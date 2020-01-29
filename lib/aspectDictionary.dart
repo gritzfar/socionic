@@ -84,7 +84,104 @@ final introvertSensoric = AspectDictionary(
                   words: ["\"как сейчас помню запах свежескошенной травы на том поле\""]
               ),
             ]
-          )
+          ),
+          Theme(
+            name: "Ощущения",
+            subThemes: <SubTheme>[
+              SubTheme(
+                name: "Основная",
+                words: []
+              ),
+              SubTheme(
+                  name: "Тело",
+                  words: []
+              ),
+              SubTheme(
+                  name: "Конкретизация ощущения по месту",
+                  words: []
+              ),
+              SubTheme(
+                  name: "Внутренние и мышечные ощущения",
+                  words: []
+              ),
+              SubTheme(
+                  name: "Физиологические процессы",
+                  words: []
+              ),
+            ]
+          ),
+          Theme(
+            name: "Поза, смена позы",
+            subThemes: <SubTheme>[
+              SubTheme(
+                name: "Основная",
+                words: []
+              )
+            ]
+          ),
+          Theme(
+              name: "Потребности и их удовлетворение",
+              subThemes: <SubTheme>[
+                SubTheme(
+                    name: "Основная",
+                    words: []
+                ),
+                SubTheme(
+                    name: "Еда",
+                    words: []
+                ),
+                SubTheme(
+                    name: "Питье (выпивка)",
+                    words: []
+                ),
+                SubTheme(
+                    name: "Секс",
+                    words: []
+                ),
+                SubTheme(
+                    name: "Здоровье",
+                    words: []
+                ),
+                SubTheme(
+                    name: "Чистота",
+                    words: []
+                ),
+              ]
+          ),
+          Theme(
+              name: "Физические свойства",
+              subThemes: <SubTheme>[
+                SubTheme(
+                    name: "Основная",
+                    words: []
+                ),
+                SubTheme(
+                    name: "Косистенция",
+                    words: []
+                ),
+                SubTheme(
+                    name: "Изменение физических свойств любого объекта",
+                    words: []
+                ),
+              ]
+          ),
+          Theme(
+              name: "Среда обитания",
+              subThemes: <SubTheme>[
+                SubTheme(
+                    name: "Основная",
+                    words: []
+                ),
+                SubTheme(
+                    name: "Оттенки цветов",
+                    words: []
+                ),
+                SubTheme(
+                    name: "Одежда",
+                    words: []
+                ),
+              ]
+          ),
         ]
       )
     ]
