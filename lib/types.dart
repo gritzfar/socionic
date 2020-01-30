@@ -73,7 +73,7 @@ const TypeDesc hugoType = TypeDesc(
     shortName: "Гюго",
     longName: "Гюго - ЭСЭ(Р)",
     altName: "Энтузиаст",
-    nameDescription: "Этико-сенсорный эктраверт (Рационал)",
+    nameDescription: "Этико-сенсорный экстраверт (Рационал)",
     mbti: "ESFJ",
     moto: "Воплощенная ответственность",
     svg: "svgs/hugo.svg",
