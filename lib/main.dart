@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:socionic_tools/aspectCalulationPage.dart';
+import 'package:socionic_tools/aspectsPage.dart';
 import 'package:socionic_tools/quadratesPage.dart';
 import 'package:socionic_tools/relationsPage.dart';
 import 'package:socionic_tools/typesPage.dart';
@@ -32,8 +33,8 @@ class MySocionicApp extends StatelessWidget {
         TypesPage.routeName: (BuildContext context) => TypesPage(),
         RelationsPage.routeName: (BuildContext context) => RelationsPage(),
         QuadratesPage.routeName: (BuildContext context) => QuadratesPage(),
-        AspectCalculationPage.routeName: (BuildContext context) =>
-            AspectCalculationPage(),
+        AspectCalculationPage.routeName: (BuildContext context) => AspectCalculationPage(),
+        AspectsPage.routeName: (BuildContext context) => AspectsPage(),
       },
     );
   }

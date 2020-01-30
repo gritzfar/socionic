@@ -36,8 +36,8 @@ class QuadratesPageState extends State<QuadratesPage> {
                         padding: EdgeInsets.only(bottom: 5),
                         child: ListTile(
                           leading: new Icon(Icons.border_all),
-                          title: FittedBox(child: Text(quadrate.title,
-                              style: Theme.of(context).textTheme.display1)),
+                          title: Text(quadrate.title,
+                              style: Theme.of(context).textTheme.display1),
                           subtitle: Text(quadrate.moto),
                         )),
                     Divider(),

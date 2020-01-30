@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:socionic_tools/aspectCalulationPage.dart';
+import 'package:socionic_tools/aspectsPage.dart';
 import 'package:socionic_tools/quadratesPage.dart';
 import 'package:socionic_tools/relationsPage.dart';
 import 'package:socionic_tools/typesPage.dart';
@@ -33,6 +34,13 @@ class AppDrawer extends StatelessWidget {
             text: 'Квадры',
             onTap: () {
               Navigator.popAndPushNamed(context, QuadratesPage.routeName);
+            },
+          ),
+          _createDrawerItem(
+            icon: Icons.category,
+            text: 'Аспекты',
+            onTap: () {
+              Navigator.popAndPushNamed(context, AspectsPage.routeName);
             },
           ),
           Divider(),
