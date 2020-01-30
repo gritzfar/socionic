@@ -6,8 +6,11 @@ class Aspect {
   String name;
   String altName;
   Widget icon;
+  String tag;
 
-  Aspect({this.name, this.altName, this.icon});
+  Aspect({this.name, this.altName, this.icon}) {
+    tag = this.name;
+  }
 }
 
 class AspectDictionary {
