@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:socionic_tools/customPainters.dart';
 
 class Aspect {
   String name;
+  String altName;
   Widget icon;
 
-  Aspect({this.name, this.icon});
+  Aspect({this.name, this.altName, this.icon});
 }
 
 class AspectDictionary {
@@ -183,127 +185,40 @@ final introvertSensoric = AspectDictionary(name: "Интровертная се�
 
 final eIntuition = Aspect(
     name: "Черная интуиция",
-    icon: Container(
-        width: 20,
-        height: 20,
-        child: CustomPaint(
-          //size: Size(10, 10),
-          painter: TrianglePainter(color: Colors.black54),
-        )));
+    altName: "Экстравертная интуиция (Иррациональная)",
+    icon: getIcon(IntuitionIcon(color: Colors.black54), 20, 20));
 
 final iIntuition = Aspect(
     name: "Белая интуиция",
-    icon: Container(
-        width: 20,
-        height: 20,
-        child: CustomPaint(
-          //size: Size(10, 10),
-          painter: TrianglePainter(color: Colors.white),
-        )));
-
-class TrianglePainter extends CustomPainter {
-  Color color;
-
-  TrianglePainter({this.color = Colors.white});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint();
-
-    paint.color = color;
-
-    // create a path
-    var path = Path();
-    path.lineTo(0, size.height);
-    path.lineTo(size.width, size.height);
-    path.lineTo(size.width / 2, 0);
-    path.lineTo(0, size.height);
-    // close the path to form a bounded shape
-    path.close();
-
-    canvas.drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) => false;
-}
-
-class EthicPainter extends CustomPainter {
-  Color color;
-
-  EthicPainter({this.color = Colors.white});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint();
-
-    paint.color = color;
-
-    // create a path
-    var path = Path();
-    path.lineTo(0, 0);
-    path.lineTo(0, size.height);
-    path.lineTo(size.width, size.height);
-    path.lineTo(size.width, size.height / 2);
-    path.lineTo(size.width / 2, size.height / 2);
-    path.lineTo(size.width / 2, 0);
-    path.lineTo(0, 0);
-    // close the path to form a bounded shape
-    path.close();
-
-    canvas.drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) => false;
-}
+    altName: "Интровертная интуиция (Иррациональная)",
+    icon: getIcon(IntuitionIcon(color: Colors.white), 20, 20));
 
 final eLogic = Aspect(
     name: "Черная логика",
-    icon: Container(
-      width: 20,
-      height: 20,
-      color: Colors.black54,
-    ));
+    altName: "Экстравертная логика (Рациональная)",
+    icon: getIcon(LogicIcon(color: Colors.black54), 20, 20));
 
 final iLogic = Aspect(
     name: "Белая логика",
-    icon: Container(
-      width: 20,
-      height: 20,
-      color: Colors.white,
-    ));
+    altName: "Интровертная логика (Рациональная)",
+    icon: getIcon(LogicIcon(color: Colors.white), 20, 20));
 
 final eSensoric = Aspect(
     name: "Черная сенсорика",
-    icon: new Icon(
-      Icons.lens,
-      color: Colors.black54,
-    ));
+    altName: "Экстравертная сенсорика (Иррациональная)",
+    icon: getIcon(SensoricIcon(color: Colors.black54), 20, 20));
 
 final iSensoric = Aspect(
     name: "Белая сенсорика",
-    icon: new Icon(
-      Icons.lens,
-      color: Colors.white,
-    ));
+    altName: "Интровертная сенсорика (Иррациональная)",
+    icon: getIcon(SensoricIcon(color: Colors.white), 20, 20));
 
 final eEthic = Aspect(
     name: "Черная этика",
-    icon: Container(
-        width: 20,
-        height: 20,
-        child: CustomPaint(
-          //size: Size(10, 10),
-          painter: EthicPainter(color: Colors.black54),
-        )));
+    altName: "Экстравертная этика (Рациональная)",
+    icon: getIcon(EthicIcon(color: Colors.black54), 20, 20));
 
 final iEthic = Aspect(
     name: "Белая этика",
-    icon: Container(
-        width: 20,
-        height: 20,
-        child: CustomPaint(
-          //size: Size(10, 10),
-          painter: EthicPainter(color: Colors.white),
-        )));
+    altName: "Интровертная этика (Рациональная)",
+    icon: getIcon(EthicIcon(color: Colors.white), 20, 20));
