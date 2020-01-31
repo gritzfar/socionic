@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:socionic_tools/main.dart';
 import 'package:socionic_tools/relationsPage.dart';
 import 'package:socionic_tools/typeHero.dart';
 import 'package:socionic_tools/types.dart';
@@ -77,7 +78,7 @@ class TypePage extends StatelessWidget {
                     child: SingleChildScrollView(
                         physics: const BouncingScrollPhysics(),
                         child: Text(
-                          typeDesc.description,
+                          app_IsInTest ? "TEST String" : typeDesc.description,
                           style: Theme.of(context).textTheme.body1,
                         )),
                   )

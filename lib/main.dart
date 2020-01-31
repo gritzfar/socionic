@@ -1,3 +1,4 @@
+import 'package:admob_flutter/admob_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:socionic_tools/aspectCalulationPage.dart';
 import 'package:socionic_tools/aspectsPage.dart';
@@ -5,31 +6,50 @@ import 'package:socionic_tools/quadratesPage.dart';
 import 'package:socionic_tools/relationsPage.dart';
 import 'package:socionic_tools/typesPage.dart';
 
-//ca-app-pub-7993607976861905~7718564880
+final bool app_IsInTest = true;
+
+//Test id
+final String appId = "ca-app-pub-3940256099942544~3347511713";
+
+// Orig id
+//final String appId = "ca-app-pub-7993607976861905~7718564880";
+
+String getBannerAdUnitId(){
+  //Test banner
+  return "ca-app-pub-3940256099942544/6300978111";
+
+  // Orig banner id
+  //return "ca-app-pub-7993607976861905/6677424882";
+}
+
+String getAppId(){
+  return "ca-app-pub-7993607976861905~7718564880";
+}
 
 void main() => runApp(MySocionicApp());
 
-class MySocionicApp extends StatelessWidget {
-  // This widget is the root of your application.
+class MySocionicApp extends StatefulWidget  {
+  const MySocionicApp({Key key}) : super(key: key);
+
+  @override
+  _MySocionicAppState createState() => _MySocionicAppState();
+}
+
+class _MySocionicAppState extends State<MySocionicApp> {
+
+  @override
+  void initState() {
+    super.initState();
+
+    Admob.initialize(appId);
+  }
+
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       title: 'Socionic tools',
       theme: ThemeData.dark(),
-//      ThemeData(
-//        // This is the theme of your application.
-//        //
-//        // Try running your application with "flutter run". You'll see the
-//        // application has a blue toolbar. Then, without quitting the app, try
-//        // changing the primarySwatch below to Colors.green and then invoke
-//        // "hot reload" (press "r" in the console where you ran "flutter run",
-//        // or simply save your changes to "hot reload" in a Flutter IDE).
-//        // Notice that the dcounter didn't reset back to zero; the application
-//        // is not restarted.
-//        primarySwatch: Colors.blue,
-//        backgroundColor: Colors.blue,
-//        scaffoldBackgroundColor: Colors.blueAccent,
-//      ),
       initialRoute: TypesPage.routeName,
       routes: {
         TypesPage.routeName: (BuildContext context) => TypesPage(),

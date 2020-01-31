@@ -1,6 +1,8 @@
+import 'package:admob_flutter/admob_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:socionic_tools/appDrawer.dart';
+import 'package:socionic_tools/main.dart';
 import 'package:socionic_tools/typeHero.dart';
 import 'package:socionic_tools/typePage.dart';
 import 'package:socionic_tools/types.dart';
@@ -29,6 +31,16 @@ class TypesPageState extends State<TypesPage> {
           children: getRows(),
         ),
       ),
+      bottomNavigationBar: Padding(
+          padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
+          child: ClipRRect(
+            // rounded corners ad.
+            borderRadius: BorderRadius.circular(40.0),
+            child: AdmobBanner(
+              adUnitId: getBannerAdUnitId(),
+              adSize: AdmobBannerSize.BANNER,
+            ),
+          )),
     );
   }
 
