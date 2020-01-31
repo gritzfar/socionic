@@ -5,6 +5,8 @@ import 'package:socionic_tools/quadratesPage.dart';
 import 'package:socionic_tools/relationsPage.dart';
 import 'package:socionic_tools/typesPage.dart';
 
+//ca-app-pub-7993607976861905~7718564880
+
 void main() => runApp(MySocionicApp());
 
 class MySocionicApp extends StatelessWidget {
