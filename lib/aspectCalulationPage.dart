@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:socionic_tools/main.dart';
 import 'package:socionic_tools/typeHero.dart';
 import 'package:socionic_tools/typePage.dart';
 import 'package:socionic_tools/types.dart';
@@ -98,7 +99,6 @@ class AspectCalculationPageState extends State<AspectCalculationPage> {
               childAspectRatio: .58),
           physics: const BouncingScrollPhysics(),
           itemBuilder: (context, i) {
-
             //double width = MediaQuery.of(context).size.width * 0.23;
 
             return
@@ -111,7 +111,8 @@ class AspectCalculationPageState extends State<AspectCalculationPage> {
               child: Column(
                 //mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  FittedBox(child: Text(
+                  FittedBox(
+                      child: Text(
                     _data[i].shortName,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
@@ -129,6 +130,7 @@ class AspectCalculationPageState extends State<AspectCalculationPage> {
           itemCount: _data.length,
         ))
       ]),
+      bottomNavigationBar: getBanner(context),
     );
   }
 

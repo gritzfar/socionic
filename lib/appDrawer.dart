@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:socionic_tools/appConfig.dart';
 import 'package:socionic_tools/aspectCalulationPage.dart';
 import 'package:socionic_tools/aspectsPage.dart';
 import 'package:socionic_tools/quadratesPage.dart';
@@ -71,13 +72,13 @@ class AppDrawer extends StatelessWidget {
           color: Theme.of(context).primaryColor,
 //            image: DecorationImage(
 //                fit: BoxFit.fill,
-//                image: AssetImage('images/back_gray.png'))
+//                image: AssetImage(''))
         ),
         child: Stack(children: <Widget>[
           Positioned(
               bottom: 12.0,
               left: 16.0,
-              child: Text("Моя соционика",
+              child: Text("Моя соционика" + (AppConfig.of(context).hasAdds ? " (free)" : ""),
                   style: TextStyle(
                       //color: Theme.of(context).secondaryHeaderColor,
                       fontSize: 20.0,

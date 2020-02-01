@@ -1,32 +1,26 @@
-import 'package:admob_flutter/admob_flutter.dart';
+//import 'package:admob_flutter/admob_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:socionic_tools/appConfig.dart';
 import 'package:socionic_tools/aspectCalulationPage.dart';
 import 'package:socionic_tools/aspectsPage.dart';
 import 'package:socionic_tools/quadratesPage.dart';
 import 'package:socionic_tools/relationsPage.dart';
 import 'package:socionic_tools/typesPage.dart';
 
-final bool app_IsInTest = true;
+//void main() => runApp(MySocionicApp());
 
-//Test id
-final String appId = "ca-app-pub-3940256099942544~3347511713";
+void main() {
+  var configuredApp = AppConfig(
+    hasAdds: false,
+    child: MySocionicApp(),
+  );
 
-// Orig id
-//final String appId = "ca-app-pub-7993607976861905~7718564880";
+  WidgetsFlutterBinding.ensureInitialized();
 
-String getBannerAdUnitId(){
-  //Test banner
-  return "ca-app-pub-3940256099942544/6300978111";
+  //mainCommon(configuredApp);
 
-  // Orig banner id
-  //return "ca-app-pub-7993607976861905/6677424882";
+  runApp(configuredApp);
 }
-
-String getAppId(){
-  return "ca-app-pub-7993607976861905~7718564880";
-}
-
-void main() => runApp(MySocionicApp());
 
 class MySocionicApp extends StatefulWidget  {
   const MySocionicApp({Key key}) : super(key: key);
@@ -37,18 +31,25 @@ class MySocionicApp extends StatefulWidget  {
 
 class _MySocionicAppState extends State<MySocionicApp> {
 
-  @override
-  void initState() {
-    super.initState();
-
-    Admob.initialize(appId);
-  }
+//  @override
+//  void initState() {
+//    super.initState();
+//    var config = AppConfig.of(context);
+//
+//    config.initAdds();
+//  }
 
   @override
   Widget build(BuildContext context) {
 
+    var config = AppConfig.of(context);
+    var hasAdds = config.hasAdds;
+    var title = "Socionic tools" + (hasAdds ? "(free)" : "");
+
+    config.initAdds();
+
     return MaterialApp(
-      title: 'Socionic tools',
+      title: title,
       theme: ThemeData.dark(),
       initialRoute: TypesPage.routeName,
       routes: {
@@ -60,4 +61,26 @@ class _MySocionicAppState extends State<MySocionicApp> {
       },
     );
   }
+}
+
+Widget getBanner(BuildContext context) {
+  var config = AppConfig.of(context);
+  if (!config.hasAdds) {
+    return null;
+  }
+
+  return null;
+//  return
+//    Padding(
+//        padding: EdgeInsets.only(top: 8.0),
+//        //child: ClipRRect(
+//        // rounded corners ad.
+//        //borderRadius: BorderRadius.circular(40.0),
+//        child:
+//        AdmobBanner(
+//          adUnitId: config.getBannerAdUnitId(),
+//          adSize: AdmobBannerSize.BANNER,
+//        )
+//    );
+  //));
 }

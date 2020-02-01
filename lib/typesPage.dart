@@ -1,4 +1,4 @@
-import 'package:admob_flutter/admob_flutter.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:socionic_tools/appDrawer.dart';
@@ -17,7 +17,7 @@ class TypesPage extends StatefulWidget {
 class TypesPageState extends State<TypesPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    Scaffold scaffold = Scaffold(
       appBar: AppBar(
         title: Text("Социотипы"),
       ),
@@ -31,17 +31,10 @@ class TypesPageState extends State<TypesPage> {
           children: getRows(),
         ),
       ),
-      bottomNavigationBar: Padding(
-          padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
-          child: ClipRRect(
-            // rounded corners ad.
-            borderRadius: BorderRadius.circular(40.0),
-            child: AdmobBanner(
-              adUnitId: getBannerAdUnitId(),
-              adSize: AdmobBannerSize.BANNER,
-            ),
-          )),
+      bottomNavigationBar: getBanner(context),
     );
+
+    return scaffold;
   }
 
   List<Row> getRows() {

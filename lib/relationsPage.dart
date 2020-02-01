@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:socionic_tools/appDrawer.dart';
+import 'package:socionic_tools/main.dart';
 import 'package:socionic_tools/typeHero.dart';
 import 'package:socionic_tools/typePage.dart';
 import 'package:socionic_tools/types.dart';
@@ -58,6 +59,7 @@ class RelationsPageState extends State<RelationsPage> {
           ],
         ),
       ),
+      bottomNavigationBar: getBanner(context),
     );
   }
 
