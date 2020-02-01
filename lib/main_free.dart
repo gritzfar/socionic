@@ -5,9 +5,11 @@ import 'package:socionic_tools/main.dart';
 void main() {
   var configuredApp = AppConfig(
     hasAdds: true,
-    testAdds: true,
+    testAdds: false,
     child: MySocionicApp(),
   );
+
+  WidgetsFlutterBinding.ensureInitialized();
 
   //mainCommon(configuredApp);
 

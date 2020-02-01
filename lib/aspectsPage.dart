@@ -1,4 +1,5 @@
 import 'package:expandable/expandable.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:socionic_tools/aspectDictionary.dart';
@@ -35,8 +36,8 @@ class AspectsPage extends StatelessWidget {
                         child: ListTile(
                           leading: Hero(child: aspect.icon, tag: aspect.tag),
                           title: Text(aspect.name,
-                              style: Theme.of(context).textTheme.display1),
-                          subtitle: Text(aspect.altName),
+                              style: Theme.of(context).textTheme.title),
+                          subtitle: Text(aspect.altName, overflow: TextOverflow.ellipsis),
                         )),
                     onTap: () {
                       Navigator.of(context).push(getAspectPage(aspect));
