@@ -13,6 +13,7 @@ import 'package:socionic_tools/typesPage.dart';
 void main() {
   var configuredApp = AppConfig(
     hasAdds: false,
+    testAdds: false,
     child: MySocionicApp(),
   );
 
