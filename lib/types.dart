@@ -609,20 +609,20 @@ class TypeDesc {
   final List<Relation> relations;
 
   const TypeDesc({this.tag,
-    this.shortName,
-    this.longName,
-    this.altName,
-    this.nameDescription,
-    this.mbti,
-    this.moto,
-    this.svg,
-    this.routeName,
-    this.description,
-    this.extraversion,
-    this.logic,
-    this.intuition,
-    this.razionalisation,
-    this.relations})
+        this.shortName,
+        this.longName,
+        this.altName,
+        this.nameDescription,
+        this.mbti,
+        this.moto,
+        this.svg,
+        this.routeName,
+        this.description,
+        this.extraversion,
+        this.logic,
+        this.intuition,
+        this.razionalisation,
+        this.relations})
       : super();
 
   @override

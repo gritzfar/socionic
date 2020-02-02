@@ -31,6 +31,8 @@ class AspectPage extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           alignment: Alignment.topLeft,
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
+            Text(aspect.desc),
+            Text(""),
             OutlineButton(
               child: Wrap(
                 children: <Widget>[
@@ -47,17 +49,32 @@ class AspectPage extends StatelessWidget {
             ),
             Divider(),
             Expanded(
-              flex: 1,
-              child: SingleChildScrollView(
+                flex: 1,
+                child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
-                  child: Text(
-                    "",
-                    style: Theme
+                  child: Column(children: <Widget>[
+                    Text("Проявление функций", style: Theme
                         .of(context)
                         .textTheme
-                        .body1,
-                  )),
-            )
+                        .title),
+                    Text(""),
+                    Text(aspect.func[0]),
+                    Text(""),
+                    Text(aspect.func[1]),
+                    Text(""),
+                    Text(aspect.func[2]),
+                    Text(""),
+                    Text(aspect.func[3]),
+                    Text(""),
+                    Text(aspect.func[4]),
+                    Text(""),
+                    Text(aspect.func[5]),
+                    Text(""),
+                    Text(aspect.func[6]),
+                    Text(""),
+                    Text(aspect.func[7]),
+                  ]),
+                ))
           ])),
       bottomNavigationBar: getBanner(context),
     );
