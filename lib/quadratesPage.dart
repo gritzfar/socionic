@@ -3,72 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:socionic_tools/main.dart';
 
-class QuadratesPage extends StatefulWidget {
-  static const routeName = "/qudratesPage";
-
-  @override
-  State<StatefulWidget> createState() => QuadratesPageState();
-}
-
-class QuadratesPageState extends State<QuadratesPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      //backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      appBar: AppBar(
-        title: Text("Квадры"),
-      ),
-//        drawer: AppDrawer(
-//          context: context,
-//        ),
-      body: ExpandableTheme(
-          data: ExpandableThemeData(
-              iconColor: Theme.of(context).disabledColor, useInkWell: true),
-          child: ListView.builder(
-            physics: const BouncingScrollPhysics(),
-            itemCount: quadrates.length,
-            itemBuilder: (context, i) {
-              final quadrate = quadrates[i];
-
-              return Card(
-                  child: Column(
-                children: <Widget>[
-                  Container(
-                      padding: EdgeInsets.only(bottom: 5),
-                      child: ListTile(
-                        leading: new Icon(Icons.border_all),
-                        title: Text(quadrate.title,
-                            style: Theme.of(context).textTheme.display1),
-                        subtitle: Text(quadrate.moto),
-                      )),
-                  Divider(),
-                  ExpandablePanel(
-                      header: Container(),
-//                      header: Builder(builder: (context) {
-//                        var controller = ExpandableController.of(context);
-//                        return controller.expanded ? Padding( padding: EdgeInsets.only(left: 15, top: 10), child: Text("Свернуть")) : Padding( padding: EdgeInsets.only(left: 15, top: 10), child: Text("Развернуть"));
-//                      }),
-                      expanded: Container(
-                          margin:
-                              EdgeInsets.only(left: 15, right: 15, bottom: 15),
-                          child: quadrate.description))
-                ],
-              ));
-            },
-          )),
-      bottomNavigationBar: getBanner(context),
-    );
-  }
-}
-
-class QuadrateData {
-  const QuadrateData({this.title, this.moto, this.description}) : super();
-
-  final String title;
-  final String moto;
-  final Column description;
-}
-
 final quadrates = <QuadrateData>[
   QuadrateData(
       title: "Альфа квадра",
@@ -131,3 +65,70 @@ final quadrates = <QuadrateData>[
         ],
       ))
 ];
+
+class QuadrateData {
+  final String title;
+
+  final String moto;
+  final Column description;
+
+  const QuadrateData({this.title, this.moto, this.description}) : super();
+}
+
+class QuadratesPage extends StatefulWidget {
+  static const routeName = "/qudratesPage";
+
+  @override
+  State<StatefulWidget> createState() => QuadratesPageState();
+}
+
+class QuadratesPageState extends State<QuadratesPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      //backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      appBar: AppBar(
+        title: Text("Квадры"),
+      ),
+//        drawer: AppDrawer(
+//          context: context,
+//        ),
+      body: ExpandableTheme(
+          data: ExpandableThemeData(iconColor: Theme
+              .of(context)
+              .disabledColor, useInkWell: true),
+          child: ListView.builder(
+            physics: const BouncingScrollPhysics(),
+            itemCount: quadrates.length,
+            itemBuilder: (context, i) {
+              final quadrate = quadrates[i];
+
+              return Card(
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                          padding: EdgeInsets.only(bottom: 5),
+                          child: ListTile(
+                            leading: new Icon(Icons.border_all),
+                            title: Text(quadrate.title, style: Theme
+                                .of(context)
+                                .textTheme
+                                .display1),
+                            subtitle: Text(quadrate.moto),
+                          )),
+                      Divider(),
+                      ExpandablePanel(
+                          header: Container(),
+//                      header: Builder(builder: (context) {
+//                        var controller = ExpandableController.of(context);
+//                        return controller.expanded ? Padding( padding: EdgeInsets.only(left: 15, top: 10), child: Text("Свернуть")) : Padding( padding: EdgeInsets.only(left: 15, top: 10), child: Text("Развернуть"));
+//                      }),
+                          expanded: Container(margin: EdgeInsets.only(left: 15, right: 15, bottom: 15), child: quadrate.description))
+                    ],
+                  ));
+            },
+          )),
+      bottomNavigationBar: getBanner(context),
+    );
+  }
+}

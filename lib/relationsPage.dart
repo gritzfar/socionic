@@ -8,11 +8,25 @@ import 'package:socionic_tools/typeHero.dart';
 import 'package:socionic_tools/typePage.dart';
 import 'package:socionic_tools/types.dart';
 
+MaterialPageRoute<void> getTypeRelationsPage(TypeDesc typeDesc, bool popNavigation) {
+  return MaterialPageRoute<void>(builder: (BuildContext context) {
+    return TypeRelationsPage(typeDesc: typeDesc, popNavigation: popNavigation);
+  });
+}
+
+typedef void RatingChangeCallback(double rating);
+
+//MaterialPageRoute<void> getTypeDescPage(TypeDesc typeDesc) {
+//  return MaterialPageRoute<void>(builder: (BuildContext context) {
+//    return TypePage(typeDesc: typeDesc);
+//  });
+//}
+
 class RelationsPage extends StatefulWidget {
+  static const String routeName = "/relationsPage";
+
   @override
   State<StatefulWidget> createState() => RelationsPageState();
-
-  static const String routeName = "/relationsPage";
 }
 
 class RelationsPageState extends State<RelationsPage> {
@@ -34,27 +48,23 @@ class RelationsPageState extends State<RelationsPage> {
             Container(
               //color: Theme.of(context).backgroundColor,
               child: Row(
-                children: generateItems(
-                    [donType, dumasType, hugoType, robespierreType]),
+                children: generateItems([donType, dumasType, hugoType, robespierreType]),
               ),
             ),
             Container(
                 //color: Theme.of(context).backgroundColor,
                 child: Row(
-              children: generateItems(
-                  [hamletType, maximGorkyType, zhukovType, yeseninType]),
+                  children: generateItems([hamletType, maximGorkyType, zhukovType, yeseninType]),
             )),
             Container(
                 //color: Theme.of(context).backgroundColor,
                 child: Row(
-              children: generateItems(
-                  [napoleonType, balzacType, jackLondonType, dreiserType]),
+                  children: generateItems([napoleonType, balzacType, jackLondonType, dreiserType]),
             )),
             Container(
                 //color: Theme.of(context).backgroundColor,
                 child: Row(
-              children: generateItems(
-                  [stierlitzType, dostoyevskyType, huxleyType, gabinType]),
+                  children: generateItems([stierlitzType, dostoyevskyType, huxleyType, gabinType]),
             ))
           ],
         ),
@@ -85,8 +95,7 @@ class RelationsPageState extends State<RelationsPage> {
                       child: SvgPicture.asset(types[i].svg, height: 120),
                       //width: 120,
                       onTap: () {
-                        Navigator.of(context)
-                            .push(getTypeRelationsPage(types[i], false));
+                        Navigator.of(context).push(getTypeRelationsPage(types[i], false));
                       }),
                 ],
               )),
@@ -98,26 +107,55 @@ class RelationsPageState extends State<RelationsPage> {
   }
 }
 
-//MaterialPageRoute<void> getTypeDescPage(TypeDesc typeDesc) {
-//  return MaterialPageRoute<void>(builder: (BuildContext context) {
-//    return TypePage(typeDesc: typeDesc);
-//  });
-//}
+class StarRating extends StatelessWidget {
+  final int starCount;
+  final double rating;
+  final RatingChangeCallback onRatingChanged;
+  final Color color;
+  final double size;
 
-MaterialPageRoute<void> getTypeRelationsPage(
-    TypeDesc typeDesc, bool popNavigation) {
-  return MaterialPageRoute<void>(builder: (BuildContext context) {
-    return TypeRelationsPage(typeDesc: typeDesc, popNavigation: popNavigation);
-  });
+  StarRating({this.starCount = 5, this.rating = .0, this.onRatingChanged, this.color, this.size = 15});
+
+  @override
+  Widget build(BuildContext context) {
+    return new Row(mainAxisAlignment: MainAxisAlignment.center, children: new List.generate(starCount, (index) => buildStar(context, index)));
+  }
+
+  Widget buildStar(BuildContext context, int index) {
+    Icon icon;
+    if (index >= rating) {
+      icon = new Icon(
+        Icons.star_border,
+        size: this.size,
+        color: Theme
+            .of(context)
+            .backgroundColor,
+      );
+    } else if (index > rating - 1 && index < rating) {
+      icon = new Icon(
+        Icons.star_half,
+        size: this.size,
+        color: color ?? Theme
+            .of(context)
+            .buttonColor,
+      );
+    } else {
+      icon = new Icon(
+        Icons.star,
+        size: this.size,
+        color: color ?? Theme
+            .of(context)
+            .buttonColor,
+      );
+    }
+    return new InkResponse(
+      onTap: onRatingChanged == null ? null : () => onRatingChanged(index + 1.0),
+      child: icon,
+    );
+  }
 }
 
 class TypeRelationsPage extends StatelessWidget {
-  final TypeDesc typeDesc;
-  final bool popNavigation;
-
-  const TypeRelationsPage({Key key, this.typeDesc, this.popNavigation})
-      : super();
-
   static const List<TypeDesc> typesData = [
     donType,
     dumasType,
@@ -136,13 +174,15 @@ class TypeRelationsPage extends StatelessWidget {
     huxleyType,
     gabinType
   ];
+  final TypeDesc typeDesc;
+
+  final bool popNavigation;
+
+  const TypeRelationsPage({Key key, this.typeDesc, this.popNavigation}) : super();
 
   @override
   Widget build(BuildContext context) {
-
-    Widget gridSection = Expanded(child: Padding(
-                padding: EdgeInsets.all(5),
-                child: getRows(context)));
+    Widget gridSection = Expanded(child: Padding(padding: EdgeInsets.all(5), child: getRows(context)));
 
 //    Widget gridSection = Expanded(
 //        child: SingleChildScrollView(
@@ -177,80 +217,7 @@ class TypeRelationsPage extends StatelessWidget {
     );
   }
 
-  Widget getRows(BuildContext context){
-    double rowHeight =  180;
-    //double rowWidth =  MediaQuery.of(context).size.width;
-
-    return DiagonalScrollView(
-      maxWidth: 120.0 * 4 + 20,
-      maxHeight: 180.0 * 4,
-      child:
-      Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            //width: rowWidth,
-            height: rowHeight,
-            //color: Theme.of(context).backgroundColor,
-            //flex: 1,
-            child: Row(
-              children: generateItems(
-                  context,
-                  [donType, dumasType, hugoType, robespierreType],
-                  typeDesc.relations.take(4).toList()),
-            ),
-          ),
-          Container(
-              //width: rowWidth,
-              height: rowHeight,
-              child: Row(
-                children: generateItems(
-                    context,
-                    [
-                      hamletType,
-                      maximGorkyType,
-                      zhukovType,
-                      yeseninType
-                    ],
-                    typeDesc.relations.skip(4).take(4).toList()),
-              )),
-          Container(
-              //width: rowWidth,
-              height: rowHeight,
-              child: Row(
-                children: generateItems(
-                    context,
-                    [
-                      napoleonType,
-                      balzacType,
-                      jackLondonType,
-                      dreiserType
-                    ],
-                    typeDesc.relations.skip(8).take(4).toList()),
-              )),
-          Container(
-              //width: rowWidth,
-              height: rowHeight,
-              //flex: 1,
-              //color: Theme.of(context).backgroundColor,
-              child: Row(
-                children: generateItems(
-                    context,
-                    [
-                      stierlitzType,
-                      dostoyevskyType,
-                      huxleyType,
-                      gabinType
-                    ],
-                    typeDesc.relations.skip(12).take(4).toList()),
-              ))
-        ]
-    ));
-  }
-
-  List<Widget> generateItems(
-      BuildContext context, List<TypeDesc> types, List<Relation> relations) {
+  List<Widget> generateItems(BuildContext context, List<TypeDesc> types, List<Relation> relations) {
     List<Widget> list = new List<Widget>();
     var color = Colors.amber;
 
@@ -260,15 +227,13 @@ class TypeRelationsPage extends StatelessWidget {
 
     for (var i = 0; i < types.length; i++) {
       list.add(
-        FittedBox(child:
-        Card(
-            margin: EdgeInsets.all(2),
-            child: Container(
-                width: width,
-                padding: EdgeInsets.all(5),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
+        FittedBox(
+            child: Card(
+                margin: EdgeInsets.all(2),
+                child: Container(
+                    width: width,
+                    padding: EdgeInsets.all(5),
+                    child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: <Widget>[
                       Text(
                         types[i].shortName,
                         maxLines: 1,
@@ -289,8 +254,7 @@ class TypeRelationsPage extends StatelessWidget {
                             if (popNavigation) {
                               //Navigator.of(context).pop();
                             } else {
-                              Navigator.of(context)
-                                  .push(getTypeDescPage(types[i]));
+                              Navigator.of(context).push(getTypeDescPage(types[i]));
                             }
                           })
                       //],)
@@ -300,57 +264,46 @@ class TypeRelationsPage extends StatelessWidget {
 
     return list;
   }
-}
 
-typedef void RatingChangeCallback(double rating);
+  Widget getRows(BuildContext context) {
+    double rowHeight = 180;
+    //double rowWidth =  MediaQuery.of(context).size.width;
 
-class StarRating extends StatelessWidget {
-  final int starCount;
-  final double rating;
-  final RatingChangeCallback onRatingChanged;
-  final Color color;
-  final double size;
-
-  StarRating(
-      {this.starCount = 5,
-      this.rating = .0,
-      this.onRatingChanged,
-      this.color,
-      this.size = 15});
-
-  Widget buildStar(BuildContext context, int index) {
-    Icon icon;
-    if (index >= rating) {
-      icon = new Icon(
-        Icons.star_border,
-        size: this.size,
-        color: Theme.of(context).backgroundColor,
-      );
-    } else if (index > rating - 1 && index < rating) {
-      icon = new Icon(
-        Icons.star_half,
-        size: this.size,
-        color: color ?? Theme.of(context).buttonColor,
-      );
-    } else {
-      icon = new Icon(
-        Icons.star,
-        size: this.size,
-        color: color ?? Theme.of(context).buttonColor,
-      );
-    }
-    return new InkResponse(
-      onTap:
-          onRatingChanged == null ? null : () => onRatingChanged(index + 1.0),
-      child: icon,
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return new Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children:
-            new List.generate(starCount, (index) => buildStar(context, index)));
+    return DiagonalScrollView(
+        maxWidth: 120.0 * 4 + 20,
+        maxHeight: 180.0 * 4,
+        child: Column(mainAxisAlignment: MainAxisAlignment.start, crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
+          Container(
+            //width: rowWidth,
+            height: rowHeight,
+            //color: Theme.of(context).backgroundColor,
+            //flex: 1,
+            child: Row(
+              children: generateItems(context, [donType, dumasType, hugoType, robespierreType], typeDesc.relations.take(4).toList()),
+            ),
+          ),
+          Container(
+            //width: rowWidth,
+              height: rowHeight,
+              child: Row(
+                children: generateItems(context, [hamletType, maximGorkyType, zhukovType, yeseninType], typeDesc.relations.skip(4).take(4).toList()),
+              )),
+          Container(
+            //width: rowWidth,
+              height: rowHeight,
+              child: Row(
+                children:
+                generateItems(context, [napoleonType, balzacType, jackLondonType, dreiserType], typeDesc.relations.skip(8).take(4).toList()),
+              )),
+          Container(
+            //width: rowWidth,
+              height: rowHeight,
+              //flex: 1,
+              //color: Theme.of(context).backgroundColor,
+              child: Row(
+                children:
+                generateItems(context, [stierlitzType, dostoyevskyType, huxleyType, gabinType], typeDesc.relations.skip(12).take(4).toList()),
+              ))
+        ]));
   }
 }

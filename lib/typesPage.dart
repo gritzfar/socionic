@@ -8,10 +8,10 @@ import 'package:socionic_tools/typePage.dart';
 import 'package:socionic_tools/types.dart';
 
 class TypesPage extends StatefulWidget {
+  static const String routeName = "/typesPage";
+
   @override
   State<StatefulWidget> createState() => TypesPageState();
-
-  static const String routeName = "/typesPage";
 }
 
 class TypesPageState extends State<TypesPage> {
@@ -35,21 +35,6 @@ class TypesPageState extends State<TypesPage> {
     );
 
     return scaffold;
-  }
-
-  List<Row> getRows() {
-    return <Row>[
-      getRow([donType, dumasType, hugoType, robespierreType]),
-      getRow([hamletType, maximGorkyType, zhukovType, yeseninType]),
-      getRow([napoleonType, balzacType, jackLondonType, dreiserType]),
-      getRow([stierlitzType, dostoyevskyType, huxleyType, gabinType])
-    ];
-  }
-
-  Row getRow(List<TypeDesc> types) {
-    return Row(
-      children: generateItems(types),
-    );
   }
 
   List<Widget> generateItems(List<TypeDesc> types) {
@@ -82,5 +67,20 @@ class TypesPageState extends State<TypesPage> {
     }
 
     return list;
+  }
+
+  Row getRow(List<TypeDesc> types) {
+    return Row(
+      children: generateItems(types),
+    );
+  }
+
+  List<Row> getRows() {
+    return <Row>[
+      getRow([donType, dumasType, hugoType, robespierreType]),
+      getRow([hamletType, maximGorkyType, zhukovType, yeseninType]),
+      getRow([napoleonType, balzacType, jackLondonType, dreiserType]),
+      getRow([stierlitzType, dostoyevskyType, huxleyType, gabinType])
+    ];
   }
 }

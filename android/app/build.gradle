@@ -71,13 +71,13 @@ android {
             dimension  "version"
             applicationId "de.gritzfar.socionic_tools"
             versionName "1.0"
-            manifestPlaceholders = [appLabel: "@strings/app_name_free"]
+            manifestPlaceholders = [appLabel: "@string/app_name_free"]
         }
         full {
             dimension "version"
             applicationId "de.gritzfar.my_socionic"
             versionName "1.0"
-            manifestPlaceholders = [appLabel: "@strings/app_name"]
+            manifestPlaceholders = [appLabel: "@string/app_name"]
         }
     }
 }

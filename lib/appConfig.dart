@@ -7,13 +7,6 @@ class AppConfig extends InheritedWidget {
 
   AppConfig({this.hasAdds, this.testAdds, Widget child}) : super(child: child);
 
-  static AppConfig of(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType();
-  }
-
-  @override
-  bool updateShouldNotify(InheritedWidget oldWidget) => false;
-
   String getAppId() {
     if (testAdds) {
       //Test appId
@@ -34,9 +27,10 @@ class AppConfig extends InheritedWidget {
     return "ca-app-pub-7993607976861905/6677424882";
   }
 
-  void initAdds() {
-    if (this.hasAdds) {
-      //Admob.initialize(getAppId());
-    }
+  @override
+  bool updateShouldNotify(InheritedWidget oldWidget) => false;
+
+  static AppConfig of(BuildContext context) {
+    return context.dependOnInheritedWidgetOfExactType();
   }
 }

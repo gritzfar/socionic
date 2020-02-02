@@ -1,5 +1,3 @@
-import 'dart:developer';
-import 'package:admob_flutter/admob_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:socionic_tools/appConfig.dart';
 import 'package:socionic_tools/aspectCalulationPage.dart';
@@ -17,14 +15,18 @@ void main() {
     child: MySocionicApp(),
   );
 
-  WidgetsFlutterBinding.ensureInitialized();
+  //WidgetsFlutterBinding.ensureInitialized();
 
   //mainCommon(configuredApp);
 
   runApp(configuredApp);
 }
 
-class MySocionicApp extends StatefulWidget  {
+Widget getBanner(BuildContext context) {
+  return null;
+}
+
+class MySocionicApp extends StatefulWidget {
   const MySocionicApp({Key key}) : super(key: key);
 
   @override
@@ -32,23 +34,11 @@ class MySocionicApp extends StatefulWidget  {
 }
 
 class _MySocionicAppState extends State<MySocionicApp> {
-
-//  @override
-//  void initState() {
-//    super.initState();
-//    var config = AppConfig.of(context);
-//
-//    config.initAdds();
-//  }
-
   @override
   Widget build(BuildContext context) {
-
     var config = AppConfig.of(context);
     var hasAdds = config.hasAdds;
-    var title = "Socionic tools" + (hasAdds ? "(free)" : "");
-
-    config.initAdds();
+    var title = "Моя соционика" + (hasAdds ? " (free)" : "");
 
     return MaterialApp(
       title: title,
@@ -63,24 +53,4 @@ class _MySocionicAppState extends State<MySocionicApp> {
       },
     );
   }
-}
-
-Widget getBanner(BuildContext context) {
-  var config = AppConfig.of(context);
-  if (!config.hasAdds) {
-    return null;
-  }
-
-  return
-    Padding(
-        padding: EdgeInsets.only(top: 8.0),
-        //child: ClipRRect(
-        // rounded corners ad.
-        //borderRadius: BorderRadius.circular(40.0),
-        child:
-        AdmobBanner(
-          adUnitId: config.getBannerAdUnitId(),
-          adSize: AdmobBannerSize.BANNER,
-        )
-    );
 }

@@ -4,6 +4,22 @@ import 'package:socionic_tools/typeHero.dart';
 import 'package:socionic_tools/typePage.dart';
 import 'package:socionic_tools/types.dart';
 
+class Aspect {
+  bool value;
+
+  final String falseValue;
+  final String trueValue;
+
+  Aspect({this.falseValue, this.trueValue}) : super();
+
+  @override
+  String toString() {
+    if (value == null) return "";
+
+    return value ? this.trueValue : this.falseValue;
+  }
+}
+
 class AspectCalculationPage extends StatefulWidget {
   static const routeName = "/typingPage";
 
@@ -31,39 +47,15 @@ class AspectCalculationPageState extends State<AspectCalculationPage> {
     gabinType
   ];
 
-  @override
-  void initState() {
-    super.initState();
-    _data = initData;
-  }
-
   List<TypeDesc> _data = [];
 
-  void _filterData() {
-    //setState(() {
-    var dataToFilter = initData.toList();
+  final Aspect ieDichotimie = Aspect(falseValue: "Интроверсия", trueValue: "Экстроверсия");
 
-    dataToFilter = dataToFilter
-        .where((v) =>
-            ieDichotimie.value == null || v.extraversion == ieDichotimie.value)
-        .toList();
-    dataToFilter = dataToFilter
-        .where(
-            (v) => elDichotimie.value == null || v.logic == elDichotimie.value)
-        .toList();
-    dataToFilter = dataToFilter
-        .where((v) =>
-            siDichotimie.value == null || v.intuition == siDichotimie.value)
-        .toList();
-    dataToFilter = dataToFilter
-        .where((v) =>
-            irDichotimie.value == null ||
-            v.razionalisation == irDichotimie.value)
-        .toList();
+  final Aspect elDichotimie = Aspect(falseValue: "Этика", trueValue: "Логика");
 
-    _data = dataToFilter;
-    //});
-  }
+  final Aspect siDichotimie = Aspect(falseValue: "Сенсорика", trueValue: "Интуиция");
+
+  final Aspect irDichotimie = Aspect(falseValue: "Иррациональность", trueValue: "Рациональность");
 
   @override
   Widget build(BuildContext context) {
@@ -76,27 +68,16 @@ class AspectCalculationPageState extends State<AspectCalculationPage> {
               spacing: 8.0, // gap between adjacent chips
               runSpacing: 4.0, // gap between lines
               children: <Widget>[
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: _getChips(ieDichotimie)),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: _getChips(elDichotimie)),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: _getChips(siDichotimie)),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: _getChips(irDichotimie))
+                Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: _getChips(ieDichotimie)),
+                Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: _getChips(elDichotimie)),
+                Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: _getChips(siDichotimie)),
+                Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: _getChips(irDichotimie))
               ],
             )),
         Expanded(
             child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4,
-              crossAxisSpacing: 3.0,
-              mainAxisSpacing: 4.0,
-              childAspectRatio: .58),
+              gridDelegate:
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4, crossAxisSpacing: 3.0, mainAxisSpacing: 4.0, childAspectRatio: .58),
           physics: const BouncingScrollPhysics(),
           itemBuilder: (context, i) {
             //double width = MediaQuery.of(context).size.width * 0.23;
@@ -134,6 +115,25 @@ class AspectCalculationPageState extends State<AspectCalculationPage> {
     );
   }
 
+  @override
+  void initState() {
+    super.initState();
+    _data = initData;
+  }
+
+  void _filterData() {
+    //setState(() {
+    var dataToFilter = initData.toList();
+
+    dataToFilter = dataToFilter.where((v) => ieDichotimie.value == null || v.extraversion == ieDichotimie.value).toList();
+    dataToFilter = dataToFilter.where((v) => elDichotimie.value == null || v.logic == elDichotimie.value).toList();
+    dataToFilter = dataToFilter.where((v) => siDichotimie.value == null || v.intuition == siDichotimie.value).toList();
+    dataToFilter = dataToFilter.where((v) => irDichotimie.value == null || v.razionalisation == irDichotimie.value).toList();
+
+    _data = dataToFilter;
+    //});
+  }
+
   List<Widget> _getChips(Aspect dichotomie) {
     return <Widget>[
       Expanded(
@@ -162,8 +162,7 @@ class AspectCalculationPageState extends State<AspectCalculationPage> {
             constraints: BoxConstraints(minWidth: 100, maxWidth: 150),
             //width: 150,
             alignment: Alignment.center,
-            child:
-                Text(dichotomie.falseValue, overflow: TextOverflow.ellipsis)),
+            child: Text(dichotomie.falseValue, overflow: TextOverflow.ellipsis)),
         selected: dichotomie.value == false,
         onSelected: (bool selected) {
           setState(() {
@@ -173,28 +172,5 @@ class AspectCalculationPageState extends State<AspectCalculationPage> {
         },
       ))
     ];
-  }
-
-  final Aspect ieDichotimie =
-      Aspect(falseValue: "Интроверсия", trueValue: "Экстроверсия");
-  final Aspect elDichotimie = Aspect(falseValue: "Этика", trueValue: "Логика");
-  final Aspect siDichotimie =
-      Aspect(falseValue: "Сенсорика", trueValue: "Интуиция");
-  final Aspect irDichotimie =
-      Aspect(falseValue: "Иррациональность", trueValue: "Рациональность");
-}
-
-class Aspect {
-  Aspect({this.falseValue, this.trueValue}) : super();
-
-  bool value;
-  final String falseValue;
-  final String trueValue;
-
-  @override
-  String toString() {
-    if (value == null) return "";
-
-    return value ? this.trueValue : this.falseValue;
   }
 }

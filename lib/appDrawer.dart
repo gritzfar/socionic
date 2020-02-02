@@ -21,14 +21,12 @@ class AppDrawer extends StatelessWidget {
           _createDrawerItem(
             icon: Icons.contacts,
             text: 'Социотипы',
-            onTap: () =>
-                Navigator.pushReplacementNamed(context, TypesPage.routeName),
+            onTap: () => Navigator.pushReplacementNamed(context, TypesPage.routeName),
           ),
           _createDrawerItem(
             icon: Icons.all_out,
             text: 'Отношения',
-            onTap: () =>
-                Navigator.pushReplacementNamed(context, RelationsPage.routeName),
+            onTap: () => Navigator.pushReplacementNamed(context, RelationsPage.routeName),
           ),
           _createDrawerItem(
             icon: Icons.border_all,
@@ -48,14 +46,10 @@ class AppDrawer extends StatelessWidget {
           _createDrawerItem(
             icon: Icons.assignment_ind,
             text: 'Типирование',
-            onTap: () => Navigator.popAndPushNamed(
-                context, AspectCalculationPage.routeName),
+            onTap: () => Navigator.popAndPushNamed(context, AspectCalculationPage.routeName),
           ),
           Divider(),
-          _createDrawerItem(
-              icon: Icons.local_library,
-              text: 'Школа соционики',
-              onTap: () => {}
+          _createDrawerItem(icon: Icons.local_library, text: 'Школа соционики', onTap: () => {}
               //Navigator.pushReplacementNamed(context, QuadratesPage.routeName),
               ),
         ],
@@ -63,8 +57,22 @@ class AppDrawer extends StatelessWidget {
     );
   }
 
-  Widget _createHeader() {
+  Widget _createDrawerItem({IconData icon, String text, GestureTapCallback onTap}) {
+    return ListTile(
+      title: Row(
+        children: <Widget>[
+          Icon(icon),
+          Padding(
+            padding: EdgeInsets.only(left: 8.0),
+            child: Text(text),
+          )
+        ],
+      ),
+      onTap: onTap,
+    );
+  }
 
+  Widget _createHeader() {
     return DrawerHeader(
         margin: EdgeInsets.zero,
         padding: EdgeInsets.zero,
@@ -84,21 +92,5 @@ class AppDrawer extends StatelessWidget {
                       fontSize: 20.0,
                       fontWeight: FontWeight.w500))),
         ]));
-  }
-
-  Widget _createDrawerItem(
-      {IconData icon, String text, GestureTapCallback onTap}) {
-    return ListTile(
-      title: Row(
-        children: <Widget>[
-          Icon(icon),
-          Padding(
-            padding: EdgeInsets.only(left: 8.0),
-            child: Text(text),
-          )
-        ],
-      ),
-      onTap: onTap,
-    );
   }
 }

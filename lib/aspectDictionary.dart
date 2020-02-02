@@ -2,44 +2,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:socionic_tools/customPainters.dart';
 
-class Aspect {
-  String name;
-  String altName;
-  Widget icon;
-  String tag;
+final eEthic = Aspect(name: "Черная этика", altName: "Экстравертная этика (Рациональная)", icon: getIcon(EthicIcon(color: Colors.black54), 20, 20));
 
-  Aspect({this.name, this.altName, this.icon}) {
-    tag = this.name;
-  }
-}
+final eIntuition =
+Aspect(name: "Черная интуиция", altName: "Экстравертная интуиция (Иррациональная)", icon: getIcon(IntuitionIcon(color: Colors.black54), 20, 20));
 
-class AspectDictionary {
-  String name;
-  List<SubDictionary> subDictionaries;
+final eLogic = Aspect(name: "Черная логика", altName: "Экстравертная логика (Рациональная)", icon: getIcon(LogicIcon(color: Colors.black54), 20, 20));
 
-  AspectDictionary({@required this.name, this.subDictionaries});
-}
+final eSensoric =
+Aspect(name: "Черная сенсорика", altName: "Экстравертная сенсорика (Иррациональная)", icon: getIcon(SensoricIcon(color: Colors.black54), 20, 20));
 
-class SubDictionary {
-  String name;
-  List<SemanticTheme> themes;
+final iEthic = Aspect(name: "Белая этика", altName: "Интровертная этика (Рациональная)", icon: getIcon(EthicIcon(color: Colors.white), 20, 20));
 
-  SubDictionary({@required this.name, this.themes});
-}
+final iIntuition =
+Aspect(name: "Белая интуиция", altName: "Интровертная интуиция (Иррациональная)", icon: getIcon(IntuitionIcon(color: Colors.white), 20, 20));
 
-class SemanticTheme {
-  String name;
-  List<SubSemanticTheme> subThemes;
-
-  SemanticTheme({@required this.name, this.subThemes});
-}
-
-class SubSemanticTheme {
-  String name;
-  List<String> words;
-
-  SubSemanticTheme({@required this.name, this.words});
-}
+final iLogic = Aspect(name: "Белая логика", altName: "Интровертная логика (Рациональная)", icon: getIcon(LogicIcon(color: Colors.white), 20, 20));
 
 final introvertSensoric = AspectDictionary(name: "Интровертная сенсорика", subDictionaries: <SubDictionary>[
   SubDictionary(name: "Способ словесного выражения (лексика, грамматика, речевые конструкторы)", themes: <SemanticTheme>[
@@ -186,42 +164,44 @@ final introvertSensoric = AspectDictionary(name: "Интровертная се�
   ])
 ]);
 
-final eIntuition = Aspect(
-    name: "Черная интуиция",
-    altName: "Экстравертная интуиция (Иррациональная)",
-    icon: getIcon(IntuitionIcon(color: Colors.black54), 20, 20));
+final iSensoric =
+Aspect(name: "Белая сенсорика", altName: "Интровертная сенсорика (Иррациональная)", icon: getIcon(SensoricIcon(color: Colors.white), 20, 20));
 
-final iIntuition = Aspect(
-    name: "Белая интуиция",
-    altName: "Интровертная интуиция (Иррациональная)",
-    icon: getIcon(IntuitionIcon(color: Colors.white), 20, 20));
+class Aspect {
+  String name;
+  String altName;
+  Widget icon;
+  String tag;
 
-final eLogic = Aspect(
-    name: "Черная логика",
-    altName: "Экстравертная логика (Рациональная)",
-    icon: getIcon(LogicIcon(color: Colors.black54), 20, 20));
+  Aspect({this.name, this.altName, this.icon}) {
+    tag = this.name;
+  }
+}
 
-final iLogic = Aspect(
-    name: "Белая логика",
-    altName: "Интровертная логика (Рациональная)",
-    icon: getIcon(LogicIcon(color: Colors.white), 20, 20));
+class AspectDictionary {
+  String name;
+  List<SubDictionary> subDictionaries;
 
-final eSensoric = Aspect(
-    name: "Черная сенсорика",
-    altName: "Экстравертная сенсорика (Иррациональная)",
-    icon: getIcon(SensoricIcon(color: Colors.black54), 20, 20));
+  AspectDictionary({@required this.name, this.subDictionaries});
+}
 
-final iSensoric = Aspect(
-    name: "Белая сенсорика",
-    altName: "Интровертная сенсорика (Иррациональная)",
-    icon: getIcon(SensoricIcon(color: Colors.white), 20, 20));
+class SemanticTheme {
+  String name;
+  List<SubSemanticTheme> subThemes;
 
-final eEthic = Aspect(
-    name: "Черная этика",
-    altName: "Экстравертная этика (Рациональная)",
-    icon: getIcon(EthicIcon(color: Colors.black54), 20, 20));
+  SemanticTheme({@required this.name, this.subThemes});
+}
 
-final iEthic = Aspect(
-    name: "Белая этика",
-    altName: "Интровертная этика (Рациональная)",
-    icon: getIcon(EthicIcon(color: Colors.white), 20, 20));
+class SubDictionary {
+  String name;
+  List<SemanticTheme> themes;
+
+  SubDictionary({@required this.name, this.themes});
+}
+
+class SubSemanticTheme {
+  String name;
+  List<String> words;
+
+  SubSemanticTheme({@required this.name, this.words});
+}
