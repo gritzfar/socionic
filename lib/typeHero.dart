@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:socionic_tools/types.dart';
+
+import 'types.dart';
 
 const double typeHeroHeight = 120;
 const double typeHeroWidth = 80;

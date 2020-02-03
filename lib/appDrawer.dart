@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:socionic_tools/appConfig.dart';
-import 'package:socionic_tools/aspectCalulationPage.dart';
-import 'package:socionic_tools/aspectsPage.dart';
-import 'package:socionic_tools/quadratesPage.dart';
-import 'package:socionic_tools/relationsPage.dart';
-import 'package:socionic_tools/typesPage.dart';
+
+import 'aspectCalulationPage.dart';
+import 'aspectsPage.dart';
+import 'quadratesPage.dart';
+import 'relationsPage.dart';
+import 'typesPage.dart';
 
 class AppDrawer extends StatelessWidget {
   final BuildContext context;
@@ -86,7 +86,7 @@ class AppDrawer extends StatelessWidget {
           Positioned(
               bottom: 12.0,
               left: 16.0,
-              child: Text("Моя соционика" + (AppConfig.of(context).hasAdds ? " (free)" : ""),
+              child: Text("Моя соционика",
                   style: TextStyle(
                       //color: Theme.of(context).secondaryHeaderColor,
                       fontSize: 20.0,

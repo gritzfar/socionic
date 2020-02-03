@@ -1,29 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:socionic_tools/appConfig.dart';
-import 'package:socionic_tools/aspectCalulationPage.dart';
-import 'package:socionic_tools/aspectsPage.dart';
-import 'package:socionic_tools/quadratesPage.dart';
-import 'package:socionic_tools/relationsPage.dart';
-import 'package:socionic_tools/typesPage.dart';
 
-import 'appLocalizations.dart';
+import 'aspectCalulationPage.dart';
+import 'aspectsPage.dart';
+import 'quadratesPage.dart';
+import 'relationsPage.dart';
+import 'typesPage.dart';
 
-//void main() => runApp(MySocionicApp());
+void main() => runApp(MySocionicApp());
 
-void main() {
-  var configuredApp = AppConfig(
-    hasAdds: false,
-    testAdds: false,
-    child: MySocionicApp(),
-  );
-
-  //WidgetsFlutterBinding.ensureInitialized();
-
-  //mainCommon(configuredApp);
-
-  runApp(configuredApp);
-}
+//void main() {
+//  var configuredApp = AppConfig(
+//    hasAdds: false,
+//    testAdds: false,
+//    child: MySocionicApp(),
+//  );
+//
+//  //WidgetsFlutterBinding.ensureInitialized();
+//
+//  //mainCommon(configuredApp);
+//
+//  runApp(configuredApp);
+//}
 
 Widget getBanner(BuildContext context) {
   return null;
@@ -46,21 +43,21 @@ class _MySocionicAppState extends State<MySocionicApp> {
     return MaterialApp(
       title: "Моя соционика",
       theme: ThemeData.dark(),
-      supportedLocales: [
-        Locale('ru', 'RU'),
-        //Locale('de', 'DE'),
-        //Locale('de', 'US'),
-      ],
-      localizationsDelegates: [AppLocalizations.delegate, GlobalMaterialLocalizations.delegate, GlobalWidgetsLocalizations.delegate],
-      localeResolutionCallback: (locale, supportedLocals) {
-        for (var supportedLocale in supportedLocals) {
-          if (supportedLocale.languageCode == locale.languageCode && supportedLocale.countryCode == locale.countryCode) {
-            return supportedLocale;
-          }
-
-          return supportedLocals.first;
-        }
-      },
+//      supportedLocales: [
+//        Locale('ru', 'RU'),
+//        //Locale('de', 'DE'),
+//        //Locale('de', 'US'),
+//      ],
+//      localizationsDelegates: [AppLocalizations.delegate, GlobalMaterialLocalizations.delegate, GlobalWidgetsLocalizations.delegate],
+//      localeResolutionCallback: (locale, supportedLocals) {
+//        for (var supportedLocale in supportedLocals) {
+//          if (supportedLocale.languageCode == locale.languageCode && supportedLocale.countryCode == locale.countryCode) {
+//            return supportedLocale;
+//          }
+//        }
+//
+//        return supportedLocals.first;
+//      },
       initialRoute: TypesPage.routeName,
       routes: {
         TypesPage.routeName: (BuildContext context) => TypesPage(),

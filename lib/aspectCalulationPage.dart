@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:socionic_tools/main.dart';
-import 'package:socionic_tools/typeHero.dart';
-import 'package:socionic_tools/typePage.dart';
-import 'package:socionic_tools/types.dart';
+
+import 'main.dart';
+import 'typeHero.dart';
+import 'typePage.dart';
+import 'types.dart';
 
 class Aspect {
   bool value;
@@ -76,7 +77,7 @@ class AspectCalculationPageState extends State<AspectCalculationPage> {
             )),
         Expanded(
             child: GridView.builder(
-              gridDelegate:
+          gridDelegate:
               SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4, crossAxisSpacing: 3.0, mainAxisSpacing: 4.0, childAspectRatio: .58),
           physics: const BouncingScrollPhysics(),
           itemBuilder: (context, i) {
@@ -128,7 +129,7 @@ class AspectCalculationPageState extends State<AspectCalculationPage> {
     dataToFilter = dataToFilter.where((v) => ieDichotimie.value == null || v.extraversion == ieDichotimie.value).toList();
     dataToFilter = dataToFilter.where((v) => elDichotimie.value == null || v.logic == elDichotimie.value).toList();
     dataToFilter = dataToFilter.where((v) => siDichotimie.value == null || v.intuition == siDichotimie.value).toList();
-    dataToFilter = dataToFilter.where((v) => irDichotimie.value == null || v.razionalisation == irDichotimie.value).toList();
+    dataToFilter = dataToFilter.where((v) => irDichotimie.value == null || v.rationalization == irDichotimie.value).toList();
 
     _data = dataToFilter;
     //});

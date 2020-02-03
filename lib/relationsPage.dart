@@ -2,11 +2,13 @@ import 'package:diagonal_scrollview/diagonal_scrollview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:socionic_tools/appDrawer.dart';
-import 'package:socionic_tools/main.dart';
-import 'package:socionic_tools/typeHero.dart';
-import 'package:socionic_tools/typePage.dart';
-import 'package:socionic_tools/types.dart';
+
+import 'appDrawer.dart';
+import 'main.dart';
+import 'relations.dart';
+import 'typeHero.dart';
+import 'typePage.dart';
+import 'types.dart';
 
 MaterialPageRoute<void> getTypeRelationsPage(TypeDesc typeDesc, bool popNavigation) {
   return MaterialPageRoute<void>(builder: (BuildContext context) {
@@ -54,17 +56,17 @@ class RelationsPageState extends State<RelationsPage> {
             Container(
                 //color: Theme.of(context).backgroundColor,
                 child: Row(
-                  children: generateItems([hamletType, maximGorkyType, zhukovType, yeseninType]),
+              children: generateItems([hamletType, maximGorkyType, zhukovType, yeseninType]),
             )),
             Container(
                 //color: Theme.of(context).backgroundColor,
                 child: Row(
-                  children: generateItems([napoleonType, balzacType, jackLondonType, dreiserType]),
+              children: generateItems([napoleonType, balzacType, jackLondonType, dreiserType]),
             )),
             Container(
                 //color: Theme.of(context).backgroundColor,
                 child: Row(
-                  children: generateItems([stierlitzType, dostoyevskyType, huxleyType, gabinType]),
+              children: generateItems([stierlitzType, dostoyevskyType, huxleyType, gabinType]),
             ))
           ],
         ),
@@ -127,25 +129,19 @@ class StarRating extends StatelessWidget {
       icon = new Icon(
         Icons.star_border,
         size: this.size,
-        color: Theme
-            .of(context)
-            .backgroundColor,
+        color: Theme.of(context).backgroundColor,
       );
     } else if (index > rating - 1 && index < rating) {
       icon = new Icon(
         Icons.star_half,
         size: this.size,
-        color: color ?? Theme
-            .of(context)
-            .buttonColor,
+        color: color ?? Theme.of(context).buttonColor,
       );
     } else {
       icon = new Icon(
         Icons.star,
         size: this.size,
-        color: color ?? Theme
-            .of(context)
-            .buttonColor,
+        color: color ?? Theme.of(context).buttonColor,
       );
     }
     return new InkResponse(
@@ -283,26 +279,26 @@ class TypeRelationsPage extends StatelessWidget {
             ),
           ),
           Container(
-            //width: rowWidth,
+              //width: rowWidth,
               height: rowHeight,
               child: Row(
                 children: generateItems(context, [hamletType, maximGorkyType, zhukovType, yeseninType], typeDesc.relations.skip(4).take(4).toList()),
               )),
           Container(
-            //width: rowWidth,
+              //width: rowWidth,
               height: rowHeight,
               child: Row(
                 children:
-                generateItems(context, [napoleonType, balzacType, jackLondonType, dreiserType], typeDesc.relations.skip(8).take(4).toList()),
+                    generateItems(context, [napoleonType, balzacType, jackLondonType, dreiserType], typeDesc.relations.skip(8).take(4).toList()),
               )),
           Container(
-            //width: rowWidth,
+              //width: rowWidth,
               height: rowHeight,
               //flex: 1,
               //color: Theme.of(context).backgroundColor,
               child: Row(
                 children:
-                generateItems(context, [stierlitzType, dostoyevskyType, huxleyType, gabinType], typeDesc.relations.skip(12).take(4).toList()),
+                    generateItems(context, [stierlitzType, dostoyevskyType, huxleyType, gabinType], typeDesc.relations.skip(12).take(4).toList()),
               ))
         ]));
   }
