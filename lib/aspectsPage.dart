@@ -207,7 +207,6 @@ Widget _getTopBar(BuildContext context, Aspect aspect) {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(aspect.desc, maxLines: 5),
-        Text(""),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -260,7 +259,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   }
 
   @override
-  double get maxExtent => 140;
+  double get maxExtent => 150;
 
   @override
   double get minExtent => 55;
