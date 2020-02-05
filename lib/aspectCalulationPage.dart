@@ -60,6 +60,9 @@ class AspectCalculationPageState extends State<AspectCalculationPage> {
 
   @override
   Widget build(BuildContext context) {
+    var width = (MediaQuery.of(context).size.width - 30) / 4;
+    var aspect = width / (typeHeroHeight + 15);
+
     return Scaffold(
       appBar: AppBar(title: Text("Типирование")),
       body: Column(children: <Widget>[
@@ -77,12 +80,11 @@ class AspectCalculationPageState extends State<AspectCalculationPage> {
             )),
         Expanded(
             child: GridView.builder(
+          shrinkWrap: false,
           gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4, crossAxisSpacing: 3.0, mainAxisSpacing: 4.0, childAspectRatio: .58),
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4, crossAxisSpacing: 0.0, mainAxisSpacing: 0.0, childAspectRatio: aspect),
           physics: const BouncingScrollPhysics(),
           itemBuilder: (context, i) {
-            //double width = MediaQuery.of(context).size.width * 0.23;
-
             return
 //              new Flexible(
 //              flex: 1,

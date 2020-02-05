@@ -26,7 +26,7 @@ class _AspectDictionaryState extends State<AspectDictionaryPage> {
 
   TextEditingController editingController = TextEditingController();
 
-  double _clearOpacity = 1;
+  double _clearOpacity = 0;
 
   @override
   Widget build(BuildContext context) {
