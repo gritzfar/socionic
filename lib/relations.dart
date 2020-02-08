@@ -1,6 +1,6 @@
 const Relation dualRelation = Relation(
     name: "Дуальные",
-    longName: "Тождественные отношения",
+    longName: "Дуальные отношения",
     moto: "Всегда дополнят",
     rating: 5,
     desc:

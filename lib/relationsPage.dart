@@ -310,7 +310,7 @@ class RelationDescriptionPage extends StatelessWidget {
             title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Wrap(children: <Widget>[Text(relation.longName)]),
+            Wrap(children: <Widget>[FittedBox(child: Text(relation.longName),)]),
             Text(relation.moto, style: Theme.of(context).textTheme.caption)
           ],
         )),
