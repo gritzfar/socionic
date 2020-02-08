@@ -309,7 +309,10 @@ class RelationDescriptionPage extends StatelessWidget {
         appBar: new AppBar(
             title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[Text(relation.longName), Text(relation.moto, style: Theme.of(context).textTheme.caption)],
+          children: <Widget>[
+            Wrap(children: <Widget>[Text(relation.longName)]),
+            Text(relation.moto, style: Theme.of(context).textTheme.caption)
+          ],
         )),
         body: CustomScrollView(physics: const BouncingScrollPhysics(), slivers: <Widget>[
           SliverPersistentHeader(
