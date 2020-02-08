@@ -65,6 +65,7 @@ class _MySocionicAppState extends State<MySocionicApp> {
         QuadratesPage.routeName: (BuildContext context) => QuadratesPage(),
         AspectCalculationPage.routeName: (BuildContext context) => AspectCalculationPage(),
         AspectsPage.routeName: (BuildContext context) => AspectsPage(),
+        AspectDictionariesPage.routeName: (BuildContext context) => AspectDictionariesPage(),
       },
     );
   }

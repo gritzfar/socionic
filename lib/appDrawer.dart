@@ -42,6 +42,13 @@ class AppDrawer extends StatelessWidget {
               Navigator.popAndPushNamed(context, AspectsPage.routeName);
             },
           ),
+          _createDrawerItem(
+            icon: Icons.list,
+            text: 'Словари',
+            onTap: () {
+              Navigator.popAndPushNamed(context, AspectDictionariesPage.routeName);
+            },
+          ),
           Divider(),
           _createDrawerItem(
             icon: Icons.assignment_ind,
