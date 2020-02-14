@@ -1,4 +1,3 @@
-import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -94,36 +93,41 @@ class QuadratesPageState extends State<QuadratesPage> {
 //        drawer: AppDrawer(
 //          context: context,
 //        ),
-      body: ExpandableTheme(
-          data: ExpandableThemeData(iconColor: Theme.of(context).disabledColor, useInkWell: true),
-          child: ListView.builder(
-            physics: const BouncingScrollPhysics(),
-            itemCount: quadrates.length,
-            itemBuilder: (context, i) {
-              final quadrate = quadrates[i];
+      body:
+          //ExpandableTheme(
+          //  data: ExpandableThemeData(iconColor: Theme.of(context).disabledColor, useInkWell: true),
+          //  child:
+          ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              itemCount: quadrates.length,
+              itemBuilder: (context, i) {
+                final quadrate = quadrates[i];
 
-              return Card(
-                  child: Column(
-                children: <Widget>[
-                  Container(
-                      padding: EdgeInsets.only(bottom: 5),
-                      child: ListTile(
-                        leading: new Icon(Icons.border_all),
-                        title: Text(quadrate.title, style: Theme.of(context).textTheme.display1),
-                        subtitle: Text(quadrate.moto),
-                      )),
-                  Divider(),
-                  ExpandablePanel(
-                      header: Container(),
-//                      header: Builder(builder: (context) {
-//                        var controller = ExpandableController.of(context);
-//                        return controller.expanded ? Padding( padding: EdgeInsets.only(left: 15, top: 10), child: Text("Свернуть")) : Padding( padding: EdgeInsets.only(left: 15, top: 10), child: Text("Развернуть"));
-//                      }),
-                      expanded: Container(margin: EdgeInsets.only(left: 15, right: 15, bottom: 15), child: quadrate.description))
-                ],
-              ));
-            },
-          )),
+                return Card(
+                    child: Column(
+                  children: <Widget>[
+                    ExpansionTile(
+                        title: Container(
+                            padding: EdgeInsets.only(bottom: 5),
+                            child: ListTile(
+                              leading: new Icon(Icons.border_all),
+                              title: Text(quadrate.title, style: Theme.of(context).textTheme.title),
+                              subtitle: Text(quadrate.moto),
+                            )),
+                        children: <Widget>[Container(margin: EdgeInsets.only(left: 15, right: 15, bottom: 15), child: quadrate.description)]
+                        //Divider(),
+//                    ExpandablePanel(
+//                        header: Container(),
+////                      header: Builder(builder: (context) {
+////                        var controller = ExpandableController.of(context);
+////                        return controller.expanded ? Padding( padding: EdgeInsets.only(left: 15, top: 10), child: Text("Свернуть")) : Padding( padding: EdgeInsets.only(left: 15, top: 10), child: Text("Развернуть"));
+////                      }),
+//                        expanded: Container(margin: EdgeInsets.only(left: 15, right: 15, bottom: 15), child: quadrate.description))
+                        )
+                  ],
+                ));
+              }),
+      //)),
       bottomNavigationBar: getBanner(context),
     );
   }

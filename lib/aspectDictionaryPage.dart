@@ -20,7 +20,8 @@ class _AspectDictionaryState extends State<AspectDictionaryPage> {
 
   @override
   void initState() {
-    semanticThemes.addAll(aspect.dictionary.semanticThemes);
+    semanticThemes.addAll(aspect.dictionary?.semanticThemes ??
+        <SemanticTheme>[SemanticTheme(name: "Страница в разработке, ждите обновлений", subThemes: <SubSemanticTheme>[])]);
     super.initState();
   }
 
