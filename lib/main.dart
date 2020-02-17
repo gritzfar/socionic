@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'appLocalizations.dart';
 import 'aspectCalulationPage.dart';
 import 'aspectsPage.dart';
 import 'quadratesPage.dart';
@@ -43,21 +45,21 @@ class _MySocionicAppState extends State<MySocionicApp> {
     return MaterialApp(
       title: "Моя соционика",
       theme: ThemeData.dark(),
-//      supportedLocales: [
-//        Locale('ru', 'RU'),
-//        //Locale('de', 'DE'),
-//        //Locale('de', 'US'),
-//      ],
-//      localizationsDelegates: [AppLocalizations.delegate, GlobalMaterialLocalizations.delegate, GlobalWidgetsLocalizations.delegate],
-//      localeResolutionCallback: (locale, supportedLocals) {
-//        for (var supportedLocale in supportedLocals) {
-//          if (supportedLocale.languageCode == locale.languageCode && supportedLocale.countryCode == locale.countryCode) {
-//            return supportedLocale;
-//          }
-//        }
-//
-//        return supportedLocals.first;
-//      },
+      supportedLocales: [
+        Locale('ru', 'RU'),
+        //Locale('de', 'DE'),
+        //Locale('de', 'US'),
+      ],
+      localizationsDelegates: [AppLocalizations.delegate, GlobalMaterialLocalizations.delegate, GlobalWidgetsLocalizations.delegate],
+      localeResolutionCallback: (locale, supportedLocals) {
+        for (var supportedLocale in supportedLocals) {
+          if (supportedLocale.languageCode == locale.languageCode && supportedLocale.countryCode == locale.countryCode) {
+            return supportedLocale;
+          }
+        }
+
+        return supportedLocals.first;
+      },
       initialRoute: TypesPage.routeName,
       routes: {
         TypesPage.routeName: (BuildContext context) => TypesPage(),

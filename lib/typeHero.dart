@@ -24,7 +24,7 @@ class TypeHero extends StatelessWidget {
       tag: typeDesc.tag,
       child: Material(
         color: Colors.transparent,
-        child: InkWell(onTap: onTap, child: SvgPicture.asset(typeDesc.svg, width: width, height: height)),
+        child: InkWell(onTap: onTap, child: SvgPicture.asset(typeDesc.svg, width: width, height: height, semanticsLabel: typeDesc.shortName,)),
       ),
     );
   }

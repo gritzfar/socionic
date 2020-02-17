@@ -55,10 +55,11 @@ class AppDrawer extends StatelessWidget {
             text: 'Типирование',
             onTap: () => Navigator.popAndPushNamed(context, AspectCalculationPage.routeName),
           ),
-          Divider(),
-          _createDrawerItem(icon: Icons.local_library, text: 'Школа соционики', onTap: () => {}
-              //Navigator.pushReplacementNamed(context, QuadratesPage.routeName),
-              ),
+//TODO
+//          Divider(),
+//          _createDrawerItem(icon: Icons.local_library, text: 'Школа соционики', onTap: () => {}
+//              //Navigator.pushReplacementNamed(context, QuadratesPage.routeName),
+//              ),
         ],
       ),
     );
@@ -68,7 +69,7 @@ class AppDrawer extends StatelessWidget {
     return ListTile(
       title: Row(
         children: <Widget>[
-          Icon(icon),
+          Icon(icon, semanticLabel: text),
           Padding(
             padding: EdgeInsets.only(left: 8.0),
             child: Text(text),

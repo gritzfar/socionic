@@ -93,7 +93,7 @@ class RelationsPageState extends State<RelationsPage> {
                     overflow: TextOverflow.ellipsis,
                   )),
                   InkWell(
-                      child: SvgPicture.asset(types[i].svg, height: 120),
+                      child: SvgPicture.asset(types[i].svg, height: 120, semanticsLabel: types[i].shortName,),
                       //width: 120,
                       onTap: () {
                         Navigator.of(context).push(getTypeRelationsPage(types[i], false));
@@ -129,18 +129,21 @@ class StarRating extends StatelessWidget {
         Icons.star_border,
         size: this.size,
         color: Theme.of(context).backgroundColor,
+        semanticLabel: "Качество",
       );
     } else if (index > rating - 1 && index < rating) {
       icon = new Icon(
         Icons.star_half,
         size: this.size,
         color: color ?? Theme.of(context).buttonColor,
+        semanticLabel: "Качество",
       );
     } else {
       icon = new Icon(
         Icons.star,
         size: this.size,
         color: color ?? Theme.of(context).buttonColor,
+        semanticLabel: "Качество",
       );
     }
     return new InkResponse(
