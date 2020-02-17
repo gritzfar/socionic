@@ -93,7 +93,11 @@ class RelationsPageState extends State<RelationsPage> {
                     overflow: TextOverflow.ellipsis,
                   )),
                   InkWell(
-                      child: SvgPicture.asset(types[i].svg, height: 120, semanticsLabel: types[i].shortName,),
+                      child: SvgPicture.asset(
+                        types[i].svg,
+                        height: 120,
+                        semanticsLabel: types[i].shortName,
+                      ),
                       //width: 120,
                       onTap: () {
                         Navigator.of(context).push(getTypeRelationsPage(types[i], false));
@@ -306,14 +310,16 @@ class RelationDescriptionPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var color = Colors.amber;
-
     return new Scaffold(
         appBar: new AppBar(
             title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Wrap(children: <Widget>[FittedBox(child: Text(relation.longName),)]),
+            Wrap(children: <Widget>[
+              FittedBox(
+                child: Text(relation.longName),
+              )
+            ]),
             Text(relation.moto, style: Theme.of(context).textTheme.caption)
           ],
         )),

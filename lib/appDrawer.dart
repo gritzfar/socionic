@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'aspectCalulationPage.dart';
 import 'aspectsPage.dart';
@@ -55,11 +56,8 @@ class AppDrawer extends StatelessWidget {
             text: 'Типирование',
             onTap: () => Navigator.popAndPushNamed(context, AspectCalculationPage.routeName),
           ),
-//TODO
-//          Divider(),
-//          _createDrawerItem(icon: Icons.local_library, text: 'Школа соционики', onTap: () => {}
-//              //Navigator.pushReplacementNamed(context, QuadratesPage.routeName),
-//              ),
+          Divider(),
+          _createDrawerItem(icon: Icons.local_library, text: 'Школа соционики', onTap: () => {launch("http://www.socion.ru/")}),
         ],
       ),
     );

@@ -119,7 +119,6 @@ class _AspectDictionaryState extends State<AspectDictionaryPage> {
                               ),
                             )
                           ]);
-                          return Text(item.name);
                         }).toList(),
                       ))
                 ],
