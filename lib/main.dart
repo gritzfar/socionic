@@ -10,7 +10,7 @@ import 'typesPage.dart';
 
 void main() {
   var configuredApp = AppConfig(
-    internal: false,
+    internal: true,
     testAdds: false,
     hasAdds: true,
     child: MySocionicApp(),
