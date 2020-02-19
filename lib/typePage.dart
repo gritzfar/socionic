@@ -181,6 +181,7 @@ class TypePage extends StatelessWidget {
                   )))
         ],
       ),
+      bottomNavigationBar: getBanner(context),
     );
   }
 }

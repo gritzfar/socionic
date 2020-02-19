@@ -1,31 +1,61 @@
+import 'package:admob_flutter/admob_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'appLocalizations.dart';
+import 'appConfig.dart';
 import 'aspectCalulationPage.dart';
 import 'aspectsPage.dart';
 import 'quadratesPage.dart';
 import 'relationsPage.dart';
 import 'typesPage.dart';
 
-void main() => runApp(MySocionicApp());
+void main() {
+  var configuredApp = AppConfig(
+    internal: false,
+    testAdds: false,
+    hasAdds: true,
+    child: MySocionicApp(),
+  );
 
-//void main() {
-//  var configuredApp = AppConfig(
-//    hasAdds: false,
-//    testAdds: false,
-//    child: MySocionicApp(),
-//  );
-//
-//  //WidgetsFlutterBinding.ensureInitialized();
-//
-//  //mainCommon(configuredApp);
-//
-//  runApp(configuredApp);
-//}
+  WidgetsFlutterBinding.ensureInitialized();
+
+  //init adds
+  Admob.initialize(getAppId(false));
+
+  runApp(configuredApp);
+}
+
+String getAppId(bool testAdds) {
+  if (testAdds) {
+    //Test appId
+    return "ca-app-pub-3940256099942544~3347511713";
+  }
+
+  // Orig app id
+  return "ca-app-pub-7993607976861905~7718564880";
+}
+
+String getBannerAdUnitId(bool testAdds) {
+  if (testAdds) {
+    //Test banner
+    return "ca-app-pub-3940256099942544/6300978111";
+  }
+
+  // Orig banner id
+  return "ca-app-pub-7993607976861905/6677424882";
+}
 
 Widget getBanner(BuildContext context) {
-  return null;
+  if (!AppConfig.of(context).hasAdds) return null;
+
+  return Padding(
+      padding: EdgeInsets.only(top: 8.0),
+//child: ClipRRect(
+// rounded corners ad.
+//borderRadius: BorderRadius.circular(40.0),
+      child: AdmobBanner(
+        adUnitId: getBannerAdUnitId(AppConfig.of(context).testAdds),
+        adSize: AdmobBannerSize.BANNER,
+      ));
 }
 
 class MySocionicApp extends StatefulWidget {

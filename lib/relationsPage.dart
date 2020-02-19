@@ -2,6 +2,7 @@ import 'package:diagonal_scrollview/diagonal_scrollview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:socionic_tools/appConfig.dart';
 
 import 'appDrawer.dart';
 import 'main.dart';
@@ -123,7 +124,11 @@ class StarRating extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Row(mainAxisAlignment: MainAxisAlignment.center, children: new List.generate(starCount, (index) => buildStar(context, index)));
+    if (AppConfig.of(context).internal) {
+      return new Row(mainAxisAlignment: MainAxisAlignment.center, children: new List.generate(starCount, (index) => buildStar(context, index)));
+    }
+
+    return Container();
   }
 
   Widget buildStar(BuildContext context, int index) {
@@ -203,6 +208,7 @@ class TypeRelationsPage extends StatelessWidget {
         padding: new EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
         child: body,
       ),
+      bottomNavigationBar: getBanner(context),
     );
   }
 
@@ -311,33 +317,41 @@ class RelationDescriptionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: new AppBar(
-            title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Wrap(children: <Widget>[
-              FittedBox(
-                child: Text(relation.longName),
+      appBar: new AppBar(
+          title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Wrap(children: <Widget>[
+            FittedBox(
+              child: Text(relation.longName),
+            )
+          ]),
+          Text(relation.moto, style: Theme.of(context).textTheme.caption)
+        ],
+      )),
+      body: CustomScrollView(physics: const BouncingScrollPhysics(), slivers: <Widget>[
+        AppConfig.of(context).internal
+            ? SliverPersistentHeader(
+                pinned: true,
+                floating: true,
+                delegate: _SliverAppBarDelegate(relation: relation),
               )
-            ]),
-            Text(relation.moto, style: Theme.of(context).textTheme.caption)
-          ],
-        )),
-        body: CustomScrollView(physics: const BouncingScrollPhysics(), slivers: <Widget>[
-          SliverPersistentHeader(
-            pinned: true,
-            floating: true,
-            delegate: _SliverAppBarDelegate(relation: relation),
-          ),
-          SliverToBoxAdapter(
-              child: Container(
-            alignment: Alignment.topLeft,
-            padding: EdgeInsets.only(left: 16, right: 16, bottom: 16),
-            child: Column(children: <Widget>[
-              Text(relation.desc ?? "TEST"),
-            ]),
-          ))
-        ]));
+            : SliverToBoxAdapter(
+                child: Padding(
+                  padding: EdgeInsets.only(top: 5),
+                ),
+              ),
+        SliverToBoxAdapter(
+            child: Container(
+          alignment: Alignment.topLeft,
+          padding: EdgeInsets.only(left: 16, right: 16, bottom: 16),
+          child: Column(children: <Widget>[
+            Text(relation.desc ?? "TEST"),
+          ]),
+        ))
+      ]),
+      bottomNavigationBar: getBanner(context),
+    );
   }
 }
 

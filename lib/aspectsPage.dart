@@ -1,6 +1,7 @@
 //import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:socionic_tools/appConfig.dart';
 
 import 'aspectDictionaryPage.dart';
 import 'aspects.dart';
@@ -128,72 +129,87 @@ class AspectPage extends StatelessWidget {
 
   Scaffold getScaffoldNew(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[Hero(child: aspect.icon, tag: aspect.tag), Container(width: 15), Text(aspect.name)],
-          ),
+      appBar: AppBar(
+        title: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[Hero(child: aspect.icon, tag: aspect.tag), Container(width: 15), Text(aspect.name)],
         ),
-        body: CustomScrollView(physics: const BouncingScrollPhysics(), slivers: <Widget>[
-          SliverPersistentHeader(
-            pinned: true,
-            floating: true,
-            delegate: _SliverAppBarDelegate(aspect: aspect),
-          ),
-          SliverToBoxAdapter(
-              child: Container(
-            alignment: Alignment.topLeft,
-            padding: EdgeInsets.only(left: 16, right: 16, bottom: 16),
-            child: Column(children: <Widget>[
-              Text("Проявление функций", style: Theme.of(context).textTheme.title),
-              Text(""),
-              Text("    " + aspect.func[0]),
-              Text(""),
-              Text("    " + aspect.func[1]),
-              Text(""),
-              Text("    " + aspect.func[2]),
-              Text(""),
-              Text("    " + aspect.func[3]),
-              Text(""),
-              Text("    " + aspect.func[4]),
-              Text(""),
-              Text("    " + aspect.func[5]),
-              Text(""),
-              Text("    " + aspect.func[6]),
-              Text(""),
-              Text("    " + aspect.func[7]),
-            ]),
-          ))
-        ]));
+      ),
+      body: CustomScrollView(physics: const BouncingScrollPhysics(), slivers: <Widget>[
+        SliverPersistentHeader(
+          pinned: true,
+          floating: true,
+          delegate: _SliverAppBarDelegate(aspect: aspect),
+        ),
+        SliverToBoxAdapter(
+            child: Container(
+          alignment: Alignment.topLeft,
+          padding: EdgeInsets.only(left: 16, right: 16, bottom: 16),
+          child: Column(children: <Widget>[
+            Text("Проявление функций", style: Theme.of(context).textTheme.title),
+            Text(""),
+            Text("    " + aspect.func[0]),
+            Text(""),
+            Text("    " + aspect.func[1]),
+            Text(""),
+            Text("    " + aspect.func[2]),
+            Text(""),
+            Text("    " + aspect.func[3]),
+            Text(""),
+            Text("    " + aspect.func[4]),
+            Text(""),
+            Text("    " + aspect.func[5]),
+            Text(""),
+            Text("    " + aspect.func[6]),
+            Text(""),
+            Text("    " + aspect.func[7]),
+          ]),
+        ))
+      ]),
+      bottomNavigationBar: getBanner(context),
+    );
   }
 }
 
 Widget _getTopBar(BuildContext context, Aspect aspect) {
-  return Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
-    Text(aspect.desc, maxLines: 5),
-    Column(
+  if (AppConfig.of(context).internal) {
+    return Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
+      Text(aspect.desc, maxLines: 5),
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          OutlineButton(
+            child: Wrap(
+              children: <Widget>[
+                Icon(Icons.list),
+                Padding(
+                  padding: EdgeInsets.only(left: 8.0, top: 4),
+                  child: Text("Словарь"),
+                )
+              ],
+            ),
+            onPressed: () {
+              Navigator.of(context).push(getAspectDictionaryPage(aspect));
+            },
+          ),
+          Divider(
+            height: 5,
+          )
+        ],
+      )
+    ]);
+  } else {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        OutlineButton(
-          child: Wrap(
-            children: <Widget>[
-              Icon(Icons.list),
-              Padding(
-                padding: EdgeInsets.only(left: 8.0, top: 4),
-                child: Text("Словарь"),
-              )
-            ],
-          ),
-          onPressed: () {
-            Navigator.of(context).push(getAspectDictionaryPage(aspect));
-          },
-        ),
+        Text(aspect.desc, maxLines: 5),
         Divider(
           height: 5,
         )
       ],
-    )
-  ]);
+    );
+  }
 }
 
 class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
@@ -201,9 +217,17 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
 
   _SliverAppBarDelegate({this.aspect});
 
+  double _maxExtent = 150;
+  double _minExtent = 55;
+
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     var offset = maxExtent - shrinkOffset < minExtent ? minExtent - maxExtent : -shrinkOffset;
+
+    if (!AppConfig.of(context).internal) {
+      _minExtent = 5;
+      _maxExtent = 85;
+    }
 
     return Stack(overflow: Overflow.clip, children: <Widget>[
       Positioned(
@@ -219,10 +243,10 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   }
 
   @override
-  double get maxExtent => 150;
+  double get maxExtent => _maxExtent;
 
   @override
-  double get minExtent => 55;
+  double get minExtent => _minExtent;
 
   @override
   bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "906572584409",
+    "firebase_url": "https://my-socionic.firebaseio.com",
+    "project_id": "my-socionic",
+    "storage_bucket": "my-socionic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:906572584409:android:16d394fab75c3aedeb75c8",
+        "android_client_info": {
+          "package_name": "de.gritzfar.my_socionic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "906572584409-rlnrd5ev138028us75u49d84suoha5m8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARZZdlNYbv8NsFxhuKlkeHb2HA3hX2vIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "906572584409-rlnrd5ev138028us75u49d84suoha5m8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
