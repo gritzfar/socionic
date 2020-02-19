@@ -1,3 +1,5 @@
+import 'package:socionic_tools/models/relation.dart';
+
 const Relation dualRelation = Relation(
     name: "Дуальные",
     longName: "Дуальные отношения",
@@ -110,13 +112,3 @@ const Relation familyRelation = Relation(
     rating: 4,
     desc:
         "«Родственники» похожи, очень хорошо понимают друг друга, легко находят общий язык в оценке происходящего. Это очень плотные отношения. Партнер чувствуется во всех его проявлениях. Видны многие его хитрости и бессознательные реакции. Но при обсуждении совместных действий интересы партнеров расходятся кардинально. Пара может отстаивать свои позиции даже в самой неблагоприятной обстановке. Однако часто присутствуют взаимная критическая оценка, замечания, придирки к мелочам. Возможны действия, задевающие партнеров. Эти отношения помогают людям решить проблему поиска своего места в мире и обществе.");
-
-class Relation {
-  final String name;
-  final String longName;
-  final String moto;
-  final double rating;
-  final String desc;
-
-  const Relation({this.name, this.longName, this.moto, this.rating, this.desc});
-}

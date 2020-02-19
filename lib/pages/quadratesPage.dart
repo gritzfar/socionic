@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import 'main.dart';
+import '../main.dart';
 
 final quadrates = <QuadrateData>[
   QuadrateData(
@@ -111,10 +111,16 @@ class QuadratesPageState extends State<QuadratesPage> {
                             padding: EdgeInsets.only(bottom: 5),
                             child: ListTile(
                               leading: new Icon(Icons.border_all),
-                              title: Text(quadrate.title, style: Theme.of(context).textTheme.title),
+                              title: Text(quadrate.title,
+                                  style: Theme.of(context).textTheme.title),
                               subtitle: Text(quadrate.moto),
                             )),
-                        children: <Widget>[Container(margin: EdgeInsets.only(left: 15, right: 15, bottom: 15), child: quadrate.description)]
+                        children: <Widget>[
+                          Container(
+                              margin: EdgeInsets.only(
+                                  left: 15, right: 15, bottom: 15),
+                              child: quadrate.description)
+                        ]
                         //Divider(),
 //                    ExpandablePanel(
 //                        header: Container(),

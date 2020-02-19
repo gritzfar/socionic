@@ -8,7 +8,8 @@ class AppLocalizations {
 
   AppLocalizations(this.locale);
 
-  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate =
+      _AppLocalizationDelegate();
 
   static AppLocalizations of(BuildContext context) {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
@@ -17,7 +18,8 @@ class AppLocalizations {
   Map<String, String> _localizedStrings;
 
   Future<bool> load() async {
-    String jsonString = await rootBundle.loadString("lang/${locale.languageCode}.json");
+    String jsonString =
+        await rootBundle.loadString("lang/${locale.languageCode}.json");
 
     Map<String, dynamic> jsonMap = json.decode(jsonString);
 

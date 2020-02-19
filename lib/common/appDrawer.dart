@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../pages/aspectCalulationPage.dart';
+import '../pages/aspectsPage.dart';
+import '../pages/quadratesPage.dart';
+import '../pages/relationsPage.dart';
+import '../pages/typesPage.dart';
 import 'appConfig.dart';
-import 'aspectCalulationPage.dart';
-import 'aspectsPage.dart';
-import 'quadratesPage.dart';
-import 'relationsPage.dart';
-import 'typesPage.dart';
 
 class AppDrawer extends StatelessWidget {
   final BuildContext context;
@@ -26,12 +26,14 @@ class AppDrawer extends StatelessWidget {
         _createDrawerItem(
           icon: Icons.contacts,
           text: 'Социотипы',
-          onTap: () => Navigator.pushReplacementNamed(context, TypesPage.routeName),
+          onTap: () =>
+              Navigator.pushReplacementNamed(context, TypesPage.routeName),
         ),
         _createDrawerItem(
           icon: Icons.all_out,
           text: 'Отношения',
-          onTap: () => Navigator.pushReplacementNamed(context, RelationsPage.routeName),
+          onTap: () =>
+              Navigator.pushReplacementNamed(context, RelationsPage.routeName),
         ),
         _createDrawerItem(
           icon: Icons.border_all,
@@ -51,10 +53,14 @@ class AppDrawer extends StatelessWidget {
         _createDrawerItem(
           icon: Icons.assignment_ind,
           text: 'Типирование',
-          onTap: () => Navigator.popAndPushNamed(context, AspectCalculationPage.routeName),
+          onTap: () => Navigator.popAndPushNamed(
+              context, AspectCalculationPage.routeName),
         ),
         Divider(),
-        _createDrawerItem(icon: Icons.local_library, text: 'Школа соционики', onTap: () => {launch("http://www.socion.ru/")}),
+        _createDrawerItem(
+            icon: Icons.local_library,
+            text: 'Школа соционики',
+            onTap: () => {launch("http://www.socion.ru/")}),
       ],
     );
 
@@ -66,12 +72,14 @@ class AppDrawer extends StatelessWidget {
           _createDrawerItem(
             icon: Icons.contacts,
             text: 'Социотипы',
-            onTap: () => Navigator.pushReplacementNamed(context, TypesPage.routeName),
+            onTap: () =>
+                Navigator.pushReplacementNamed(context, TypesPage.routeName),
           ),
           _createDrawerItem(
             icon: Icons.all_out,
             text: 'Отношения',
-            onTap: () => Navigator.pushReplacementNamed(context, RelationsPage.routeName),
+            onTap: () => Navigator.pushReplacementNamed(
+                context, RelationsPage.routeName),
           ),
           _createDrawerItem(
             icon: Icons.border_all,
@@ -91,17 +99,22 @@ class AppDrawer extends StatelessWidget {
             icon: Icons.list,
             text: 'Словари',
             onTap: () {
-              Navigator.popAndPushNamed(context, AspectDictionariesPage.routeName);
+              Navigator.popAndPushNamed(
+                  context, AspectDictionariesPage.routeName);
             },
           ),
           Divider(),
           _createDrawerItem(
             icon: Icons.assignment_ind,
             text: 'Типирование',
-            onTap: () => Navigator.popAndPushNamed(context, AspectCalculationPage.routeName),
+            onTap: () => Navigator.popAndPushNamed(
+                context, AspectCalculationPage.routeName),
           ),
           Divider(),
-          _createDrawerItem(icon: Icons.local_library, text: 'Школа соционики', onTap: () => {launch("http://www.socion.ru/")}),
+          _createDrawerItem(
+              icon: Icons.local_library,
+              text: 'Школа соционики',
+              onTap: () => {launch("http://www.socion.ru/")}),
         ],
       );
     }
@@ -109,7 +122,8 @@ class AppDrawer extends StatelessWidget {
     return list;
   }
 
-  Widget _createDrawerItem({IconData icon, String text, GestureTapCallback onTap}) {
+  Widget _createDrawerItem(
+      {IconData icon, String text, GestureTapCallback onTap}) {
     return ListTile(
       title: Row(
         children: <Widget>[

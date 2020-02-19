@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:socionic_tools/models/relation.dart';
+import 'package:socionic_tools/models/typeDesc.dart';
 
-import 'main.dart';
+import '../common/starRating.dart';
+import '../common/typeHero.dart';
+import '../data/types.dart';
+import '../main.dart';
 import 'relationDescriptionPage.dart';
-import 'relations.dart';
-import 'starRating.dart';
-import 'typeHero.dart';
-import 'types.dart';
 
 class TypeRelationsPage extends StatelessWidget {
   static const List<TypeDesc> typesData = [
@@ -30,7 +31,8 @@ class TypeRelationsPage extends StatelessWidget {
 
   final bool popNavigation;
 
-  const TypeRelationsPage({Key key, this.typeDesc, this.popNavigation}) : super();
+  const TypeRelationsPage({Key key, this.typeDesc, this.popNavigation})
+      : super();
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +61,8 @@ class TypeRelationsPage extends StatelessWidget {
     );
   }
 
-  List<Widget> generateItems(BuildContext context, List<TypeDesc> types, List<Relation> relations, double width) {
+  List<Widget> generateItems(BuildContext context, List<TypeDesc> types,
+      List<Relation> relations, double width) {
     List<Widget> list = new List<Widget>();
     var color = Colors.amber;
 
@@ -74,33 +77,36 @@ class TypeRelationsPage extends StatelessWidget {
                 child: Container(
                     width: width,
                     padding: EdgeInsets.all(5),
-                    child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: <Widget>[
-                      Text(
-                        types[i].shortName,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                      FittedBox(child:
-                      Text(
-                        relations[i].name,
-                        overflow: TextOverflow.ellipsis,
-                        style: Theme.of(context).textTheme.caption,
-                      )),
-                      StarRating(
-                        color: color,
-                        rating: relations[i].rating,
-                      ),
-                      TypeHero(
-                          typeDesc: types[i],
-                          onTap: () {
-                            //if (popNavigation) {
-                            Navigator.of(context).push(getRelationDescriptionPage(relations[i]));
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            types[i].shortName,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          FittedBox(
+                              child: Text(
+                            relations[i].name,
+                            overflow: TextOverflow.ellipsis,
+                            style: Theme.of(context).textTheme.caption,
+                          )),
+                          StarRating(
+                            color: color,
+                            rating: relations[i].rating,
+                          ),
+                          TypeHero(
+                              typeDesc: types[i],
+                              onTap: () {
+                                //if (popNavigation) {
+                                Navigator.of(context).push(
+                                    getRelationDescriptionPage(relations[i]));
 //                            } else {
 //                              Navigator.of(context).push(getTypeDescPage(types[i]));
 //                            }
-                          })
-                      //],)
-                    ])))),
+                              })
+                          //],)
+                        ])))),
       );
     }
 
@@ -119,24 +125,40 @@ class TypeRelationsPage extends StatelessWidget {
           Container(
             //color: Theme.of(context).backgroundColor,
             child: Row(
-              children: generateItems(context, [donType, dumasType, hugoType, robespierreType], typeDesc.relations.take(4).toList(), typeWidth),
+              children: generateItems(
+                  context,
+                  [donType, dumasType, hugoType, robespierreType],
+                  typeDesc.relations.take(4).toList(),
+                  typeWidth),
             ),
           ),
           Container(
-            //color: Theme.of(context).backgroundColor,
+              //color: Theme.of(context).backgroundColor,
               child: Row(
-                children: generateItems(context, [hamletType, maximGorkyType, zhukovType, yeseninType], typeDesc.relations.skip(4).take(4).toList(), typeWidth),
-              )),
+            children: generateItems(
+                context,
+                [hamletType, maximGorkyType, zhukovType, yeseninType],
+                typeDesc.relations.skip(4).take(4).toList(),
+                typeWidth),
+          )),
           Container(
-            //color: Theme.of(context).backgroundColor,
+              //color: Theme.of(context).backgroundColor,
               child: Row(
-                children: generateItems(context, [napoleonType, balzacType, jackLondonType, dreiserType], typeDesc.relations.skip(8).take(4).toList(), typeWidth),
-              )),
+            children: generateItems(
+                context,
+                [napoleonType, balzacType, jackLondonType, dreiserType],
+                typeDesc.relations.skip(8).take(4).toList(),
+                typeWidth),
+          )),
           Container(
-            //color: Theme.of(context).backgroundColor,
+              //color: Theme.of(context).backgroundColor,
               child: Row(
-                children: generateItems(context, [stierlitzType, dostoyevskyType, huxleyType, gabinType], typeDesc.relations.skip(12).take(4).toList(), typeWidth),
-              ))
+            children: generateItems(
+                context,
+                [stierlitzType, dostoyevskyType, huxleyType, gabinType],
+                typeDesc.relations.skip(12).take(4).toList(),
+                typeWidth),
+          ))
         ],
       ),
     );

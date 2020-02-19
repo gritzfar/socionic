@@ -5,7 +5,8 @@ class AppConfig extends InheritedWidget {
   final bool testAdds;
   final bool internal;
 
-  AppConfig({this.internal, this.testAdds, this.hasAdds, Widget child}) : super(child: child);
+  AppConfig({this.internal, this.testAdds, this.hasAdds, Widget child})
+      : super(child: child);
 
 //  String getAppId() {
 //    if (testAdds) {

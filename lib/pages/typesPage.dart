@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:socionic_tools/models/typeDesc.dart';
 
-import 'appDrawer.dart';
-import 'main.dart';
-import 'typeHero.dart';
+import '../common/appDrawer.dart';
+import '../common/typeHero.dart';
+import '../data/types.dart';
+import '../main.dart';
 import 'typePage.dart';
-import 'types.dart';
 
 class TypesPage extends StatefulWidget {
   static const String routeName = "/typesPage";

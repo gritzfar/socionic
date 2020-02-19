@@ -96,7 +96,8 @@ class SensoricIcon extends CustomPainter {
 
     paint.color = color;
 
-    canvas.drawCircle(Offset(size.width / 2, size.height / 2), size.width / 2, paint);
+    canvas.drawCircle(
+        Offset(size.width / 2, size.height / 2), size.width / 2, paint);
   }
 
   @override

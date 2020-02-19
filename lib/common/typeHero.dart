@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import 'types.dart';
+import 'package:socionic_tools/models/typeDesc.dart';
 
 const double typeHeroHeight = 120;
 const double typeHeroWidth = 80;
@@ -13,7 +12,13 @@ class TypeHero extends StatelessWidget {
   final double width;
   final double height;
 
-  const TypeHero({Key key, this.typeDesc, this.onTap, this.width = typeHeroWidth, this.height = typeHeroHeight}) : super(key: key);
+  const TypeHero(
+      {Key key,
+      this.typeDesc,
+      this.onTap,
+      this.width = typeHeroWidth,
+      this.height = typeHeroHeight})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +29,14 @@ class TypeHero extends StatelessWidget {
       tag: typeDesc.tag,
       child: Material(
         color: Colors.transparent,
-        child: InkWell(onTap: onTap, child: SvgPicture.asset(typeDesc.svg, width: width, height: height, semanticsLabel: typeDesc.shortName,)),
+        child: InkWell(
+            onTap: onTap,
+            child: SvgPicture.asset(
+              typeDesc.svg,
+              width: width,
+              height: height,
+              semanticsLabel: typeDesc.shortName,
+            )),
       ),
     );
   }

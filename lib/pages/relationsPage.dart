@@ -2,14 +2,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
-//import 'package:socionic_tools/appConfig.dart';
+import 'package:socionic_tools/models/typeDesc.dart';
 
-import 'appDrawer.dart';
-import 'main.dart';
+import '../common/appDrawer.dart';
+import '../data/types.dart';
+import '../main.dart';
 import 'typeRelationsPage.dart';
-import 'types.dart';
 
-MaterialPageRoute<void> getTypeRelationsPage(TypeDesc typeDesc, bool popNavigation) {
+MaterialPageRoute<void> getTypeRelationsPage(
+    TypeDesc typeDesc, bool popNavigation) {
   return MaterialPageRoute<void>(builder: (BuildContext context) {
     return TypeRelationsPage(typeDesc: typeDesc, popNavigation: popNavigation);
   });
@@ -36,23 +37,27 @@ class RelationsPage extends StatelessWidget {
             Container(
               //color: Theme.of(context).backgroundColor,
               child: Row(
-                children: generateItems(context, [donType, dumasType, hugoType, robespierreType]),
+                children: generateItems(
+                    context, [donType, dumasType, hugoType, robespierreType]),
               ),
             ),
             Container(
                 //color: Theme.of(context).backgroundColor,
                 child: Row(
-              children: generateItems(context, [hamletType, maximGorkyType, zhukovType, yeseninType]),
+              children: generateItems(context,
+                  [hamletType, maximGorkyType, zhukovType, yeseninType]),
             )),
             Container(
                 //color: Theme.of(context).backgroundColor,
                 child: Row(
-              children: generateItems(context, [napoleonType, balzacType, jackLondonType, dreiserType]),
+              children: generateItems(context,
+                  [napoleonType, balzacType, jackLondonType, dreiserType]),
             )),
             Container(
                 //color: Theme.of(context).backgroundColor,
                 child: Row(
-              children: generateItems(context, [stierlitzType, dostoyevskyType, huxleyType, gabinType]),
+              children: generateItems(context,
+                  [stierlitzType, dostoyevskyType, huxleyType, gabinType]),
             ))
           ],
         ),
@@ -87,7 +92,8 @@ class RelationsPage extends StatelessWidget {
                       ),
                       //width: 120,
                       onTap: () {
-                        Navigator.of(context).push(getTypeRelationsPage(types[i], false));
+                        Navigator.of(context)
+                            .push(getTypeRelationsPage(types[i], false));
                       }),
                 ],
               )),

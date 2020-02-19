@@ -1,12 +1,12 @@
 import 'package:admob_flutter/admob_flutter.dart';
 import 'package:flutter/material.dart';
 
-import 'appConfig.dart';
-import 'aspectCalulationPage.dart';
-import 'aspectsPage.dart';
-import 'quadratesPage.dart';
-import 'relationsPage.dart';
-import 'typesPage.dart';
+import 'common/appConfig.dart';
+import 'pages/aspectCalulationPage.dart';
+import 'pages/aspectsPage.dart';
+import 'pages/quadratesPage.dart';
+import 'pages/relationsPage.dart';
+import 'pages/typesPage.dart';
 
 void main() {
   var configuredApp = AppConfig(
