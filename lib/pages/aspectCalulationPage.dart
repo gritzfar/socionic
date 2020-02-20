@@ -67,7 +67,7 @@ class AspectCalculationPageState extends State<AspectCalculationPage> {
         Expanded(
             child: GridView.builder(
           shrinkWrap: false,
-              gridDelegate:
+          gridDelegate:
               SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4, crossAxisSpacing: 0.0, mainAxisSpacing: 0.0, childAspectRatio: aspect),
           physics: const BouncingScrollPhysics(),
           itemBuilder: (context, i) {

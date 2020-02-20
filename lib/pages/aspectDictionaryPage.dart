@@ -106,16 +106,10 @@ class _AspectDictionaryState extends State<AspectDictionaryPage> {
                                   color: Colors.black12,
                                 ),
                                 padding: EdgeInsets.all(5),
-                                width: MediaQuery
-                                    .of(context)
-                                    .size
-                                    .width,
+                                width: MediaQuery.of(context).size.width,
                                 child: Text(
                                   item.name,
-                                  style: Theme
-                                      .of(context)
-                                      .textTheme
-                                      .body2,
+                                  style: Theme.of(context).textTheme.body2,
                                 )),
                             //Divider(),
                             Container(
