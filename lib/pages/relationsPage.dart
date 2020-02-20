@@ -42,17 +42,17 @@ class RelationsPage extends StatelessWidget {
             Container(
                 //color: Theme.of(context).backgroundColor,
                 child: Row(
-                  children: generateItems(context, [hamletType, maximGorkyType, zhukovType, yeseninType]),
+              children: generateItems(context, [hamletType, maximGorkyType, zhukovType, yeseninType]),
             )),
             Container(
                 //color: Theme.of(context).backgroundColor,
                 child: Row(
-                  children: generateItems(context, [napoleonType, balzacType, jackLondonType, dreiserType]),
+              children: generateItems(context, [napoleonType, balzacType, jackLondonType, dreiserType]),
             )),
             Container(
                 //color: Theme.of(context).backgroundColor,
                 child: Row(
-                  children: generateItems(context, [stierlitzType, dostoyevskyType, huxleyType, gabinType]),
+              children: generateItems(context, [stierlitzType, dostoyevskyType, huxleyType, gabinType]),
             ))
           ],
         ),

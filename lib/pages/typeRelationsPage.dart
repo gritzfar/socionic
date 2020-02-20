@@ -83,13 +83,10 @@ class TypeRelationsPage extends StatelessWidget {
                       ),
                       Container(
                           child: Text(
-                            relations[i].name,
-                            overflow: TextOverflow.ellipsis,
-                            style: Theme
-                                .of(context)
-                                .textTheme
-                                .caption,
-                          )),
+                        relations[i].name,
+                        overflow: TextOverflow.ellipsis,
+                        style: Theme.of(context).textTheme.caption,
+                      )),
                       StarRating(
                         color: color,
                         rating: relations[i].rating,
@@ -129,7 +126,7 @@ class TypeRelationsPage extends StatelessWidget {
           Container(
               //color: Theme.of(context).backgroundColor,
               child: Row(
-                children:
+            children:
                 generateItems(context, [hamletType, maximGorkyType, zhukovType, yeseninType], typeDesc.relations.skip(4).take(4).toList(), typeWidth),
           )),
           Container(

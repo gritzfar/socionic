@@ -50,18 +50,9 @@ class TypePage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
-                          Text(typeDesc.nameDescription, softWrap: true, maxLines: 3, style: Theme
-                              .of(context)
-                              .textTheme
-                              .title),
-                          FittedBox(child: Text(typeDesc.altName + " - " + typeDesc.mbti, style: Theme
-                              .of(context)
-                              .textTheme
-                              .body2)),
-                          FittedBox(child: Text("Кредо: " + typeDesc.moto, style: Theme
-                              .of(context)
-                              .textTheme
-                              .caption)),
+                          Text(typeDesc.nameDescription, softWrap: true, maxLines: 3, style: Theme.of(context).textTheme.title),
+                          FittedBox(child: Text(typeDesc.altName + " - " + typeDesc.mbti, style: Theme.of(context).textTheme.body2)),
+                          FittedBox(child: Text("Кредо: " + typeDesc.moto, style: Theme.of(context).textTheme.caption)),
                         ],
                       ),
                     ))
@@ -215,18 +206,9 @@ Widget _getTopBar(BuildContext context, TypeDesc typeDesc) {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Text(typeDesc.nameDescription, softWrap: true, maxLines: 3, style: Theme
-                      .of(context)
-                      .textTheme
-                      .title),
-                  FittedBox(child: Text(typeDesc.altName + " - " + typeDesc.mbti, style: Theme
-                      .of(context)
-                      .textTheme
-                      .body2)),
-                  FittedBox(child: Text("Кредо: " + typeDesc.moto, style: Theme
-                      .of(context)
-                      .textTheme
-                      .caption)),
+                  Text(typeDesc.nameDescription, softWrap: true, maxLines: 3, style: Theme.of(context).textTheme.title),
+                  FittedBox(child: Text(typeDesc.altName + " - " + typeDesc.mbti, style: Theme.of(context).textTheme.body2)),
+                  FittedBox(child: Text("Кредо: " + typeDesc.moto, style: Theme.of(context).textTheme.caption)),
                 ],
               ),
             ))

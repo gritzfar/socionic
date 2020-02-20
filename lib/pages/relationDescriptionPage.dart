@@ -26,27 +26,25 @@ class RelationDescriptionPage extends StatelessWidget {
         ],
       )),
       body: CustomScrollView(physics: const BouncingScrollPhysics(), slivers: <Widget>[
-        AppConfig
-            .of(context)
-            .internal
+        AppConfig.of(context).internal
             ? SliverPersistentHeader(
-          pinned: true,
-          floating: true,
-          delegate: _SliverAppBarDelegate(relation: relation),
-        )
+                pinned: true,
+                floating: true,
+                delegate: _SliverAppBarDelegate(relation: relation),
+              )
             : SliverToBoxAdapter(
-          child: Padding(
-            padding: EdgeInsets.only(top: 5),
-          ),
-        ),
+                child: Padding(
+                  padding: EdgeInsets.only(top: 5),
+                ),
+              ),
         SliverToBoxAdapter(
             child: Container(
-              alignment: Alignment.topLeft,
-              padding: EdgeInsets.only(left: 16, right: 16, bottom: 16),
-              child: Column(children: <Widget>[
-                Text(relation.desc ?? "TEST"),
-              ]),
-            ))
+          alignment: Alignment.topLeft,
+          padding: EdgeInsets.only(left: 16, right: 16, bottom: 16),
+          child: Column(children: <Widget>[
+            Text(relation.desc ?? "TEST"),
+          ]),
+        ))
       ]),
       bottomNavigationBar: AdModBannerWidget(),
     );
