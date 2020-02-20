@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import '../common/admodBanner.dart';
 import '../common/appDrawer.dart';
 import '../common/typeHero.dart';
 import '../data/types.dart';
-import '../main.dart';
 import '../models/typeDesc.dart';
 import 'typePage.dart';
 
@@ -33,7 +33,7 @@ class TypesPageState extends State<TypesPage> {
           children: getRows(),
         ),
       ),
-      bottomNavigationBar: getBanner(context),
+      bottomNavigationBar: AdModBannerWidget(),
     );
 
     return scaffold;

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../common/admodBanner.dart';
 import '../common/starRating.dart';
 import '../common/typeHero.dart';
 import '../data/types.dart';
-import '../main.dart';
 import '../models/relation.dart';
 import '../models/typeDesc.dart';
 import 'relationDescriptionPage.dart';
@@ -31,8 +31,7 @@ class TypeRelationsPage extends StatelessWidget {
 
   final bool popNavigation;
 
-  const TypeRelationsPage({Key key, this.typeDesc, this.popNavigation})
-      : super();
+  const TypeRelationsPage({Key key, this.typeDesc, this.popNavigation}) : super();
 
   @override
   Widget build(BuildContext context) {
@@ -57,12 +56,11 @@ class TypeRelationsPage extends StatelessWidget {
         padding: new EdgeInsets.symmetric(vertical: 0.0, horizontal: 0.0),
         child: body,
       ),
-      bottomNavigationBar: getBanner(context),
+      bottomNavigationBar: AdModBannerWidget(),
     );
   }
 
-  List<Widget> generateItems(BuildContext context, List<TypeDesc> types,
-      List<Relation> relations, double width) {
+  List<Widget> generateItems(BuildContext context, List<TypeDesc> types, List<Relation> relations, double width) {
     List<Widget> list = new List<Widget>();
     var color = Colors.amber;
 
@@ -77,36 +75,36 @@ class TypeRelationsPage extends StatelessWidget {
                 child: Container(
                     width: width,
                     padding: EdgeInsets.all(5),
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Text(
-                            types[i].shortName,
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          FittedBox(
-                              child: Text(
+                    child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: <Widget>[
+                      Text(
+                        types[i].shortName,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      Container(
+                          child: Text(
                             relations[i].name,
                             overflow: TextOverflow.ellipsis,
-                            style: Theme.of(context).textTheme.caption,
+                            style: Theme
+                                .of(context)
+                                .textTheme
+                                .caption,
                           )),
-                          StarRating(
-                            color: color,
-                            rating: relations[i].rating,
-                          ),
-                          TypeHero(
-                              typeDesc: types[i],
-                              onTap: () {
-                                //if (popNavigation) {
-                                Navigator.of(context).push(
-                                    getRelationDescriptionPage(relations[i]));
+                      StarRating(
+                        color: color,
+                        rating: relations[i].rating,
+                      ),
+                      TypeHero(
+                          typeDesc: types[i],
+                          onTap: () {
+                            //if (popNavigation) {
+                            Navigator.of(context).push(getRelationDescriptionPage(relations[i]));
 //                            } else {
 //                              Navigator.of(context).push(getTypeDescPage(types[i]));
 //                            }
-                              })
-                          //],)
-                        ])))),
+                          })
+                      //],)
+                    ])))),
       );
     }
 
@@ -125,39 +123,26 @@ class TypeRelationsPage extends StatelessWidget {
           Container(
             //color: Theme.of(context).backgroundColor,
             child: Row(
-              children: generateItems(
-                  context,
-                  [donType, dumasType, hugoType, robespierreType],
-                  typeDesc.relations.take(4).toList(),
-                  typeWidth),
+              children: generateItems(context, [donType, dumasType, hugoType, robespierreType], typeDesc.relations.take(4).toList(), typeWidth),
             ),
           ),
           Container(
               //color: Theme.of(context).backgroundColor,
               child: Row(
-            children: generateItems(
-                context,
-                [hamletType, maximGorkyType, zhukovType, yeseninType],
-                typeDesc.relations.skip(4).take(4).toList(),
-                typeWidth),
+                children:
+                generateItems(context, [hamletType, maximGorkyType, zhukovType, yeseninType], typeDesc.relations.skip(4).take(4).toList(), typeWidth),
           )),
           Container(
               //color: Theme.of(context).backgroundColor,
               child: Row(
             children: generateItems(
-                context,
-                [napoleonType, balzacType, jackLondonType, dreiserType],
-                typeDesc.relations.skip(8).take(4).toList(),
-                typeWidth),
+                context, [napoleonType, balzacType, jackLondonType, dreiserType], typeDesc.relations.skip(8).take(4).toList(), typeWidth),
           )),
           Container(
               //color: Theme.of(context).backgroundColor,
               child: Row(
             children: generateItems(
-                context,
-                [stierlitzType, dostoyevskyType, huxleyType, gabinType],
-                typeDesc.relations.skip(12).take(4).toList(),
-                typeWidth),
+                context, [stierlitzType, dostoyevskyType, huxleyType, gabinType], typeDesc.relations.skip(12).take(4).toList(), typeWidth),
           ))
         ],
       ),

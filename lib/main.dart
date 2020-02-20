@@ -37,41 +37,30 @@ String getAppId(bool testAdds) {
   // return "ca-app-pub-7993607976861905~7718564880";
 }
 
-String getBannerAdUnitId(bool testAdds) {
-  if (testAdds) {
-    //Test banner
-    return "ca-app-pub-3940256099942544/6300978111";
-  }
-
-  // Orig banner id _free
-  return "ca-app-pub-7993607976861905/5803013257";
-
-  // Orig banner id
-  // return "ca-app-pub-7993607976861905/6677424882";
-}
-
-Widget getBanner(BuildContext context) {
-  if (!AppConfig.of(context).hasAdds) return null;
-
-  bool failed = false;
-  var banner = AdmobBanner(
-      adUnitId: getBannerAdUnitId(AppConfig.of(context).testAdds),
-      adSize: AdmobBannerSize.BANNER,
-      listener:  (AdmobAdEvent event, Map<String, dynamic> args) {
-        if (event == AdmobAdEvent.failedToLoad){
-          failed = true;
-        }
-      });
-
-  if (failed) { return null; }
-
-  return Padding(
-      padding: EdgeInsets.only(top: 8.0),
-//child: ClipRRect(
-// rounded corners ad.
-//borderRadius: BorderRadius.circular(40.0),
-      child: banner);
-}
+//Widget getBanner(BuildContext context) {
+//  if (!AppConfig.of(context).hasAdds) return null;
+//
+//  bool failed = false;
+//  var banner = AdmobBanner(
+//      adUnitId: getBannerAdUnitId(AppConfig.of(context).testAdds),
+//      adSize: AdmobBannerSize.BANNER,
+//      listener: (AdmobAdEvent event, Map<String, dynamic> args) {
+//        if (event == AdmobAdEvent.failedToLoad) {
+//          failed = true;
+//        }
+//      });
+//
+//  if (failed) {
+//    return null;
+//  }
+//
+//  return Padding(
+//      padding: EdgeInsets.only(top: 8.0),
+////child: ClipRRect(
+//// rounded corners ad.
+////borderRadius: BorderRadius.circular(40.0),
+//      child: banner);
+//}
 
 class MySocionicApp extends StatefulWidget {
   const MySocionicApp({Key key}) : super(key: key);

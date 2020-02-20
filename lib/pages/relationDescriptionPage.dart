@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../common/admodBanner.dart';
 import '../common/appConfig.dart';
 import '../common/starRating.dart';
-import '../main.dart';
 import '../models/relation.dart';
 
 class RelationDescriptionPage extends StatelessWidget {
@@ -25,30 +25,30 @@ class RelationDescriptionPage extends StatelessWidget {
           Text(relation.moto, style: Theme.of(context).textTheme.caption)
         ],
       )),
-      body: CustomScrollView(
-          physics: const BouncingScrollPhysics(),
-          slivers: <Widget>[
-            AppConfig.of(context).internal
-                ? SliverPersistentHeader(
-                    pinned: true,
-                    floating: true,
-                    delegate: _SliverAppBarDelegate(relation: relation),
-                  )
-                : SliverToBoxAdapter(
-                    child: Padding(
-                      padding: EdgeInsets.only(top: 5),
-                    ),
-                  ),
-            SliverToBoxAdapter(
-                child: Container(
+      body: CustomScrollView(physics: const BouncingScrollPhysics(), slivers: <Widget>[
+        AppConfig
+            .of(context)
+            .internal
+            ? SliverPersistentHeader(
+          pinned: true,
+          floating: true,
+          delegate: _SliverAppBarDelegate(relation: relation),
+        )
+            : SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.only(top: 5),
+          ),
+        ),
+        SliverToBoxAdapter(
+            child: Container(
               alignment: Alignment.topLeft,
               padding: EdgeInsets.only(left: 16, right: 16, bottom: 16),
               child: Column(children: <Widget>[
                 Text(relation.desc ?? "TEST"),
               ]),
             ))
-          ]),
-      bottomNavigationBar: getBanner(context),
+      ]),
+      bottomNavigationBar: AdModBannerWidget(),
     );
   }
 }
@@ -59,11 +59,8 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   _SliverAppBarDelegate({this.relation});
 
   @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
-    var offset = maxExtent - shrinkOffset < minExtent
-        ? minExtent - maxExtent
-        : -shrinkOffset;
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+    var offset = maxExtent - shrinkOffset < minExtent ? minExtent - maxExtent : -shrinkOffset;
 
     return Stack(overflow: Overflow.clip, children: <Widget>[
       Positioned(
@@ -73,8 +70,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
               height: maxExtent,
               child: Container(
                   color: Theme.of(context).scaffoldBackgroundColor,
-                  padding:
-                      EdgeInsets.only(left: 16, top: 5, right: 16, bottom: 0),
+                  padding: EdgeInsets.only(left: 16, top: 5, right: 16, bottom: 0),
                   child: _getTopBar(context, relation))))
     ]);
   }
@@ -92,17 +88,14 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
 }
 
 Widget _getTopBar(BuildContext context, Relation relation) {
-  return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        StarRating(
-          color: Colors.amber,
-          rating: relation.rating,
-          size: 40,
-        ),
-        Divider(
-          height: 5,
-        )
-      ]);
+  return Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
+    StarRating(
+      color: Colors.amber,
+      rating: relation.rating,
+      size: 40,
+    ),
+    Divider(
+      height: 5,
+    )
+  ]);
 }

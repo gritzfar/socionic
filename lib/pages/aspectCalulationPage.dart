@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../common/admodBanner.dart';
 import '../common/typeHero.dart';
 import '../data/types.dart';
-import '../main.dart';
 import '../models/dichotomie.dart';
 import '../models/typeDesc.dart';
 import 'typePage.dart';
@@ -36,17 +36,13 @@ class AspectCalculationPageState extends State<AspectCalculationPage> {
 
   List<TypeDesc> _data = [];
 
-  final Dichotomie ieDichotomie =
-      Dichotomie(falseValue: "Интроверсия", trueValue: "Экстроверсия");
+  final Dichotomie ieDichotomie = Dichotomie(falseValue: "Интроверсия", trueValue: "Экстроверсия");
 
-  final Dichotomie elDichotomie =
-      Dichotomie(falseValue: "Этика", trueValue: "Логика");
+  final Dichotomie elDichotomie = Dichotomie(falseValue: "Этика", trueValue: "Логика");
 
-  final Dichotomie siDichotomie =
-      Dichotomie(falseValue: "Сенсорика", trueValue: "Интуиция");
+  final Dichotomie siDichotomie = Dichotomie(falseValue: "Сенсорика", trueValue: "Интуиция");
 
-  final Dichotomie irDichotomie =
-      Dichotomie(falseValue: "Иррациональность", trueValue: "Рациональность");
+  final Dichotomie irDichotomie = Dichotomie(falseValue: "Иррациональность", trueValue: "Рациональность");
 
   @override
   Widget build(BuildContext context) {
@@ -62,28 +58,17 @@ class AspectCalculationPageState extends State<AspectCalculationPage> {
               spacing: 8.0, // gap between adjacent chips
               runSpacing: 4.0, // gap between lines
               children: <Widget>[
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: _getChips(ieDichotomie)),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: _getChips(elDichotomie)),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: _getChips(siDichotomie)),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: _getChips(irDichotomie))
+                Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: _getChips(ieDichotomie)),
+                Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: _getChips(elDichotomie)),
+                Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: _getChips(siDichotomie)),
+                Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: _getChips(irDichotomie))
               ],
             )),
         Expanded(
             child: GridView.builder(
           shrinkWrap: false,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4,
-              crossAxisSpacing: 0.0,
-              mainAxisSpacing: 0.0,
-              childAspectRatio: aspect),
+              gridDelegate:
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4, crossAxisSpacing: 0.0, mainAxisSpacing: 0.0, childAspectRatio: aspect),
           physics: const BouncingScrollPhysics(),
           itemBuilder: (context, i) {
             return
@@ -115,7 +100,7 @@ class AspectCalculationPageState extends State<AspectCalculationPage> {
           itemCount: _data.length,
         ))
       ]),
-      bottomNavigationBar: getBanner(context),
+      bottomNavigationBar: AdModBannerWidget(),
     );
   }
 
@@ -129,23 +114,10 @@ class AspectCalculationPageState extends State<AspectCalculationPage> {
     //setState(() {
     var dataToFilter = initData.toList();
 
-    dataToFilter = dataToFilter
-        .where((v) =>
-            ieDichotomie.value == null || v.extraversion == ieDichotomie.value)
-        .toList();
-    dataToFilter = dataToFilter
-        .where(
-            (v) => elDichotomie.value == null || v.logic == elDichotomie.value)
-        .toList();
-    dataToFilter = dataToFilter
-        .where((v) =>
-            siDichotomie.value == null || v.intuition == siDichotomie.value)
-        .toList();
-    dataToFilter = dataToFilter
-        .where((v) =>
-            irDichotomie.value == null ||
-            v.rationalization == irDichotomie.value)
-        .toList();
+    dataToFilter = dataToFilter.where((v) => ieDichotomie.value == null || v.extraversion == ieDichotomie.value).toList();
+    dataToFilter = dataToFilter.where((v) => elDichotomie.value == null || v.logic == elDichotomie.value).toList();
+    dataToFilter = dataToFilter.where((v) => siDichotomie.value == null || v.intuition == siDichotomie.value).toList();
+    dataToFilter = dataToFilter.where((v) => irDichotomie.value == null || v.rationalization == irDichotomie.value).toList();
 
     _data = dataToFilter;
     //});
@@ -179,8 +151,7 @@ class AspectCalculationPageState extends State<AspectCalculationPage> {
             constraints: BoxConstraints(minWidth: 100, maxWidth: 150),
             //width: 150,
             alignment: Alignment.center,
-            child:
-                Text(dichotomie.falseValue, overflow: TextOverflow.ellipsis)),
+            child: Text(dichotomie.falseValue, overflow: TextOverflow.ellipsis)),
         selected: dichotomie.value == false,
         onSelected: (bool selected) {
           setState(() {

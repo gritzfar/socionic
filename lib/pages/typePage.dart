@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import '../common/admodBanner.dart';
 import '../common/typeHero.dart';
-import '../main.dart';
 import '../models/typeDesc.dart';
 import 'relationsPage.dart';
 
@@ -29,12 +29,9 @@ class TypePage extends StatelessWidget {
         title: Text(typeDesc.longName),
       ),
       body: Container(
-          padding:
-              const EdgeInsets.only(left: 16, top: 5, right: 16, bottom: 16),
+          padding: const EdgeInsets.only(left: 16, top: 5, right: 16, bottom: 16),
           alignment: Alignment.topLeft,
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: <
-                  Widget>[
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
@@ -53,17 +50,18 @@ class TypePage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
-                          Text(typeDesc.nameDescription,
-                              softWrap: true,
-                              maxLines: 3,
-                              style: Theme.of(context).textTheme.title),
-                          FittedBox(
-                              child: Text(
-                                  typeDesc.altName + " - " + typeDesc.mbti,
-                                  style: Theme.of(context).textTheme.body2)),
-                          FittedBox(
-                              child: Text("Кредо: " + typeDesc.moto,
-                                  style: Theme.of(context).textTheme.caption)),
+                          Text(typeDesc.nameDescription, softWrap: true, maxLines: 3, style: Theme
+                              .of(context)
+                              .textTheme
+                              .title),
+                          FittedBox(child: Text(typeDesc.altName + " - " + typeDesc.mbti, style: Theme
+                              .of(context)
+                              .textTheme
+                              .body2)),
+                          FittedBox(child: Text("Кредо: " + typeDesc.moto, style: Theme
+                              .of(context)
+                              .textTheme
+                              .caption)),
                         ],
                       ),
                     ))
@@ -81,8 +79,7 @@ class TypePage extends StatelessWidget {
                 ],
               ),
               onPressed: () {
-                Navigator.of(context)
-                    .push(getTypeRelationsPage(typeDesc, true));
+                Navigator.of(context).push(getTypeRelationsPage(typeDesc, true));
               },
             ),
             Expanded(
@@ -95,66 +92,42 @@ class TypePage extends StatelessWidget {
                           text: TextSpan(
                               text: "    Сильные стороны. ",
                               style: TextStyle(fontWeight: FontWeight.bold),
-                              children: <TextSpan>[
-                            TextSpan(
-                                text: typeDesc.strongTypeDesc,
-                                style: TextStyle(fontWeight: FontWeight.normal))
-                          ])),
+                              children: <TextSpan>[TextSpan(text: typeDesc.strongTypeDesc, style: TextStyle(fontWeight: FontWeight.normal))])),
                       Text(""),
                       RichText(
                           text: TextSpan(
                               text: "    Уровень пользователя. ",
                               style: TextStyle(fontWeight: FontWeight.bold),
-                              children: <TextSpan>[
-                            TextSpan(
-                                text: typeDesc.roleTypeDesc,
-                                style: TextStyle(fontWeight: FontWeight.normal))
-                          ])),
+                              children: <TextSpan>[TextSpan(text: typeDesc.roleTypeDesc, style: TextStyle(fontWeight: FontWeight.normal))])),
                       Text(""),
                       RichText(
                           text: TextSpan(
                               text: "    Слабые стороны. ",
                               style: TextStyle(fontWeight: FontWeight.bold),
-                              children: <TextSpan>[
-                            TextSpan(
-                                text: typeDesc.weakTypeDesc,
-                                style: TextStyle(fontWeight: FontWeight.normal))
-                          ])),
+                              children: <TextSpan>[TextSpan(text: typeDesc.weakTypeDesc, style: TextStyle(fontWeight: FontWeight.normal))])),
                       Text(""),
                       RichText(
                           text: TextSpan(
                               text: "    Лучшее занятие ",
                               style: TextStyle(fontWeight: FontWeight.bold),
-                              children: <TextSpan>[
-                            TextSpan(
-                                text: typeDesc.bestPractice,
-                                style: TextStyle(fontWeight: FontWeight.normal))
-                          ])),
+                              children: <TextSpan>[TextSpan(text: typeDesc.bestPractice, style: TextStyle(fontWeight: FontWeight.normal))])),
                       Text(""),
                       RichText(
                           text: TextSpan(
                               text: "    Не подходит ",
                               style: TextStyle(fontWeight: FontWeight.bold),
-                              children: <TextSpan>[
-                            TextSpan(
-                                text: typeDesc.worstPractice,
-                                style: TextStyle(fontWeight: FontWeight.normal))
-                          ])),
+                              children: <TextSpan>[TextSpan(text: typeDesc.worstPractice, style: TextStyle(fontWeight: FontWeight.normal))])),
                       Text(""),
                       RichText(
                           text: TextSpan(
                               text: "    Для успешной работы ",
                               style: TextStyle(fontWeight: FontWeight.bold),
-                              children: <TextSpan>[
-                            TextSpan(
-                                text: typeDesc.forEffectiveWork,
-                                style: TextStyle(fontWeight: FontWeight.normal))
-                          ])),
+                              children: <TextSpan>[TextSpan(text: typeDesc.forEffectiveWork, style: TextStyle(fontWeight: FontWeight.normal))])),
                     ],
                   )),
             )
           ])),
-      bottomNavigationBar: getBanner(context),
+      bottomNavigationBar: AdModBannerWidget(),
     );
   }
 
@@ -182,123 +155,99 @@ class TypePage extends StatelessWidget {
                           text: TextSpan(
                               text: "    Сильные стороны. ",
                               style: TextStyle(fontWeight: FontWeight.bold),
-                              children: <TextSpan>[
-                            TextSpan(
-                                text: typeDesc.strongTypeDesc,
-                                style: TextStyle(fontWeight: FontWeight.normal))
-                          ])),
+                              children: <TextSpan>[TextSpan(text: typeDesc.strongTypeDesc, style: TextStyle(fontWeight: FontWeight.normal))])),
                       Text(""),
                       RichText(
                           text: TextSpan(
                               text: "    Уровень пользователя. ",
                               style: TextStyle(fontWeight: FontWeight.bold),
-                              children: <TextSpan>[
-                            TextSpan(
-                                text: typeDesc.roleTypeDesc,
-                                style: TextStyle(fontWeight: FontWeight.normal))
-                          ])),
+                              children: <TextSpan>[TextSpan(text: typeDesc.roleTypeDesc, style: TextStyle(fontWeight: FontWeight.normal))])),
                       Text(""),
                       RichText(
                           text: TextSpan(
                               text: "    Слабые стороны. ",
                               style: TextStyle(fontWeight: FontWeight.bold),
-                              children: <TextSpan>[
-                            TextSpan(
-                                text: typeDesc.weakTypeDesc,
-                                style: TextStyle(fontWeight: FontWeight.normal))
-                          ])),
+                              children: <TextSpan>[TextSpan(text: typeDesc.weakTypeDesc, style: TextStyle(fontWeight: FontWeight.normal))])),
                       Text(""),
                       RichText(
                           text: TextSpan(
                               text: "    Лучшее занятие ",
                               style: TextStyle(fontWeight: FontWeight.bold),
-                              children: <TextSpan>[
-                            TextSpan(
-                                text: typeDesc.bestPractice,
-                                style: TextStyle(fontWeight: FontWeight.normal))
-                          ])),
+                              children: <TextSpan>[TextSpan(text: typeDesc.bestPractice, style: TextStyle(fontWeight: FontWeight.normal))])),
                       Text(""),
                       RichText(
                           text: TextSpan(
                               text: "    Не подходит ",
                               style: TextStyle(fontWeight: FontWeight.bold),
-                              children: <TextSpan>[
-                            TextSpan(
-                                text: typeDesc.worstPractice,
-                                style: TextStyle(fontWeight: FontWeight.normal))
-                          ])),
+                              children: <TextSpan>[TextSpan(text: typeDesc.worstPractice, style: TextStyle(fontWeight: FontWeight.normal))])),
                       Text(""),
                       RichText(
                           text: TextSpan(
                               text: "    Для успешной работы ",
                               style: TextStyle(fontWeight: FontWeight.bold),
-                              children: <TextSpan>[
-                            TextSpan(
-                                text: typeDesc.forEffectiveWork,
-                                style: TextStyle(fontWeight: FontWeight.normal))
-                          ])),
+                              children: <TextSpan>[TextSpan(text: typeDesc.forEffectiveWork, style: TextStyle(fontWeight: FontWeight.normal))])),
                     ],
                   )))
         ],
       ),
-      bottomNavigationBar: getBanner(context),
+      bottomNavigationBar: AdModBannerWidget(),
     );
   }
 }
 
 Widget _getTopBar(BuildContext context, TypeDesc typeDesc) {
-  return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+  return Column(crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
+    Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            TypeHero(
-              typeDesc: typeDesc,
-              onTap: () {
-                Navigator.of(context).pop();
-              },
-            ),
-            Container(width: 5),
-            Expanded(
-                flex: 1,
-                child: Container(
-                  height: 110,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Text(typeDesc.nameDescription,
-                          softWrap: true,
-                          maxLines: 3,
-                          style: Theme.of(context).textTheme.title),
-                      FittedBox(
-                          child: Text(typeDesc.altName + " - " + typeDesc.mbti,
-                              style: Theme.of(context).textTheme.body2)),
-                      FittedBox(
-                          child: Text("Кредо: " + typeDesc.moto,
-                              style: Theme.of(context).textTheme.caption)),
-                    ],
-                  ),
-                ))
-          ],
-        ),
-        OutlineButton(
-          child: Wrap(
-            children: <Widget>[
-              Icon(Icons.all_out),
-              Padding(
-                padding: EdgeInsets.only(left: 8.0, top: 4),
-                child: Text("Отношения"),
-              )
-            ],
-          ),
-          onPressed: () {
-            Navigator.of(context).push(getTypeRelationsPage(typeDesc, true));
+        TypeHero(
+          typeDesc: typeDesc,
+          onTap: () {
+            Navigator.of(context).pop();
           },
         ),
-        Divider(),
-      ]);
+        Container(width: 5),
+        Expanded(
+            flex: 1,
+            child: Container(
+              height: 110,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Text(typeDesc.nameDescription, softWrap: true, maxLines: 3, style: Theme
+                      .of(context)
+                      .textTheme
+                      .title),
+                  FittedBox(child: Text(typeDesc.altName + " - " + typeDesc.mbti, style: Theme
+                      .of(context)
+                      .textTheme
+                      .body2)),
+                  FittedBox(child: Text("Кредо: " + typeDesc.moto, style: Theme
+                      .of(context)
+                      .textTheme
+                      .caption)),
+                ],
+              ),
+            ))
+      ],
+    ),
+    OutlineButton(
+      child: Wrap(
+        children: <Widget>[
+          Icon(Icons.all_out),
+          Padding(
+            padding: EdgeInsets.only(left: 8.0, top: 4),
+            child: Text("Отношения"),
+          )
+        ],
+      ),
+      onPressed: () {
+        Navigator.of(context).push(getTypeRelationsPage(typeDesc, true));
+      },
+    ),
+    Divider(),
+  ]);
 }
 
 class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
@@ -307,11 +256,8 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   _SliverAppBarDelegate({this.typeDesc});
 
   @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
-    var offset = maxExtent - shrinkOffset < minExtent
-        ? minExtent - maxExtent
-        : -shrinkOffset;
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+    var offset = maxExtent - shrinkOffset < minExtent ? minExtent - maxExtent : -shrinkOffset;
 
     return Stack(overflow: Overflow.clip, children: <Widget>[
       Positioned(
