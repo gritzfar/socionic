@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:socionic_tools/models/aspect.dart';
-import 'package:socionic_tools/models/semanticTheme.dart';
+
+import '../models/aspect.dart';
+import '../models/semanticTheme.dart';
 
 class AspectDictionaryPage extends StatefulWidget {
   final Aspect aspect;

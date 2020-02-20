@@ -15,6 +15,43 @@
       },
       "oauth_client": [
         {
+          "client_id": "906572584409-mkge44jguu8a17jsrddhi82jbcn4fv7l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "de.gritzfar.my_socionic",
+            "certificate_hash": "d879bd8cac7b5f85b7b2046705fab80feb4b3665"
+          }
+        },
+        {
+          "client_id": "906572584409-rlnrd5ev138028us75u49d84suoha5m8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARZZdlNYbv8NsFxhuKlkeHb2HA3hX2vIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "906572584409-rlnrd5ev138028us75u49d84suoha5m8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:906572584409:android:1868ee291481d8d3eb75c8",
+        "android_client_info": {
+          "package_name": "de.gritzfar.my_socionic_free"
+        }
+      },
+      "oauth_client": [
+        {
           "client_id": "906572584409-rlnrd5ev138028us75u49d84suoha5m8.apps.googleusercontent.com",
           "client_type": 3
         }

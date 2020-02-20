@@ -1,5 +1,4 @@
-import 'package:socionic_tools/models/relation.dart';
-
+import '../models/relation.dart';
 import '../models/typeDesc.dart';
 import 'relations.dart';
 

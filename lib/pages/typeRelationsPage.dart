@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:socionic_tools/models/relation.dart';
-import 'package:socionic_tools/models/typeDesc.dart';
 
 import '../common/starRating.dart';
 import '../common/typeHero.dart';
 import '../data/types.dart';
 import '../main.dart';
+import '../models/relation.dart';
+import '../models/typeDesc.dart';
 import 'relationDescriptionPage.dart';
 
 class TypeRelationsPage extends StatelessWidget {

@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:socionic_tools/models/typeDesc.dart';
 
 import '../common/typeHero.dart';
 import '../main.dart';
+import '../models/typeDesc.dart';
 import 'relationsPage.dart';
 
 MaterialPageRoute<void> getTypeDescPage(TypeDesc typeDesc) {

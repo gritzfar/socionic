@@ -1,11 +1,11 @@
 //import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:socionic_tools/common/appConfig.dart';
-import 'package:socionic_tools/models/aspect.dart';
 
+import '../common/appConfig.dart';
 import '../data/aspects.dart';
 import '../main.dart';
+import '../models/aspect.dart';
 import 'aspectDictionaryPage.dart';
 
 final aspects = [

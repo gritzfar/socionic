@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:socionic_tools/models/relation.dart';
 
 import '../common/appConfig.dart';
 import '../common/starRating.dart';
 import '../main.dart';
+import '../models/relation.dart';
 
 class RelationDescriptionPage extends StatelessWidget {
   final Relation relation;

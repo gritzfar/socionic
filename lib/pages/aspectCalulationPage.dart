@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:socionic_tools/models/typeDesc.dart';
 
 import '../common/typeHero.dart';
 import '../data/types.dart';
 import '../main.dart';
 import '../models/dichotomie.dart';
+import '../models/typeDesc.dart';
 import 'typePage.dart';
 
 class AspectCalculationPage extends StatefulWidget {

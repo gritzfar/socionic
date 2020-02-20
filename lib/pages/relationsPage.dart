@@ -2,11 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:socionic_tools/models/typeDesc.dart';
 
 import '../common/appDrawer.dart';
 import '../data/types.dart';
 import '../main.dart';
+import '../models/typeDesc.dart';
 import 'typeRelationsPage.dart';
 
 MaterialPageRoute<void> getTypeRelationsPage(
