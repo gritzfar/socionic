@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../common/admodBanner.dart';
+import '../common/admodBannerWidget.dart';
 import '../data/aspects.dart';
 import '../models/aspect.dart';
 import 'aspectPage.dart';

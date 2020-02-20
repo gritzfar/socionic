@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../common/admodBanner.dart';
+import '../common/admodBannerWidget.dart';
 import '../common/appConfig.dart';
 import '../common/starRating.dart';
 import '../models/relation.dart';

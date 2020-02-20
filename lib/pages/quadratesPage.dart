@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../common/admodBanner.dart';
+import '../common/admodBannerWidget.dart';
 
 final quadrates = <QuadrateData>[
   QuadrateData(

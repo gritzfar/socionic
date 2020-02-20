@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../common/admodBanner.dart';
+import '../common/admodBannerWidget.dart';
 import '../models/aspect.dart';
 import '../models/semanticTheme.dart';
 

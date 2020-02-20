@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../common/admodBanner.dart';
+import '../common/admodBannerWidget.dart';
 import '../common/typeHero.dart';
 import '../models/typeDesc.dart';
 import 'relationsPage.dart';
