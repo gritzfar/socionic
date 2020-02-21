@@ -38,6 +38,10 @@ class AdModBannerWidgetState extends State<AdModBannerWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (!AppConfig.of(context).hasAdds) {
+      return Container(height: 0);
+    }
+
     if (_failedToLoad) {
       return Container(height: 0);
     }
