@@ -38,7 +38,7 @@ class AdModBannerWidgetState extends State<AdModBannerWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (!AppConfig.of(context).hasAdds) {
+    if (!AppConfig.of(context).hasAds) {
       return Container(height: 0);
     }
 
@@ -50,7 +50,7 @@ class AdModBannerWidgetState extends State<AdModBannerWidget> {
         width: _width,
         padding: EdgeInsets.only(top: 8.0),
         child: AdmobBanner(
-            adUnitId: _getBannerAdUnitId(AppConfig.of(context).testAdds),
+            adUnitId: _getBannerAdUnitId(AppConfig.of(context).testAds),
             adSize: AdmobBannerSize.BANNER,
             listener: (AdmobAdEvent event, Map<String, dynamic> args) {
               if (event == AdmobAdEvent.failedToLoad) {

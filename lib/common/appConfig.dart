@@ -1,11 +1,11 @@
 import 'package:flutter/widgets.dart';
 
 class AppConfig extends InheritedWidget {
-  final bool hasAdds;
-  final bool testAdds;
+  final bool hasAds;
+  final bool testAds;
   final bool internal;
 
-  AppConfig({this.internal, this.testAdds, this.hasAdds, Widget child})
+  AppConfig({this.internal, this.testAds, this.hasAds, Widget child})
       : super(child: child);
 
 //  String getAppId() {
