@@ -12,7 +12,7 @@ void main() {
   var configuredApp = AppConfig(
     internal: false,
     testAds: false,
-    hasAds: false,
+    hasAds: true,
     child: MySocionicApp(),
   );
 

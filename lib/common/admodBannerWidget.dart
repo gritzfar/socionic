@@ -24,17 +24,17 @@ class AdModBannerWidgetState extends State<AdModBannerWidget> {
     // return "ca-app-pub-7993607976861905/6677424882";
   }
 
-  @override
-  void initState() {
-    super.initState();
+//  @override
+//  void initState() {
+//    super.initState();
+//
+//    _width = 50;
+//    _failedToLoad = false;
+//  }
 
-    _width = 50;
-    _failedToLoad = false;
-  }
-
-  double _width = 50;
-  bool _failedToLoad = false;
-  Widget _banner;
+  //double _width = 50;
+  //bool _failedToLoad = false;
+//  Widget _banner;
 
   @override
   Widget build(BuildContext context) {
@@ -42,25 +42,27 @@ class AdModBannerWidgetState extends State<AdModBannerWidget> {
       return Container(height: 0);
     }
 
-    if (_failedToLoad) {
-      return Container(height: 0);
-    }
+//    if (_failedToLoad) {
+//      return Container(height: 0);
+//    }
 
-    _banner = Container(
-        width: _width,
+    return Container(
+        //height: 60,
+        //width: _width,
         padding: EdgeInsets.only(top: 8.0),
         child: AdmobBanner(
             adUnitId: _getBannerAdUnitId(AppConfig.of(context).testAds),
             adSize: AdmobBannerSize.BANNER,
-            listener: (AdmobAdEvent event, Map<String, dynamic> args) {
-              if (event == AdmobAdEvent.failedToLoad) {
-                setState(() {
-                  _failedToLoad = true;
-                  _width = 0;
-                });
-              }
-            }));
+//            listener: (AdmobAdEvent event, Map<String, dynamic> args) {
+//              if (event == AdmobAdEvent.failedToLoad) {
+//                setState(() {
+//                  _failedToLoad = true;
+//                  //_width = 0;
+//                });
+//              }
+//            }
+            ));
 
-    return _banner;
+//    return _banner;
   }
 }
