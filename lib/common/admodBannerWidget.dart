@@ -4,8 +4,14 @@ import 'package:flutter/material.dart';
 import 'appConfig.dart';
 
 class AdModBannerWidget extends StatefulWidget {
+
+  static const Key sKey = Key("AdModBannerWidget");
+
+  const AdModBannerWidget({Key key = sKey}): super(key: key);
+
   @override
   State<StatefulWidget> createState() {
+
     return AdModBannerWidgetState();
   }
 }
