@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" width="120" height="180" viewBox="0 0 120.00 180.00" enable-background="new 0 0 120.00 180.00" xml:space="preserve">
+	<path fill="#FFFFFF" fill-opacity="1" stroke-linejoin="round" stroke="#000000" stroke-opacity="1" d="M 25,5L 94.9999,5C 106.046,5 115,13.9543 115,25L 115,155C 115,166.046 106.046,175 94.9999,175L 25,175C 13.9543,175 5.00001,166.046 5.00001,155L 5.00001,25C 5.00001,13.9543 13.9543,5 25,5 Z "/>
+	<text transform="matrix(0.9999998807907103 0.0000000000000000 0.0000000000000000 0.9999998807907103 23.00 47.00)" xml:space="preserve">
+		<tspan style=" font-family:Segoe UI; font-size:36.000000pt;" letter-spacing="0.00em" fill="#000000" fill-opacity="1" stroke-linejoin="round">1</tspan>
+	</text>
+	<text transform="matrix(0.9999998807907103 0.0000000000000000 0.0000000000000000 0.9999998807907103 69.00 47.00)" xml:space="preserve">
+		<tspan style=" font-family:Segoe UI; font-size:36.000000pt;" letter-spacing="0.00em" fill="#000000" fill-opacity="1" stroke-linejoin="round">2</tspan>
+	</text>
+	<text transform="matrix(0.9999998807907103 0.0000000000000000 0.0000000000000000 0.9999998807907103 23.00 87.00)" xml:space="preserve">
+		<tspan style=" font-family:Segoe UI; font-size:36.000000pt;" letter-spacing="0.00em" fill="#000000" fill-opacity="1" stroke-linejoin="round">4</tspan>
+	</text>
+	<text transform="matrix(0.9999998807907103 0.0000000000000000 0.0000000000000000 0.9999998807907103 69.00 87.00)" xml:space="preserve">
+		<tspan style=" font-family:Segoe UI; font-size:36.000000pt;" letter-spacing="0.00em" fill="#000000" fill-opacity="1" stroke-linejoin="round">3</tspan>
+	</text>
+	<text transform="matrix(0.9999998807907103 0.0000000000000000 0.0000000000000000 0.9999998807907103 23.00 127.00)" xml:space="preserve">
+		<tspan style=" font-family:Segoe UI; font-size:36.000000pt;" letter-spacing="0.00em" fill="#000000" fill-opacity="1" stroke-linejoin="round">6</tspan>
+	</text>
+	<text transform="matrix(0.9999998807907103 0.0000000000000000 0.0000000000000000 0.9999998807907103 69.00 127.00)" xml:space="preserve">
+		<tspan style=" font-family:Segoe UI; font-size:36.000000pt;" letter-spacing="0.00em" fill="#000000" fill-opacity="1" stroke-linejoin="round">5</tspan>
+	</text>
+	<text transform="matrix(0.9999998807907103 0.0000000000000000 0.0000000000000000 0.9999998807907103 23.00 167.00)" xml:space="preserve">
+		<tspan style=" font-family:Segoe UI; font-size:36.000000pt;" letter-spacing="0.00em" fill="#000000" fill-opacity="1" stroke-linejoin="round">7</tspan>
+	</text>
+	<text transform="matrix(0.9999998807907103 0.0000000000000000 0.0000000000000000 0.9999998807907103 69.00 167.00)" xml:space="preserve">
+		<tspan style=" font-family:Segoe UI; font-size:36.000000pt;" letter-spacing="0.00em" fill="#000000" fill-opacity="1" stroke-linejoin="round">8</tspan>
+	</text>
+	<line fill="none" stroke-linejoin="round" stroke="#000000" stroke-opacity="1" x1="59.6875" y1="5.1667" x2="59.75" y2="174.833"/>
+	<line fill="none" stroke-linejoin="round" stroke="#000000" stroke-opacity="1" x1="5.43195" y1="50" x2="114.568" y2="50"/>
+	<line fill="none" stroke-linejoin="round" stroke="#000000" stroke-opacity="1" x1="4.68191" y1="89.9583" x2="113.818" y2="89.9583"/>
+	<line fill="none" stroke-linejoin="round" stroke="#000000" stroke-opacity="1" x1="4.9319" y1="130.208" x2="114.068" y2="130.208"/>
+</svg>
