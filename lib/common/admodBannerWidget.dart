@@ -4,14 +4,12 @@ import 'package:flutter/material.dart';
 import 'appConfig.dart';
 
 class AdModBannerWidget extends StatefulWidget {
+  //static const Key sKey = Key("AdModBannerWidget");
 
-  static const Key sKey = Key("AdModBannerWidget");
-
-  const AdModBannerWidget({Key key = sKey}): super(key: key);
+  //const AdModBannerWidget({Key key = sKey}): super(key: key);
 
   @override
   State<StatefulWidget> createState() {
-
     return AdModBannerWidgetState();
   }
 }
@@ -57,8 +55,8 @@ class AdModBannerWidgetState extends State<AdModBannerWidget> {
         //width: _width,
         padding: EdgeInsets.only(top: 8.0),
         child: AdmobBanner(
-            adUnitId: _getBannerAdUnitId(AppConfig.of(context).testAds),
-            adSize: AdmobBannerSize.BANNER,
+          adUnitId: _getBannerAdUnitId(AppConfig.of(context).testAds),
+          adSize: AdmobBannerSize.BANNER,
 //            listener: (AdmobAdEvent event, Map<String, dynamic> args) {
 //              if (event == AdmobAdEvent.failedToLoad) {
 //                setState(() {
@@ -67,7 +65,7 @@ class AdModBannerWidgetState extends State<AdModBannerWidget> {
 //                });
 //              }
 //            }
-            ));
+        ));
 
 //    return _banner;
   }

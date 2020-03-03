@@ -1,5 +1,6 @@
 import 'package:admob_flutter/admob_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:my_socionic/pages/modelAPage.dart';
 
 import 'common/appConfig.dart';
 import 'pages/aspectCalulationPage.dart';
@@ -10,8 +11,8 @@ import 'pages/typesPage.dart';
 
 void main() {
   var configuredApp = AppConfig(
-    internal: false,
-    testAds: false,
+    internal: true,
+    testAds: true,
     hasAds: true,
     child: MySocionicApp(),
   );
@@ -96,6 +97,7 @@ class _MySocionicAppState extends State<MySocionicApp> {
 //      },
       initialRoute: TypesPage.routeName,
       routes: {
+        ModelAPage.routeName: (BuildContext context) => ModelAPage(),
         TypesPage.routeName: (BuildContext context) => TypesPage(),
         RelationsPage.routeName: (BuildContext context) => RelationsPage(),
         QuadratesPage.routeName: (BuildContext context) => QuadratesPage(),
