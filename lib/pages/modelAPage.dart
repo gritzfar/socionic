@@ -16,7 +16,60 @@ class ModelAPage extends StatelessWidget {
           floating: true,
           delegate: _SliverAppBarDelegate(),
         ),
-        SliverToBoxAdapter(child: Container(alignment: Alignment.topLeft, padding: EdgeInsets.only(left: 16, right: 16, bottom: 16), child: Column()))
+        SliverToBoxAdapter(
+            child: Container(
+                alignment: Alignment.topLeft,
+                padding: EdgeInsets.only(left: 16, right: 16, bottom: 16),
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
+                  RichText(
+                      text: TextSpan(
+                          text: "1. Базовая функция ",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                          children: <TextSpan>[TextSpan(text: "текст", style: TextStyle(fontWeight: FontWeight.normal))])),
+                  Text(""),
+                  RichText(
+                      text: TextSpan(
+                          text: "2. Творческая функция ",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                          children: <TextSpan>[TextSpan(text: "текст", style: TextStyle(fontWeight: FontWeight.normal))])),
+                  Text(""),
+                  RichText(
+                      text: TextSpan(
+                          text: "3. Ролевая функция ",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                          children: <TextSpan>[TextSpan(text: "текст", style: TextStyle(fontWeight: FontWeight.normal))])),
+                  Text(""),
+                  RichText(
+                      text: TextSpan(
+                          text: "4. Болевая функция ",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                          children: <TextSpan>[TextSpan(text: "текст", style: TextStyle(fontWeight: FontWeight.normal))])),
+                  Text(""),
+                  RichText(
+                      text: TextSpan(
+                          text: "5. Внушаемая функция ",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                          children: <TextSpan>[TextSpan(text: "текст", style: TextStyle(fontWeight: FontWeight.normal))])),
+                  Text(""),
+                  RichText(
+                      text: TextSpan(
+                          text: "6. Активационая функция ",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                          children: <TextSpan>[TextSpan(text: "текст", style: TextStyle(fontWeight: FontWeight.normal))])),
+                  Text(""),
+                  RichText(
+                      text: TextSpan(
+                          text: "7. Ограничительная функция ",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                          children: <TextSpan>[TextSpan(text: "текст", style: TextStyle(fontWeight: FontWeight.normal))])),
+                  Text(""),
+                  RichText(
+                      text: TextSpan(
+                          text: "8. Фоновая функция ",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                          children: <TextSpan>[TextSpan(text: "текст", style: TextStyle(fontWeight: FontWeight.normal))])),
+                  Text(""),
+                ])))
       ]),
       bottomNavigationBar: AdModBannerWidget(),
     );
