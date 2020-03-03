@@ -20,7 +20,9 @@ class ModelAPage extends StatelessWidget {
             child: Container(
                 alignment: Alignment.topLeft,
                 padding: EdgeInsets.only(left: 16, right: 16, bottom: 16),
-                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
+                child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: <Widget>[
+                  Text("Ячейки модели А", style: Theme.of(context).textTheme.title),
+                  Text(""),
                   RichText(
                       text: TextSpan(
                           text: "1. Базовая функция ",
@@ -69,6 +71,22 @@ class ModelAPage extends StatelessWidget {
                           style: TextStyle(fontWeight: FontWeight.bold),
                           children: <TextSpan>[TextSpan(text: "текст", style: TextStyle(fontWeight: FontWeight.normal))])),
                   Text(""),
+
+                  Text("Ментально / Витальное кольцо", style: Theme.of(context).textTheme.title, textAlign: TextAlign.center,),
+                  Text("Ячейки 1, 2, 3 и 4 называются ментальным кольцом. Это наше сознание. Это то о чем мы думаем.\r\n\r\nЯчейки 5, 6, 7 и 8 нызваются витальным кольцом. Это наше подсознание. Эти функции работают вне зависимости от нашего сознания. И повлиять на их работу сложнее."),
+                  Text(""),
+
+                  Text("Мерность функций", style: Theme.of(context).textTheme.title),
+                  Text(""),
+
+                  Text("Оценочность / ситуативность", style: Theme.of(context).textTheme.title),
+                  Text(""),
+
+                  Text("Инертность / контактность", style: Theme.of(context).textTheme.title),
+                  Text(""),
+
+                  Text("Ценостные / не ценостные", style: Theme.of(context).textTheme.title),
+                  Text(""),
                 ])))
       ]),
       bottomNavigationBar: AdModBannerWidget(),
@@ -95,7 +113,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   }
 
   @override
-  double get maxExtent => 190;
+  double get maxExtent => 145;
 
   @override
   double get minExtent => 65;
