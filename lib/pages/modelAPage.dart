@@ -8,6 +8,9 @@ class ModelAPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    var titleStyle = Theme.of(context).textTheme.subhead;
+
     return Scaffold(
       appBar: AppBar(title: Text("Модель А")),
       body: CustomScrollView(physics: const BouncingScrollPhysics(), slivers: <Widget>[
@@ -20,14 +23,14 @@ class ModelAPage extends StatelessWidget {
             child: Container(
                 alignment: Alignment.topLeft,
                 padding: EdgeInsets.only(left: 16, right: 16, bottom: 16),
-                child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: <Widget>[
-                  Text("Ячейки модели А", style: Theme.of(context).textTheme.title),
+                child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: <Widget>[
+                  Text("Ячейки модели А", style: titleStyle, textAlign: TextAlign.center),
                   Text(""),
-                  RichText(
+                  RichText(textAlign: TextAlign.left,
                       text: TextSpan(
                           text: "1. Базовая функция ",
                           style: TextStyle(fontWeight: FontWeight.bold),
-                          children: <TextSpan>[TextSpan(text: "текст", style: TextStyle(fontWeight: FontWeight.normal))])),
+                          children: <TextSpan>[TextSpan(text: "основа личности", style: TextStyle(fontWeight: FontWeight.normal))])),
                   Text(""),
                   RichText(
                       text: TextSpan(
@@ -72,20 +75,25 @@ class ModelAPage extends StatelessWidget {
                           children: <TextSpan>[TextSpan(text: "текст", style: TextStyle(fontWeight: FontWeight.normal))])),
                   Text(""),
 
-                  Text("Ментально / Витальное кольцо", style: Theme.of(context).textTheme.title, textAlign: TextAlign.center,),
+                  Text("Ментально / Витальное кольцо", style: titleStyle, textAlign: TextAlign.center),
                   Text("Ячейки 1, 2, 3 и 4 называются ментальным кольцом. Это наше сознание. Это то о чем мы думаем.\r\n\r\nЯчейки 5, 6, 7 и 8 нызваются витальным кольцом. Это наше подсознание. Эти функции работают вне зависимости от нашего сознания. И повлиять на их работу сложнее."),
                   Text(""),
 
-                  Text("Мерность функций", style: Theme.of(context).textTheme.title),
+                  Text("Мерность функций", style: titleStyle, textAlign: TextAlign.center),
+                  Text("Функции могу быть разных мерностей, от 1 до 4. Чем больше мерность, тем глубже и экспертнее фукция."),
+                  Text("Ячейки 1 и 8 имеют мерность 4. Это самые сильные и экспертные функции. Они видят информацию во всем её объеме и полноте."),
+                  Text("Ячейки 2 и 7 имеют мерность 3. Это функции также сильные, но менее экспертны, и применяться ситуативно."),
+                  Text("Ячейки 3 и 6 имеют мерность 2. Функции в этих ячейках слабые, поля информации видится поверхностно. Но тем неменее они обучаемы."),
+                  Text("Ячейки 4 и 5 имеют мерность 1. Очень слабое виденье поля информации, обучение происходит только на собсвенном опыте."),
                   Text(""),
 
-                  Text("Оценочность / ситуативность", style: Theme.of(context).textTheme.title),
+                  Text("Оценочность / ситуативность", style: titleStyle, textAlign: TextAlign.center),
                   Text(""),
 
-                  Text("Инертность / контактность", style: Theme.of(context).textTheme.title),
+                  Text("Инертность / контактность", style: titleStyle, textAlign: TextAlign.center),
                   Text(""),
 
-                  Text("Ценостные / не ценостные", style: Theme.of(context).textTheme.title),
+                  Text("Ценостные / не ценостные", style: titleStyle, textAlign: TextAlign.center),
                   Text(""),
                 ])))
       ]),
@@ -116,7 +124,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   double get maxExtent => 145;
 
   @override
-  double get minExtent => 65;
+  double get minExtent => 15;
 
   @override
   bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
