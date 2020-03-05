@@ -47,7 +47,7 @@ class AspectCalculationPageState extends State<AspectCalculationPage> {
   @override
   Widget build(BuildContext context) {
     var width = (MediaQuery.of(context).size.width - 30) / 4;
-    var aspect = width / (typeHeroHeight + 15);
+    var aspect = width / (typeHeroHeight + 25); //15
 
     return Scaffold(
       appBar: AppBar(title: Text("Типирование")),

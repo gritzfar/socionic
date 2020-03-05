@@ -9,6 +9,8 @@ class TypeDesc {
   final String mbti;
   final String moto;
   final String svg;
+  final String jpg;
+  final String png;
   final String routeName;
   final String description;
   final String strongTypeDesc;
@@ -33,6 +35,8 @@ class TypeDesc {
       this.mbti,
       this.moto,
       this.svg,
+      this.jpg,
+      this.png,
       this.routeName,
       this.description,
       this.strongTypeDesc,
