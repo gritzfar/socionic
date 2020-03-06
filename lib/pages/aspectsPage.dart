@@ -17,7 +17,7 @@ class AspectDictionariesPage extends StatelessWidget {
     return Scaffold(
       //backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text("Словари информационных аспектов"),
+        title: Text("Словари аспектов"),
       ),
 //        drawer: AppDrawer(
 //          context: context,
