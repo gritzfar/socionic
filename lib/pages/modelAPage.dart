@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../common/admodBannerWidget.dart';
 
@@ -8,8 +7,9 @@ class ModelAPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    var titleStyle = Theme.of(context).textTheme.subhead;
+    var titleStyle = Theme.of(context).textTheme.subtitle1;
+    var boldStyle = TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).textTheme.bodyText1.color);
+    var normalStyle = TextStyle(fontWeight: FontWeight.normal);
 
     return Scaffold(
       appBar: AppBar(title: Text("Модель А")),
@@ -26,73 +26,57 @@ class ModelAPage extends StatelessWidget {
                 child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: <Widget>[
                   Text("Ячейки модели А", style: titleStyle, textAlign: TextAlign.center),
                   Text(""),
-                  RichText(textAlign: TextAlign.left,
+                  RichText(
+                      textAlign: TextAlign.left,
                       text: TextSpan(
                           text: "1. Базовая функция ",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                          children: <TextSpan>[TextSpan(text: "основа личности", style: TextStyle(fontWeight: FontWeight.normal))])),
+                          style: boldStyle,
+                          children: <TextSpan>[TextSpan(text: "основа личности", style: normalStyle)])),
                   Text(""),
                   RichText(
                       text: TextSpan(
-                          text: "2. Творческая функция ",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                          children: <TextSpan>[TextSpan(text: "текст", style: TextStyle(fontWeight: FontWeight.normal))])),
+                          text: "2. Творческая функция ", style: boldStyle, children: <TextSpan>[TextSpan(text: "текст", style: normalStyle)])),
+                  Text(""),
+                  RichText(
+                      text:
+                          TextSpan(text: "3. Ролевая функция ", style: boldStyle, children: <TextSpan>[TextSpan(text: "текст", style: normalStyle)])),
+                  Text(""),
+                  RichText(
+                      text:
+                          TextSpan(text: "4. Болевая функция ", style: boldStyle, children: <TextSpan>[TextSpan(text: "текст", style: normalStyle)])),
                   Text(""),
                   RichText(
                       text: TextSpan(
-                          text: "3. Ролевая функция ",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                          children: <TextSpan>[TextSpan(text: "текст", style: TextStyle(fontWeight: FontWeight.normal))])),
+                          text: "5. Внушаемая функция ", style: boldStyle, children: <TextSpan>[TextSpan(text: "текст", style: normalStyle)])),
                   Text(""),
                   RichText(
                       text: TextSpan(
-                          text: "4. Болевая функция ",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                          children: <TextSpan>[TextSpan(text: "текст", style: TextStyle(fontWeight: FontWeight.normal))])),
+                          text: "6. Активационая функция ", style: boldStyle, children: <TextSpan>[TextSpan(text: "текст", style: normalStyle)])),
                   Text(""),
                   RichText(
                       text: TextSpan(
-                          text: "5. Внушаемая функция ",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                          children: <TextSpan>[TextSpan(text: "текст", style: TextStyle(fontWeight: FontWeight.normal))])),
+                          text: "7. Ограничительная функция ", style: boldStyle, children: <TextSpan>[TextSpan(text: "текст", style: normalStyle)])),
                   Text(""),
                   RichText(
-                      text: TextSpan(
-                          text: "6. Активационая функция ",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                          children: <TextSpan>[TextSpan(text: "текст", style: TextStyle(fontWeight: FontWeight.normal))])),
+                      text:
+                          TextSpan(text: "8. Фоновая функция ", style: boldStyle, children: <TextSpan>[TextSpan(text: "текст", style: normalStyle)])),
                   Text(""),
-                  RichText(
-                      text: TextSpan(
-                          text: "7. Ограничительная функция ",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                          children: <TextSpan>[TextSpan(text: "текст", style: TextStyle(fontWeight: FontWeight.normal))])),
-                  Text(""),
-                  RichText(
-                      text: TextSpan(
-                          text: "8. Фоновая функция ",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                          children: <TextSpan>[TextSpan(text: "текст", style: TextStyle(fontWeight: FontWeight.normal))])),
-                  Text(""),
-
                   Text("Ментально / Витальное кольцо", style: titleStyle, textAlign: TextAlign.center),
-                  Text("Ячейки 1, 2, 3 и 4 называются ментальным кольцом. Это наше сознание. Это то о чем мы думаем.\r\n\r\nЯчейки 5, 6, 7 и 8 нызваются витальным кольцом. Это наше подсознание. Эти функции работают вне зависимости от нашего сознания. И повлиять на их работу сложнее."),
+                  Text(
+                      "Ячейки 1, 2, 3 и 4 называются ментальным кольцом. Это наше сознание. Это то о чем мы думаем.\r\n\r\nЯчейки 5, 6, 7 и 8 нызваются витальным кольцом. Это наше подсознание. Эти функции работают вне зависимости от нашего сознания. И повлиять на их работу сложнее."),
                   Text(""),
-
                   Text("Мерность функций", style: titleStyle, textAlign: TextAlign.center),
                   Text("Функции могу быть разных мерностей, от 1 до 4. Чем больше мерность, тем глубже и экспертнее фукция."),
                   Text("Ячейки 1 и 8 имеют мерность 4. Это самые сильные и экспертные функции. Они видят информацию во всем её объеме и полноте."),
                   Text("Ячейки 2 и 7 имеют мерность 3. Это функции также сильные, но менее экспертны, и применяться ситуативно."),
-                  Text("Ячейки 3 и 6 имеют мерность 2. Функции в этих ячейках слабые, поля информации видится поверхностно. Но тем неменее они обучаемы."),
+                  Text(
+                      "Ячейки 3 и 6 имеют мерность 2. Функции в этих ячейках слабые, поля информации видится поверхностно. Но тем неменее они обучаемы."),
                   Text("Ячейки 4 и 5 имеют мерность 1. Очень слабое виденье поля информации, обучение происходит только на собсвенном опыте."),
                   Text(""),
-
                   Text("Оценочность / ситуативность", style: titleStyle, textAlign: TextAlign.center),
                   Text(""),
-
                   Text("Инертность / контактность", style: titleStyle, textAlign: TextAlign.center),
                   Text(""),
-
                   Text("Ценостные / не ценостные", style: titleStyle, textAlign: TextAlign.center),
                   Text(""),
                 ])))
@@ -143,12 +127,14 @@ Widget _getTopBar(BuildContext context) {
               onTap: () {
                 Navigator.of(context).pop();
               },
-              child: SvgPicture.asset(
-                "svgs/model_a.svg",
-                width: 80,
-                height: 120,
-                semanticsLabel: "Модель А",
-              )),
+              child: Image.asset("images/model_a.png", width: 80, height: 120, semanticLabel: "Модель А")
+//              SvgPicture.asset(
+//                "svgs/model_a.svg",
+//                width: 80,
+//                height: 120,
+//                semanticsLabel: "Модель А",
+//              )
+              ),
         ),
         Container(width: 5),
         Expanded(
@@ -159,8 +145,8 @@ Widget _getTopBar(BuildContext context) {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Text("Описание модели А", softWrap: true, maxLines: 3, style: Theme.of(context).textTheme.title),
-                  FittedBox(child: Text("Ячейки модели А", style: Theme.of(context).textTheme.body2)),
+                  Text("Описание модели А", softWrap: true, maxLines: 3, style: Theme.of(context).textTheme.headline6),
+                  FittedBox(child: Text("Ячейки модели А", style: Theme.of(context).textTheme.bodyText2)),
                   FittedBox(child: Text("Поведение функции в различних ячейках", style: Theme.of(context).textTheme.caption)),
                 ],
               ),

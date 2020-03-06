@@ -50,8 +50,8 @@ class TypePage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
-                          Text(typeDesc.nameDescription, softWrap: true, maxLines: 3, style: Theme.of(context).textTheme.title),
-                          FittedBox(child: Text(typeDesc.altName + " - " + typeDesc.mbti, style: Theme.of(context).textTheme.body2)),
+                          Text(typeDesc.nameDescription, softWrap: true, maxLines: 3, style: Theme.of(context).textTheme.headline6),
+                          FittedBox(child: Text(typeDesc.altName + " - " + typeDesc.mbti, style: Theme.of(context).textTheme.bodyText1)),
                           FittedBox(child: Text("Кредо: " + typeDesc.moto, style: Theme.of(context).textTheme.caption)),
                         ],
                       ),
@@ -123,6 +123,8 @@ class TypePage extends StatelessWidget {
   }
 
   Scaffold getScaffoldNew(BuildContext context) {
+    var boldStyle = TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).textTheme.bodyText1.color);
+    var normalStyle = TextStyle(fontWeight: FontWeight.normal);
     return Scaffold(
       appBar: AppBar(
         title: Text(typeDesc.longName),
@@ -145,38 +147,38 @@ class TypePage extends StatelessWidget {
                       RichText(
                           text: TextSpan(
                               text: "    Сильные стороны. ",
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                              children: <TextSpan>[TextSpan(text: typeDesc.strongTypeDesc, style: TextStyle(fontWeight: FontWeight.normal))])),
+                              style: boldStyle,
+                              children: <TextSpan>[TextSpan(text: typeDesc.strongTypeDesc, style: normalStyle)])),
                       Text(""),
                       RichText(
                           text: TextSpan(
                               text: "    Уровень пользователя. ",
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                              children: <TextSpan>[TextSpan(text: typeDesc.roleTypeDesc, style: TextStyle(fontWeight: FontWeight.normal))])),
+                              style: boldStyle,
+                              children: <TextSpan>[TextSpan(text: typeDesc.roleTypeDesc, style: normalStyle)])),
                       Text(""),
                       RichText(
                           text: TextSpan(
                               text: "    Слабые стороны. ",
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                              children: <TextSpan>[TextSpan(text: typeDesc.weakTypeDesc, style: TextStyle(fontWeight: FontWeight.normal))])),
+                              style: boldStyle,
+                              children: <TextSpan>[TextSpan(text: typeDesc.weakTypeDesc, style: normalStyle)])),
                       Text(""),
                       RichText(
                           text: TextSpan(
                               text: "    Лучшее занятие ",
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                              children: <TextSpan>[TextSpan(text: typeDesc.bestPractice, style: TextStyle(fontWeight: FontWeight.normal))])),
+                              style: boldStyle,
+                              children: <TextSpan>[TextSpan(text: typeDesc.bestPractice, style: normalStyle)])),
                       Text(""),
                       RichText(
                           text: TextSpan(
                               text: "    Не подходит ",
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                              children: <TextSpan>[TextSpan(text: typeDesc.worstPractice, style: TextStyle(fontWeight: FontWeight.normal))])),
+                              style: boldStyle,
+                              children: <TextSpan>[TextSpan(text: typeDesc.worstPractice, style: normalStyle)])),
                       Text(""),
                       RichText(
                           text: TextSpan(
                               text: "    Для успешной работы ",
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                              children: <TextSpan>[TextSpan(text: typeDesc.forEffectiveWork, style: TextStyle(fontWeight: FontWeight.normal))])),
+                              style: boldStyle,
+                              children: <TextSpan>[TextSpan(text: typeDesc.forEffectiveWork, style: normalStyle)])),
                     ],
                   )))
         ],
@@ -206,8 +208,8 @@ Widget _getTopBar(BuildContext context, TypeDesc typeDesc) {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Text(typeDesc.nameDescription, softWrap: true, maxLines: 3, style: Theme.of(context).textTheme.title),
-                  FittedBox(child: Text(typeDesc.altName + " - " + typeDesc.mbti, style: Theme.of(context).textTheme.body2)),
+                  Text(typeDesc.nameDescription, softWrap: true, maxLines: 3, style: Theme.of(context).textTheme.headline6),
+                  FittedBox(child: Text(typeDesc.altName + " - " + typeDesc.mbti, style: Theme.of(context).textTheme.bodyText2)),
                   FittedBox(child: Text("Кредо: " + typeDesc.moto, style: Theme.of(context).textTheme.caption)),
                 ],
               ),

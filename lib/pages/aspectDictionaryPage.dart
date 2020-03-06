@@ -109,7 +109,7 @@ class _AspectDictionaryState extends State<AspectDictionaryPage> {
                                 width: MediaQuery.of(context).size.width,
                                 child: Text(
                                   item.name,
-                                  style: Theme.of(context).textTheme.body2,
+                                  style: Theme.of(context).textTheme.bodyText2,
                                 )),
                             //Divider(),
                             Container(

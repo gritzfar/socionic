@@ -111,7 +111,7 @@ class QuadratesPageState extends State<QuadratesPage> {
                             padding: EdgeInsets.only(bottom: 5),
                             child: ListTile(
                               leading: new Icon(Icons.border_all),
-                              title: Text(quadrate.title, style: Theme.of(context).textTheme.title),
+                              title: Text(quadrate.title, style: Theme.of(context).textTheme.headline6),
                               subtitle: Text(quadrate.moto),
                             )),
                         children: <Widget>[Container(margin: EdgeInsets.only(left: 15, right: 15, bottom: 15), child: quadrate.description)]
