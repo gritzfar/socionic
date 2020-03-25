@@ -95,6 +95,7 @@ final iEthic = Aspect(
     desc:
         "Способность воспринимать энергетические отношения, ведущие к изменению внутренней динамики объекта (притяжение/отталкивание) называется этикой отношений.",
     icon: getIcon(EthicIcon(color: Colors.white), 20, 20),
+    dictionary: iEthicDictionary,
     func: <String>[
       "1. Тонко чувствующая человеческую психологию, она имеет, как правило, хорошие отношения с людьми. Замечает проявления отношений в любой компании, хорошо знает моральные нормы, способна к эмпатии.",
       "2. Отношения - ее рабочий инструмент. Наладить контакты, завести друзей, оказать влияние на людей - ее творчество. Она легко устанавливает дружеские связи, заботлива, приятна в общении. Любит сложные психологические комбинации.",
@@ -1099,6 +1100,62 @@ final eEthicDictionary = AspectDictionary(name: "Этика эмоций", seman
       "диалог с реальным или вымышленным собеседником",
       "несколько действующих лиц: я и ты, друг другу"
     ]),
+  ]),
+  SemanticTheme(name: "Преимущественные области деятельности и темы разговоров", subThemes: <SubSemanticTheme>[
+    SubSemanticTheme(name: "", words: [
+      "сплетни",
+      "вызов у других эмоциональных реакций",
+      "изменение и создание любой эмоционально атмосферы и любых нюансов в общении",
+      "сильные эмоции и впечатления"
+    ])
+  ])
+]);
+final iEthicDictionary = AspectDictionary(name: "Этика эмоций", semanticThemes: <SemanticTheme>[
+  SemanticTheme(name: "Описание поля отношений, действий между людьми", subThemes: <SubSemanticTheme>[
+    SubSemanticTheme(name: "", words: [
+
+    ]),
+    SubSemanticTheme(name: "Описание воздействия на живой объект", words: [
+
+    ]),
+    SubSemanticTheme(name: "Описание воздействия на живой объект", words: [
+
+    ]),
+  ]),
+  SemanticTheme(name: "Описание внешних, наблюдаемых проявлений эмоций", subThemes: <SubSemanticTheme>[
+    SubSemanticTheme(name: "", words: [
+
+    ]),
+    SubSemanticTheme(name: "Зрелище", words: [
+
+    ]),
+    SubSemanticTheme(name: "Описание эмоциональных состояний или степени возбуждения", words: [
+
+    ])
+  ]),
+  SemanticTheme(name: "Звуковая форма слова, как выражение эмоций", subThemes: <SubSemanticTheme>[
+    SubSemanticTheme(name: "Описание звукового поведения, звукоподражание", words: [
+
+    ]),
+    SubSemanticTheme(name: "Ситуативное словотворчество, передающее эмоциональную окраску", words: [
+
+    ]),
+    SubSemanticTheme(name: "Экспрессивные междометия, восклицания", words: [
+
+    ]),
+    SubSemanticTheme(name: "Экспрессивные междометия, восклицания", words: [
+
+    ])
+  ]),
+  SemanticTheme(name: "Особенности речи", subThemes: <SubSemanticTheme>[
+    SubSemanticTheme(name: "Часто употребление эмоционально окрашенных наречий", words: [
+
+    ]),
+    SubSemanticTheme(name: "Оксюморон", words: ["хорошо, аж жить не хочется", "хорошо до ужаса", "прелестная гадость"]),
+    SubSemanticTheme(name: "Антитеза", words: ["он, конечно, лапочка, но это кошмар"]),
+    SubSemanticTheme(
+        name: "Цитаты из стихов, песен и т.п., отражающие актуальную эмоциональную ситуацию",
+        words: ["Дан приказ ему на запад, ей в другую сторону - описывая соору"]),
   ]),
   SemanticTheme(name: "Преимущественные области деятельности и темы разговоров", subThemes: <SubSemanticTheme>[
     SubSemanticTheme(name: "", words: [
