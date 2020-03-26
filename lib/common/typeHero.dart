@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../models/typeDesc.dart';
 
@@ -24,16 +23,13 @@ class TypeHero extends StatelessWidget {
       tag: typeDesc.tag,
       child: Material(
         color: Colors.transparent,
-        child: InkWell(
-            onTap: onTap,
-            child:
-//            Image.asset(typeDesc.png, width: width, height: height, semanticLabel: typeDesc.shortName)
-                SvgPicture.asset(
+        child: InkWell(onTap: onTap, child: Image.asset(typeDesc.png, width: width, height: height, semanticLabel: typeDesc.shortName)
+            /*SvgPicture.asset(
               typeDesc.svg,
               width: width,
               height: height,
-              semanticsLabel: typeDesc.shortName,
-            )),
+              semanticsLabel: typeDesc.shortName)*/
+            ),
       ),
     );
   }

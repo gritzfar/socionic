@@ -1,7 +1,6 @@
 //import 'package:diagonal_scrollview/diagonal_scrollview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../common/admodBannerWidget.dart';
 import '../common/appDrawer.dart';
@@ -80,11 +79,12 @@ class RelationsPage extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                   )),
                   InkWell(
-                      child: SvgPicture.asset(
+                      child: Image.asset(types[i].png, height: 120, semanticLabel: types[i].shortName),
+                      /*SvgPicture.asset(
                         types[i].svg,
                         height: 120,
                         semanticsLabel: types[i].shortName,
-                      ),
+                      ),*/
                       //width: 120,
                       onTap: () {
                         Navigator.of(context).push(getTypeRelationsPage(types[i], false));

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../common/admodBannerWidget.dart';
 
@@ -159,14 +158,14 @@ Widget _getTopBar(BuildContext context) {
               onTap: () {
                 Navigator.of(context).pop();
               },
-              child:
-//              Image.asset("images/model_a.png", width: 80, height: 120, semanticLabel: "Модель А")
-                  SvgPicture.asset(
+              child: Image.asset("images/model_a.png", width: 80, height: 120, semanticLabel: "Модель А")
+              /*SvgPicture.asset(
                 "svgs/model_a.svg",
                 width: 80,
                 height: 120,
                 semanticsLabel: "Модель А",
-              )),
+              )*/
+              ),
         ),
         Container(width: 5),
         Expanded(
