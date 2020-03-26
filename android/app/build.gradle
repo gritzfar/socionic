@@ -43,7 +43,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "de.gritzfar.my_socionic"
+        applicationId "de.gritzfar.my_socionic_free"
         minSdkVersion 23
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()

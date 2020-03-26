@@ -1,4 +1,4 @@
-package de.gritzfar.my_socionic
+package de.gritzfar.my_socionic_free
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

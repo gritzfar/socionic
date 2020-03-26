@@ -12,7 +12,7 @@ import 'pages/typesPage.dart';
 void main() {
   var configuredApp = AppConfig(
     internal: true,
-    testAds: true,
+    testAds: false,
     hasAds: true,
     child: MySocionicApp(),
   );
