@@ -40,7 +40,7 @@ const TypeDesc donType = TypeDesc(
       performerRelation,
       underControlRelation,
       businessRelation,
-      mirrorRelation,
+      mirageRelation,
       superegoRelation,
       oppositeRelation,
       quasiRelation,
@@ -376,7 +376,7 @@ const TypeDesc yeseninType = TypeDesc(
     intuition: true,
     rationalization: false,
     relations: <Relation>[
-      mirrorRelation,
+      mirageRelation,
       businessRelation,
       underControlRelation,
       performerRelation,
