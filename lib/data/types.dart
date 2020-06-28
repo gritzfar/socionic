@@ -1,6 +1,7 @@
 import '../models/relation.dart';
 import '../models/typeDesc.dart';
-import 'relations.dart';
+import '../models/sign.dart';
+import 'signs.dart';
 
 const TypeDesc donType = TypeDesc(
     tag: "Don Quixote",
@@ -49,7 +50,8 @@ const TypeDesc donType = TypeDesc(
       controlRelation,
       familyRelation,
       semiDualRelation
-    ]);
+    ],
+    signs: <Sign>[questim, static, democracy, positivism, tactic, constructivism, process, carelessness, compliance, funny, judiciousness]);
 
 const TypeDesc dumasType = TypeDesc(
     tag: "Dumas",
@@ -98,7 +100,8 @@ const TypeDesc dumasType = TypeDesc(
       customerRelation,
       semiDualRelation,
       familyRelation
-    ]);
+    ],
+    signs: <Sign>[declatim, dynamic, democracy, negativism, strategic, emotivism, process, carelessness, compliance, funny, judiciousness]);
 
 const TypeDesc hugoType = TypeDesc(
     tag: "Hugo",
@@ -147,7 +150,8 @@ const TypeDesc hugoType = TypeDesc(
       mirageRelation,
       performerRelation,
       underControlRelation
-    ]);
+    ],
+    signs: <Sign>[declatim, dynamic, democracy, positivism, tactic, constructivism, process, carelessness, compliance, funny, judiciousness]);
 
 const TypeDesc robespierreType = TypeDesc(
     tag: "Robespierre",

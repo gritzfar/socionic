@@ -1,3 +1,4 @@
+import '../models/sign.dart';
 import '../models/relation.dart';
 
 class TypeDesc {
@@ -19,12 +20,14 @@ class TypeDesc {
   final String bestPractice;
   final String worstPractice;
   final String forEffectiveWork;
-  final bool extraversion;
 
+  final bool extraversion;
   final bool logic;
   final bool intuition;
   final bool rationalization;
+
   final List<Relation> relations;
+  final List<Sign> signs;
 
   const TypeDesc(
       {this.tag,
@@ -49,7 +52,8 @@ class TypeDesc {
       this.logic,
       this.intuition,
       this.rationalization,
-      this.relations})
+      this.relations,
+      this.signs})
       : super();
 
   @override
