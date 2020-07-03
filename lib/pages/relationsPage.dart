@@ -26,7 +26,7 @@ class RelationsPage extends StatelessWidget {
         title: Text("Отношения"),
       ),
       drawer: AppDrawer(
-        context: context,
+        context: context
       ),
       body: Center(
         child: ListView(
