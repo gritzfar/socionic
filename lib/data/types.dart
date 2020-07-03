@@ -55,15 +55,15 @@ const TypeDesc donType = TypeDesc(
     signs: <Sign>[
       questimSign,
       staticSign,
-      democracySign,
-      positivismSign,
-      tacticSign,
-      constructivismSign,
-      processSign,
-      carelessnessSign,
-      complianceSign,
+      judiciousnessSign,
       funnySign,
-      judiciousnessSign
+      complianceSign,
+      carelessnessSign,
+      processSign,
+      constructivismSign,
+      tacticSign,
+      positivismSign,
+      democracySign
     ]);
 
 const TypeDesc dumasType = TypeDesc(
@@ -117,15 +117,15 @@ const TypeDesc dumasType = TypeDesc(
     signs: <Sign>[
       declatimSign,
       dynamicSign,
-      democracySign,
-      negativismSign,
-      strategicSign,
-      emotivismSign,
-      processSign,
-      carelessnessSign,
-      complianceSign,
+      judiciousnessSign,
       funnySign,
-      judiciousnessSign
+      complianceSign,
+      carelessnessSign,
+      processSign,
+      emotivismSign,
+      strategicSign,
+      negativismSign,
+      democracySign
     ]);
 
 const TypeDesc hugoType = TypeDesc(
@@ -177,15 +177,15 @@ const TypeDesc hugoType = TypeDesc(
       underControlRelation
     ],
     signs: <Sign>[
+      declatimSign,
+      dynamicSign,
       judiciousnessSign,
       funnySign,
       stubbornnessSign,
       prudenceSign,
       resultSign,
       constructivismSign,
-      declatimSign,
       tacticSign,
-      dynamicSign,
       positivismSign,
       democracySign
     ]);
@@ -239,15 +239,15 @@ const TypeDesc robespierreType = TypeDesc(
       performerRelation
     ],
     signs: <Sign>[
+      questimSign,
+      staticSign,
       judiciousnessSign,
       funnySign,
       stubbornnessSign,
       prudenceSign,
       resultSign,
       emotivismSign,
-      questimSign,
       strategicSign,
-      staticSign,
       negativismSign,
       democracySign
     ]);
@@ -301,15 +301,15 @@ const TypeDesc hamletType = TypeDesc(
       conflictRelation
     ],
     signs: <Sign>[
+      questimSign,
+      dynamicSign,
       determinationSign,
       funnySign,
       stubbornnessSign,
       carelessnessSign,
       processSign,
       constructivismSign,
-      questimSign,
       strategicSign,
-      dynamicSign,
       negativismSign,
       aristocracySign
     ]);
@@ -363,15 +363,15 @@ const TypeDesc maximGorkyType = TypeDesc(
       quasiRelation
     ],
     signs: <Sign>[
+      declatimSign,
+      staticSign,
       determinationSign,
       funnySign,
       stubbornnessSign,
       carelessnessSign,
       processSign,
       emotivismSign,
-      declatimSign,
       tacticSign,
-      staticSign,
       positivismSign,
       aristocracySign
     ]);
@@ -425,15 +425,15 @@ const TypeDesc zhukovType = TypeDesc(
       oppositeRelation
     ],
     signs: <Sign>[
+      declatimSign,
+      staticSign,
       determinationSign,
       seriousSign,
       complianceSign,
       prudenceSign,
       resultSign,
       constructivismSign,
-      declatimSign,
       strategicSign,
-      staticSign,
       negativismSign,
       aristocracySign
     ]);
@@ -487,15 +487,15 @@ const TypeDesc yeseninType = TypeDesc(
       superegoRelation
     ],
     signs: <Sign>[
+      questimSign,
+      dynamicSign,
       determinationSign,
       funnySign,
       complianceSign,
       prudenceSign,
       resultSign,
       emotivismSign,
-      questimSign,
       tacticSign,
-      dynamicSign,
       positivismSign,
       aristocracySign
     ]);
@@ -547,6 +547,19 @@ const TypeDesc napoleonType = TypeDesc(
       underControlRelation,
       businessRelation,
       mirageRelation
+    ],
+    signs: <Sign>[
+      questimSign,
+      staticSign,
+      determinationSign,
+      seriousSign,
+      stubbornnessSign,
+      prudenceSign,
+      processSign,
+      emotivismSign,
+      staticSign,
+      positivismSign,
+      democracySign
     ]);
 
 const TypeDesc balzacType = TypeDesc(
@@ -596,6 +609,19 @@ const TypeDesc balzacType = TypeDesc(
       performerRelation,
       mirageRelation,
       businessRelation
+    ],
+    signs: <Sign>[
+      declatimSign,
+      dynamicSign,
+      determinationSign,
+      seriousSign,
+      stubbornnessSign,
+      prudenceSign,
+      processSign,
+      constructivismSign,
+      tacticSign,
+      negativismSign,
+      democracySign
     ]);
 
 const TypeDesc jackLondonType = TypeDesc(
@@ -645,6 +671,19 @@ const TypeDesc jackLondonType = TypeDesc(
       semiDualRelation,
       customerRelation,
       controlRelation
+    ],
+    signs: <Sign>[
+      declatimSign,
+      dynamicSign,
+      determinationSign,
+      seriousSign,
+      complianceSign,
+      carelessnessSign,
+      resultSign,
+      emotivismSign,
+      strategicSign,
+      positivismSign,
+      democracySign
     ]);
 
 const TypeDesc dreiserType = TypeDesc(
@@ -694,6 +733,19 @@ const TypeDesc dreiserType = TypeDesc(
       familyRelation,
       controlRelation,
       customerRelation
+    ],
+    signs: <Sign>[
+      questimSign,
+      staticSign,
+      determinationSign,
+      seriousSign,
+      complianceSign,
+      carelessnessSign,
+      resultSign,
+      constructivismSign,
+      tacticSign,
+      negativismSign,
+      democracySign
     ]);
 
 const TypeDesc stierlitzType = TypeDesc(
@@ -743,6 +795,19 @@ const TypeDesc stierlitzType = TypeDesc(
       dualRelation,
       activationRelation,
       mirrorRelation
+    ],
+    signs: <Sign>[
+      questimSign,
+      dynamicSign,
+      judiciousnessSign,
+      seriousSign,
+      complianceSign,
+      prudenceSign,
+      processSign,
+      emotivismSign,
+      tacticSign,
+      negativismSign,
+      aristocracySign
     ]);
 
 const TypeDesc dostoyevskyType = TypeDesc(
@@ -792,6 +857,19 @@ const TypeDesc dostoyevskyType = TypeDesc(
       equalRelation,
       mirrorRelation,
       activationRelation
+    ],
+    signs: <Sign>[
+      declatimSign,
+      staticSign,
+      judiciousnessSign,
+      seriousSign,
+      complianceSign,
+      prudenceSign,
+      processSign,
+      constructivismSign,
+      strategicSign,
+      positivismSign,
+      aristocracySign
     ]);
 
 const TypeDesc huxleyType = TypeDesc(
@@ -841,6 +919,19 @@ const TypeDesc huxleyType = TypeDesc(
       mirrorRelation,
       equalRelation,
       dualRelation
+    ],
+    signs: <Sign>[
+      declatimSign,
+      staticSign,
+      judiciousnessSign,
+      seriousSign,
+      stubbornnessSign,
+      carelessnessSign,
+      resultSign,
+      emotivismSign,
+      tacticSign,
+      negativismSign,
+      aristocracySign
     ]);
 
 const TypeDesc gabinType = TypeDesc(
@@ -890,4 +981,17 @@ const TypeDesc gabinType = TypeDesc(
       activationRelation,
       dualRelation,
       equalRelation
+    ],
+    signs: <Sign>[
+      questimSign,
+      dynamicSign,
+      judiciousnessSign,
+      seriousSign,
+      stubbornnessSign,
+      carelessnessSign,
+      resultSign,
+      constructivismSign,
+      strategicSign,
+      positivismSign,
+      aristocracySign
     ]);
