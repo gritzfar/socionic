@@ -6,6 +6,7 @@ import '../common/admodBannerWidget.dart';
 import '../common/typeHero.dart';
 import '../models/typeDesc.dart';
 import 'relationsPage.dart';
+import 'signsPage.dart';
 
 MaterialPageRoute<void> getTypeDescPage(TypeDesc typeDesc) {
   return MaterialPageRoute<void>(builder: (BuildContext context) {
@@ -23,7 +24,7 @@ class TypePage extends StatelessWidget {
     return getScaffoldNew(context);
   }
 
-  Scaffold getScaffold(BuildContext context) {
+  /*Scaffold getScaffold(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(typeDesc.longName),
@@ -59,20 +60,36 @@ class TypePage extends StatelessWidget {
               ],
             ),
             Divider(),
-            OutlineButton(
-              child: Wrap(
-                children: <Widget>[
-                  Icon(Icons.all_out),
-                  Padding(
-                    padding: EdgeInsets.only(left: 8.0, top: 4),
-                    child: Text("Отношения"),
-                  )
-                ],
+            Row(children: <Widget>[
+              OutlineButton(
+                child: Wrap(
+                  children: <Widget>[
+                    Icon(Icons.all_out),
+                    Padding(
+                      padding: EdgeInsets.only(left: 8.0, top: 4),
+                      child: Text("Отношения"),
+                    )
+                  ],
+                ),
+                onPressed: () {
+                  Navigator.of(context).push(getTypeRelationsPage(typeDesc, true));
+                },
               ),
-              onPressed: () {
-                Navigator.of(context).push(getTypeRelationsPage(typeDesc, true));
-              },
-            ),
+              OutlineButton(
+                child: Wrap(
+                  children: <Widget>[
+                    Icon(Icons.tune),
+                    Padding(
+                      padding: EdgeInsets.only(left: 8.0, top: 4),
+                      child: Text("Признаки"),
+                    )
+                  ],
+                ),
+                onPressed: () {
+                  Navigator.of(context).push(getTypeRelationsPage(typeDesc, true));
+                },
+              ),
+            ]),
             Expanded(
               flex: 1,
               child: SingleChildScrollView(
@@ -120,7 +137,7 @@ class TypePage extends StatelessWidget {
           ])),
       bottomNavigationBar: AdModBannerWidget(),
     );
-  }
+  }*/
 
   Scaffold getScaffoldNew(BuildContext context) {
     var boldStyle = TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).textTheme.bodyText1.color);
@@ -216,20 +233,37 @@ Widget _getTopBar(BuildContext context, TypeDesc typeDesc) {
             ))
       ],
     ),
-    OutlineButton(
-      child: Wrap(
-        children: <Widget>[
-          Icon(Icons.all_out),
-          Padding(
-            padding: EdgeInsets.only(left: 8.0, top: 4),
-            child: Text("Отношения"),
-          )
-        ],
+    Row(children: <Widget>[
+      OutlineButton(
+        child: Wrap(
+          children: <Widget>[
+            Icon(Icons.all_out),
+            Padding(
+              padding: EdgeInsets.only(left: 8.0, top: 4),
+              child: Text("Отношения"),
+            )
+          ],
+        ),
+        onPressed: () {
+          Navigator.of(context).push(getTypeRelationsPage(typeDesc, true));
+        },
       ),
-      onPressed: () {
-        Navigator.of(context).push(getTypeRelationsPage(typeDesc, true));
-      },
-    ),
+      Spacer(flex: 1),
+      OutlineButton(
+        child: Wrap(
+          children: <Widget>[
+            Icon(Icons.tune),
+            Padding(
+              padding: EdgeInsets.only(left: 8.0, top: 4),
+              child: Text("Признаки"),
+            )
+          ],
+        ),
+        onPressed: () {
+          Navigator.of(context).push(getSignsPage(typeDesc, true));
+        },
+      ),
+    ]),
     Divider(),
   ]);
 }
