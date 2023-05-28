@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:906572584409:android:16d394fab75c3aedeb75c8",
         "android_client_info": {
-          "package_name": "de.gritzfar.my_socionic"
+          "package_name": "de.gritzfar.my_socionic_free"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "906572584409-mkge44jguu8a17jsrddhi82jbcn4fv7l.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "de.gritzfar.my_socionic",
+            "package_name": "de.gritzfar.my_socionic_free",
             "certificate_hash": "d879bd8cac7b5f85b7b2046705fab80feb4b3665"
           }
         },
