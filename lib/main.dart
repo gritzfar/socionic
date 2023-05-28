@@ -20,7 +20,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   //init adds
-  Admob.initialize(getAppId(false));
+  Admob.initialize(testDeviceIds: [getAppId(false) ]);
 
   runApp(configuredApp);
 }

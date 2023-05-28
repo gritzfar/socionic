@@ -8,8 +8,8 @@ class ModelAPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var titleStyle = Theme.of(context).textTheme.subtitle1;
-    var boldStyle = TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).textTheme.bodyText1.color);
+    var titleStyle = Theme.of(context).textTheme.titleMedium;
+    var boldStyle = TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).textTheme.bodyLarge.color);
     var normalStyle = TextStyle(fontWeight: FontWeight.normal);
 
     return Scaffold(
@@ -123,7 +123,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     var offset = maxExtent - shrinkOffset < minExtent ? minExtent - maxExtent : -shrinkOffset;
 
-    return Stack(overflow: Overflow.clip, children: <Widget>[
+    return Stack(children: <Widget>[
       Positioned(
           top: offset,
           child: Container(
@@ -160,13 +160,13 @@ Widget _getTopBar(BuildContext context) {
                 Navigator.of(context).pop();
               },
               child:
-//              Image.asset("images/model_a.png", width: 80, height: 120, semanticLabel: "Модель А")
-                  SvgPicture.asset(
-                "svgs/model_a.svg",
-                width: 80,
-                height: 120,
-                semanticsLabel: "Модель А",
-              )),
+                Image.asset("images/model_a.png", width: 80, height: 120, semanticLabel: "Модель А"),
+                //SvgPicture.asset("svgs/model_a.svg",
+                //width: 80,
+                //height: 120,
+                //semanticsLabel: "Модель А",
+              //)
+          ),
         ),
         Container(width: 5),
         Expanded(
@@ -177,9 +177,9 @@ Widget _getTopBar(BuildContext context) {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Text("Описание модели А", softWrap: true, maxLines: 3, style: Theme.of(context).textTheme.headline6),
-                  FittedBox(child: Text("Блоки модели А", style: Theme.of(context).textTheme.bodyText2)),
-                  FittedBox(child: Text("Поведение функции в различних блоках", style: Theme.of(context).textTheme.caption)),
+                  Text("Описание модели А", softWrap: true, maxLines: 3, style: Theme.of(context).textTheme.titleLarge),
+                  FittedBox(child: Text("Блоки модели А", style: Theme.of(context).textTheme.bodyMedium)),
+                  FittedBox(child: Text("Поведение функции в различних блоках", style: Theme.of(context).textTheme.bodySmall)),
                 ],
               ),
             ))

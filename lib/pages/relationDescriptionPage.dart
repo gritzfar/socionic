@@ -22,7 +22,7 @@ class RelationDescriptionPage extends StatelessWidget {
               child: Text(relation.longName),
             )
           ]),
-          Text(relation.moto, style: Theme.of(context).textTheme.caption)
+          Text(relation.moto, style: Theme.of(context).textTheme.bodySmall)
         ],
       )),
       body: CustomScrollView(physics: const BouncingScrollPhysics(), slivers: <Widget>[
@@ -60,7 +60,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     var offset = maxExtent - shrinkOffset < minExtent ? minExtent - maxExtent : -shrinkOffset;
 
-    return Stack(overflow: Overflow.clip, children: <Widget>[
+    return Stack(children: <Widget>[
       Positioned(
           top: offset,
           child: SizedBox(

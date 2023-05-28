@@ -140,7 +140,7 @@ class TypePage extends StatelessWidget {
   }*/
 
   Scaffold getScaffoldNew(BuildContext context) {
-    var boldStyle = TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).textTheme.bodyText1.color);
+    var boldStyle = TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).textTheme.bodyLarge.color);
     var normalStyle = TextStyle(fontWeight: FontWeight.normal);
     return Scaffold(
       appBar: AppBar(
@@ -225,16 +225,16 @@ Widget _getTopBar(BuildContext context, TypeDesc typeDesc) {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Text(typeDesc.nameDescription, softWrap: true, maxLines: 3, style: Theme.of(context).textTheme.headline6),
-                  FittedBox(child: Text(typeDesc.altName + " - " + typeDesc.mbti, style: Theme.of(context).textTheme.bodyText2)),
-                  FittedBox(child: Text("Кредо: " + typeDesc.moto, style: Theme.of(context).textTheme.caption)),
+                  Text(typeDesc.nameDescription, softWrap: true, maxLines: 3, style: Theme.of(context).textTheme.titleLarge),
+                  FittedBox(child: Text(typeDesc.altName + " - " + typeDesc.mbti, style: Theme.of(context).textTheme.bodyMedium)),
+                  FittedBox(child: Text("Кредо: " + typeDesc.moto, style: Theme.of(context).textTheme.bodySmall)),
                 ],
               ),
             ))
       ],
     ),
     Row(children: <Widget>[
-      OutlineButton(
+      OutlinedButton(
         child: Wrap(
           children: <Widget>[
             Icon(Icons.all_out),
@@ -249,7 +249,7 @@ Widget _getTopBar(BuildContext context, TypeDesc typeDesc) {
         },
       ),
       Spacer(flex: 1),
-      OutlineButton(
+      OutlinedButton(
         child: Wrap(
           children: <Widget>[
             Icon(Icons.tune),
@@ -277,7 +277,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     var offset = maxExtent - shrinkOffset < minExtent ? minExtent - maxExtent : -shrinkOffset;
 
-    return Stack(overflow: Overflow.clip, children: <Widget>[
+    return Stack(children: <Widget>[
       Positioned(
           top: offset,
           child: Container(

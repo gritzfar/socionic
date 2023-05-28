@@ -41,7 +41,7 @@ class AspectDictionariesPage extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 5),
                           child: ListTile(
                             leading: Hero(child: aspect.icon, tag: aspect.tag),
-                            title: Text(aspect.name, style: Theme.of(context).textTheme.headline6),
+                            title: Text(aspect.name, style: Theme.of(context).textTheme.titleLarge),
                             subtitle: Text(aspect.altName, overflow: TextOverflow.ellipsis),
                           )),
                       onTap: () {
@@ -89,7 +89,7 @@ class AspectsPage extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 5),
                           child: ListTile(
                             leading: Hero(child: aspect.icon, tag: aspect.tag),
-                            title: Text(aspect.name, style: Theme.of(context).textTheme.headline6),
+                            title: Text(aspect.name, style: Theme.of(context).textTheme.titleLarge),
                             subtitle: Text(aspect.altName, overflow: TextOverflow.ellipsis),
                           )),
                       onTap: () {
