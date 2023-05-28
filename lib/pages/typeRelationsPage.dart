@@ -85,7 +85,7 @@ class TypeRelationsPage extends StatelessWidget {
                           child: Text(
                         relations[i].name,
                         overflow: TextOverflow.ellipsis,
-                        style: Theme.of(context).textTheme.caption,
+                        style: Theme.of(context).textTheme.bodySmall,
                       )),
                       StarRating(
                         color: color,

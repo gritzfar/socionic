@@ -36,7 +36,7 @@ class AspectPage extends StatelessWidget {
           alignment: Alignment.topLeft,
           padding: EdgeInsets.only(left: 16, right: 16, bottom: 16),
           child: Column(children: <Widget>[
-            Text("Проявление функций", style: Theme.of(context).textTheme.headline6),
+            Text("Проявление функций", style: Theme.of(context).textTheme.titleLarge),
             Text(""),
             Text("    " + aspect.func[0]),
             Text(""),
@@ -68,7 +68,7 @@ Widget _getTopBar(BuildContext context, Aspect aspect) {
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          OutlineButton(
+          OutlinedButton(
             child: Wrap(
               children: <Widget>[
                 Icon(Icons.list),
@@ -119,7 +119,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
       _maxExtent = 85;
     }
 
-    return Stack(overflow: Overflow.clip, children: <Widget>[
+    return Stack(children: <Widget>[
       Positioned(
           top: offset,
           child: SizedBox(

@@ -25,8 +25,8 @@ class SignsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var boldStyle = TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).textTheme.bodyText1.color);
-    var normalStyle = TextStyle(fontWeight: FontWeight.normal);
+    var boldStyle = TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).textTheme.bodyLarge.color);
+    //var normalStyle = TextStyle(fontWeight: FontWeight.normal);
 
     return Scaffold(
       appBar: AppBar(
