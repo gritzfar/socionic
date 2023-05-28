@@ -137,7 +137,7 @@ class AspectCalculationPageState extends State<AspectCalculationPage> {
         selected: dichotomie.value == true,
         onSelected: (bool selected) {
           setState(() {
-            dichotomie.value = selected ? true : null;
+            dichotomie.value = selected ? true : false;
             _filterData();
           });
         },
@@ -155,7 +155,7 @@ class AspectCalculationPageState extends State<AspectCalculationPage> {
         selected: dichotomie.value == false,
         onSelected: (bool selected) {
           setState(() {
-            dichotomie.value = selected ? false : null;
+            dichotomie.value = selected ? false : true;
             _filterData();
           });
         },

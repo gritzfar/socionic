@@ -13,7 +13,7 @@ class TypeHero extends StatelessWidget {
   final double width;
   final double height;
 
-  const TypeHero({Key key, this.typeDesc, this.onTap, this.width = typeHeroWidth, this.height = typeHeroHeight}) : super(key: key);
+  const TypeHero({required this.typeDesc, required this.onTap, this.width = typeHeroWidth, this.height = typeHeroHeight}) : super();
 
   @override
   Widget build(BuildContext context) {

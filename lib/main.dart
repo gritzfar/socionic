@@ -14,7 +14,7 @@ void main() {
     internal: true,
     testAds: true,
     hasAds: false,
-    child: MySocionicApp(),
+    child: MySocionicApp()
   );
 
   WidgetsFlutterBinding.ensureInitialized();
@@ -64,7 +64,7 @@ String getAppId(bool testAdds) {
 //}
 
 class MySocionicApp extends StatefulWidget {
-  const MySocionicApp({Key key}) : super(key: key);
+  const MySocionicApp();
 
   @override
   _MySocionicAppState createState() => _MySocionicAppState();

@@ -68,11 +68,10 @@ final quadrates = <QuadrateData>[
 
 class QuadrateData {
   final String title;
-
   final String moto;
   final Column description;
 
-  const QuadrateData({this.title, this.moto, this.description}) : super();
+  const QuadrateData({required this.title, required this.moto, required this.description}) : super();
 }
 
 class QuadratesPage extends StatefulWidget {

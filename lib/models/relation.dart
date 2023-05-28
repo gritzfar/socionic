@@ -5,5 +5,5 @@ class Relation {
   final double rating;
   final String desc;
 
-  const Relation({this.name, this.longName, this.moto, this.rating, this.desc});
+  const Relation({required this.name, required this.longName, required this.moto, required this.rating, required this.desc});
 }

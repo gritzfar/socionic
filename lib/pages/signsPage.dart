@@ -20,12 +20,12 @@ class SignsPage extends StatelessWidget {
 
   final TypeDesc typeDesc;
 
-  const SignsPage({Key key, this.typeDesc}) : super();
+  const SignsPage({required this.typeDesc}) : super();
 
 
   @override
   Widget build(BuildContext context) {
-    var boldStyle = TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).textTheme.bodyLarge.color);
+    var boldStyle = TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).textTheme.bodyLarge?.color);
     //var normalStyle = TextStyle(fontWeight: FontWeight.normal);
 
     return Scaffold(

@@ -12,7 +12,7 @@ import 'appConfig.dart';
 class AppDrawer extends StatelessWidget {
   final BuildContext context;
 
-  const AppDrawer({Key key, this.context}) : super(key: key);
+  const AppDrawer({required this.context});
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +120,7 @@ class AppDrawer extends StatelessWidget {
     return list;
   }
 
-  Widget _createDrawerItem({IconData icon, String text, GestureTapCallback onTap}) {
+  Widget _createDrawerItem({required IconData icon, required String text, required GestureTapCallback onTap}) {
     return ListTile(
       title: Row(
         children: <Widget>[
