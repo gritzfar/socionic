@@ -1,11 +1,12 @@
 import 'package:flutter/widgets.dart';
+import '../main.dart';
 
 class AppConfig extends InheritedWidget {
   final bool hasAds;
   final bool testAds;
   final bool internal;
 
-  AppConfig({this.internal, this.testAds, this.hasAds, Widget child}) : super(child: child);
+  AppConfig({required this.internal, required this.testAds, required this.hasAds, required Widget child}) : super(child: child);
 
 //  String getAppId() {
 //    if (testAdds) {
@@ -31,6 +32,6 @@ class AppConfig extends InheritedWidget {
   bool updateShouldNotify(InheritedWidget oldWidget) => false;
 
   static AppConfig of(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType();
+    return context.dependOnInheritedWidgetOfExactType<AppConfig>() ?? new AppConfig(internal: false, testAds: false, hasAds: false, child: new MySocionicApp());
   }
 }

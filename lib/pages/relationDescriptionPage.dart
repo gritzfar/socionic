@@ -8,7 +8,7 @@ import '../models/relation.dart';
 class RelationDescriptionPage extends StatelessWidget {
   final Relation relation;
 
-  RelationDescriptionPage({Key key, this.relation}) : super(key: key);
+  RelationDescriptionPage({required this.relation}) : super();
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +54,7 @@ class RelationDescriptionPage extends StatelessWidget {
 class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   final Relation relation;
 
-  _SliverAppBarDelegate({this.relation});
+  _SliverAppBarDelegate({required this.relation});
 
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {

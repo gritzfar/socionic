@@ -7,7 +7,7 @@ import '../models/semanticTheme.dart';
 class AspectDictionaryPage extends StatefulWidget {
   final Aspect aspect;
 
-  AspectDictionaryPage({Key key, this.aspect}) : super(key: key);
+  AspectDictionaryPage({required this.aspect}) : super();
 
   @override
   State<StatefulWidget> createState() {
@@ -18,7 +18,7 @@ class AspectDictionaryPage extends StatefulWidget {
 class _AspectDictionaryState extends State<AspectDictionaryPage> {
   final Aspect aspect;
 
-  _AspectDictionaryState({this.aspect});
+  _AspectDictionaryState({required this.aspect});
 
   @override
   void initState() {
@@ -81,7 +81,7 @@ class _AspectDictionaryState extends State<AspectDictionaryPage> {
     );
   }
 
-  List<SemanticTheme> semanticThemes = new List<SemanticTheme>();
+  var semanticThemes = <SemanticTheme>[];
 
   Widget buildThemes(BuildContext context) {
     return ListView.builder(

@@ -17,7 +17,7 @@ MaterialPageRoute<void> getTypeDescPage(TypeDesc typeDesc) {
 class TypePage extends StatelessWidget {
   final TypeDesc typeDesc;
 
-  const TypePage({Key key, this.typeDesc}) : super(key: key);
+  const TypePage({required this.typeDesc});
 
   @override
   Widget build(BuildContext context) {
@@ -140,7 +140,7 @@ class TypePage extends StatelessWidget {
   }*/
 
   Scaffold getScaffoldNew(BuildContext context) {
-    var boldStyle = TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).textTheme.bodyLarge.color);
+    var boldStyle = TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).textTheme.bodyLarge?.color);
     var normalStyle = TextStyle(fontWeight: FontWeight.normal);
     return Scaffold(
       appBar: AppBar(
@@ -271,7 +271,7 @@ Widget _getTopBar(BuildContext context, TypeDesc typeDesc) {
 class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   final TypeDesc typeDesc;
 
-  _SliverAppBarDelegate({this.typeDesc});
+  _SliverAppBarDelegate({required this.typeDesc});
 
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {

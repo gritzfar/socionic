@@ -9,7 +9,7 @@ class ModelAPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var titleStyle = Theme.of(context).textTheme.titleMedium;
-    var boldStyle = TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).textTheme.bodyLarge.color);
+    var boldStyle = TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).textTheme.bodyLarge?.color);
     var normalStyle = TextStyle(fontWeight: FontWeight.normal);
 
     return Scaffold(

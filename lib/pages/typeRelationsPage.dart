@@ -31,7 +31,7 @@ class TypeRelationsPage extends StatelessWidget {
 
   final bool popNavigation;
 
-  const TypeRelationsPage({Key key, this.typeDesc, this.popNavigation}) : super();
+  const TypeRelationsPage({required this.typeDesc, required this.popNavigation}) : super();
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +61,7 @@ class TypeRelationsPage extends StatelessWidget {
   }
 
   List<Widget> generateItems(BuildContext context, List<TypeDesc> types, List<Relation> relations, double width) {
-    List<Widget> list = new List<Widget>();
+    var list = <Widget>[];
     var color = Colors.amber;
 
     //double width = (MediaQuery.of(context).size.width / 4) - 6;

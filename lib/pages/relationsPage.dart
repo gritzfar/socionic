@@ -62,7 +62,7 @@ class RelationsPage extends StatelessWidget {
   }
 
   List<Widget> generateItems(BuildContext context, List<TypeDesc> types) {
-    List<Widget> list = new List<Widget>();
+    var list = <Widget>[];
 
     for (var i = 0; i < types.length; i++) {
       list.add(

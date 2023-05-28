@@ -13,8 +13,7 @@ class StarRating extends StatelessWidget {
   final double size;
 
   //StarRating({this.starCount = 5, this.rating = .0, this.onRatingChanged, this.color, this.size = 15});
-  StarRating(
-      {this.starCount = 5, this.rating = .0, this.color, this.size = 15});
+  StarRating({this.starCount = 5, this.rating = .0, required this.color, this.size = 15});
 
   @override
   Widget build(BuildContext context) {
@@ -41,14 +40,14 @@ class StarRating extends StatelessWidget {
       icon = new Icon(
         Icons.star_half,
         size: this.size,
-        color: color ?? Theme.of(context).buttonColor,
+        color: color, // ?? Theme.of(context).buttonColor,
         semanticLabel: "Качество",
       );
     } else {
       icon = new Icon(
         Icons.star,
         size: this.size,
-        color: color ?? Theme.of(context).buttonColor,
+        color: color, // ?? Theme.of(context).buttonColor,
         semanticLabel: "Качество",
       );
     }

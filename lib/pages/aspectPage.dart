@@ -10,7 +10,7 @@ import 'aspectDictionaryPage.dart';
 class AspectPage extends StatelessWidget {
   final Aspect aspect;
 
-  const AspectPage({Key key, this.aspect}) : super(key: key);
+  const AspectPage({required this.aspect}) : super();
 
   @override
   Widget build(BuildContext context) {
@@ -105,7 +105,7 @@ Widget _getTopBar(BuildContext context, Aspect aspect) {
 class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   final Aspect aspect;
 
-  _SliverAppBarDelegate({this.aspect});
+  _SliverAppBarDelegate({required this.aspect});
 
   double _maxExtent = 150;
   double _minExtent = 55;

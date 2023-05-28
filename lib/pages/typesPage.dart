@@ -40,7 +40,7 @@ class TypesPageState extends State<TypesPage> {
   }
 
   List<Widget> generateItems(List<TypeDesc> types) {
-    List<Widget> list = new List<Widget>();
+    var list = <Widget>[];
 
     for (var i = 0; i < types.length; i++) {
       list.add(

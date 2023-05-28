@@ -1,15 +1,14 @@
 class Dichotomie {
-  bool value;
-
+  bool? value;
   final String falseValue;
   final String trueValue;
 
-  Dichotomie({this.falseValue, this.trueValue}) : super();
+  Dichotomie({required this.falseValue, required this.trueValue});
 
   @override
   String toString() {
     if (value == null) return "";
 
-    return value ? this.trueValue : this.falseValue;
+    return (value ?? false) ? this.trueValue : this.falseValue;
   }
 }
