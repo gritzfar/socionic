@@ -64,7 +64,7 @@ String getAppId(bool testAdds) {
 //}
 
 class MySocionicApp extends StatefulWidget {
-  const MySocionicApp({Key key}) : super(key: key);
+  const MySocionicApp() : super();
 
   @override
   _MySocionicAppState createState() => _MySocionicAppState();
