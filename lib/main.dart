@@ -1,6 +1,7 @@
-import 'package:admob_flutter/admob_flutter.dart';
+//import 'package:admob_flutter/admob_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:my_socionic/pages/modelAPage.dart';
+//import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import 'common/appConfig.dart';
 import 'pages/aspectCalulationPage.dart';
@@ -13,14 +14,14 @@ void main() {
   var configuredApp = AppConfig(
     internal: true,
     testAds: true,
-    hasAds: false,
+    hasAds: true,
     child: MySocionicApp()
   );
 
   WidgetsFlutterBinding.ensureInitialized();
 
   //init adds
-  Admob.initialize(testDeviceIds: [getAppId(false) ]);
+  //Admob.initialize(testDeviceIds: [getAppId(false) ]);
 
   runApp(configuredApp);
 }

@@ -1,5 +1,6 @@
-import 'package:admob_flutter/admob_flutter.dart';
+//import 'package:admob_flutter/admob_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import 'appConfig.dart';
 
@@ -15,7 +16,11 @@ class AdModBannerWidget extends StatefulWidget {
 }
 
 class AdModBannerWidgetState extends State<AdModBannerWidget> {
-  String _getBannerAdUnitId(bool testAdds) {
+
+  BannerAd? _bannerAd;
+  bool _isLoaded = false;
+
+    String _getBannerAdUnitId(bool testAdds) {
     if (testAdds) {
       //Test banner
       return "ca-app-pub-3940256099942544/6300978111";
@@ -28,17 +33,32 @@ class AdModBannerWidgetState extends State<AdModBannerWidget> {
     // return "ca-app-pub-7993607976861905/6677424882";
   }
 
-//  @override
-//  void initState() {
-//    super.initState();
-//
-//    _width = 50;
-//    _failedToLoad = false;
-//  }
-
-  //double _width = 50;
-  //bool _failedToLoad = false;
-//  Widget _banner;
+  /// Loads a banner ad.
+  void loadAd() {
+    _bannerAd = BannerAd(
+      adUnitId: _getBannerAdUnitId(AppConfig
+          .of(context)
+          .testAds),
+      request: const AdRequest(),
+      size: AdSize.banner,
+      listener: BannerAdListener(
+        // Called when an ad is successfully received.
+        onAdLoaded: (ad) {
+          debugPrint('$ad loaded.');
+          setState(() {
+            _isLoaded = true;
+          });
+        },
+        // Called when an ad request failed.
+        onAdFailedToLoad: (ad, error) {
+          debugPrint('BannerAd failed to load: $error');
+          // Dispose the ad here to free resources.
+          ad.dispose();
+        },
+      ),
+    )
+      ..load();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,27 +66,22 @@ class AdModBannerWidgetState extends State<AdModBannerWidget> {
       return Container(height: 0);
     }
 
-//    if (_failedToLoad) {
-//      return Container(height: 0);
-//    }
+    this.loadAd();
 
-    return Container(
-        //height: 60,
-        //width: _width,
+    if (_bannerAd != null) {
+      return Container(
         padding: EdgeInsets.only(top: 8.0),
-        child: AdmobBanner(
-          adUnitId: _getBannerAdUnitId(AppConfig.of(context).testAds),
-          adSize: AdmobBannerSize.BANNER,
-//            listener: (AdmobAdEvent event, Map<String, dynamic> args) {
-//              if (event == AdmobAdEvent.failedToLoad) {
-//                setState(() {
-//                  _failedToLoad = true;
-//                  //_width = 0;
-//                });
-//              }
-//            }
-        ));
+        //alignment: Alignment.bottomCenter,
+        child: SafeArea(
+          child: SizedBox(
+            width: _bannerAd!.size.width.toDouble(),
+            height: _bannerAd!.size.height.toDouble(),
+            child: AdWidget(ad: _bannerAd!),
+          ),
+        ),
+      );
+    }
 
-//    return _banner;
+   return Container(height: 0);
   }
 }
