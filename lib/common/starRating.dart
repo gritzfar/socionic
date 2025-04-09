@@ -33,7 +33,7 @@ class StarRating extends StatelessWidget {
       icon = new Icon(
         Icons.star_border,
         size: this.size,
-        color: Theme.of(context).backgroundColor,
+        color: Theme.of(context).colorScheme.surface,
         semanticLabel: "Качество",
       );
     } else if (index > rating - 1 && index < rating) {
